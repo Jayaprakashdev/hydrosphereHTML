@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 0;
+    --primary-color: #102e44;
+    --secondary-color: #b2fcfb;
+    --text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+}
+img {
+    max-width: 100%;
+}
+body :where(h1, h2, h3, h4, h5, h6) {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+    font-weight: 400;
+    font-family: "Coiny", system-ui;
+}
+body p {
+    font-weight: 400;
+    line-height: 1.5;
+    font-family: "Comic Relief", system-ui;
+}
+/* header styles */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background: var(--secondary-color);
+    width: 100%;
+    padding: 20px 10px;
+    text-align: center;
+}
+header .header-logo {
+    width: 300px;
+    border-radius: 8px;
+}
+header .brand-promotion {
+    font-family: "Comic Relief", system-ui;
+    font-size: 13px;
+}
+header .brand-slogan {
+    color: #102e44;
+    font-size: 24px;
+    opacity: 0.8;
+    margin: 7px 0 0 0;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+/* section styles */
+section {
+    width: 100%;
+    height: 100%;
+    padding: 50px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color) url('../../assets/images/water-drops.png.png') repeat center / contain;
+    opacity: 0.5;
+    z-index: -1;
+}
+.section-desc {
+    color: var(--secondary-color);
+    font-size: 28px;
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 400;
+    text-shadow: var(--text-shadow);
+}
+.wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 50px 25px;
+    background: #ffffff75;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px -5px rgba(0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.inputs .input-group {
+    width: 98%;
+    text-align: center;
+}
+.inputs .input-group label {
+    font-weight: 400;
+    color: var(--primary-color);
+    font-family: "Coiny", system-ui;
+    text-transform: capitalize;
+    font-size: 24px;
+}
+.inputs .input-group .data-input {
+    display: block;
+    width: 100%;
+    border: 2px solid transparent;
+    background: #ffffff69;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    font-family: "Comic Relief", system-ui;
+    text-transform: capitalize;
+    text-align: center;
+    transition: 0.5s;
+}
+.inputs .input-group .data-input:focus,
+.inputs .input-group .data-input:focus-visible {
+    outline: none;
+}
+.inputs .input-group.itsError input {
+    border: 2px solid var(--primary-color);
+}
+.inputs .input-group.itsSuccess input {
+    border: 2px solid var(--secondary-color);
+}
+.err {
+    display: block;
+    font-family: "Comic Relief", system-ui;
+    font-size: 13px;
+    text-transform: capitalize;
+    color: var(--secondary-color);
+    height: 15px;
+    transform: scale(0);
+    transition: 0.5s;
+    text-transform: capitalize;
+}
+.err.active {
+    transform: scale(1);
+}
+.submitBtn {
+    display: block;
+    border: none;
+    text-align: center;
+    padding: 10px 45px;
+    border-radius: 50px;
+    text-transform: capitalize;
+    font-family: "Comic Relief", system-ui;
+    font-size: 18px;
+    font-weight: 400;
+    background: var(--primary-color);
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 15px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
+}
+.submitBtn:hover {
+    letter-spacing: 1px;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.result-holer {
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+.result-holer p {
+    color: #fff;
+}
+.result-tile {
+    color: #fff;
+    font-size: 38px;
+    letter-spacing: 2px;
+    position: relative;
+    font-family: "Comic Relief", system-ui;
+    text-shadow: var(--text-shadow);
+}
+.result-tile::before {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 100%;
+    border-bottom: 4px dotted #fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.percentage-count {
+    margin: 30px 0 20px 0;
+    font-size: 60px;
+    font-family: "Love Light", cursive;
+    line-height: 1;
+}
+.result-description {
+    font-size: 18px;
+    text-shadow: var(--text-shadow);
+}
+.blast-effect {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+}
+.blast-effect.active {
+    display: block;
+}
+/* refresh icon */
+.refresh-btn {
+    margin-left: auto;
+    transform: translate(10px, -35px) rotate(0deg);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.refresh-btn img {
+    display: block;
+    margin: auto;
+    position: absolute;
+    transition: 0.5s;
+}
+.refresh-btn .waterdrop-icon {
+    width: 15px;
+    filter: brightness(0) saturate(100%) invert(15%) sepia(25%) saturate(1242%) hue-rotate(160deg) brightness(98%) contrast(99%);
+    animation: water-dropping 2s cubic-bezier(0.6, 0.05, 0.28, 0.91) infinite;
+}
+.refresh-btn .reload-icon {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(25%) saturate(1242%) hue-rotate(160deg) brightness(98%) contrast(99%);
+}
+.refresh-btn:hover .reload-icon {
+    transform: rotate(245deg);
+}
+@keyframes water-dropping {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    25% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-50px);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+}
+/* footer */
+footer {
+    text-align: center;
+    background: var(--secondary-color);
+    padding: 50px 0;
+}
+footer p {
+    font-size: 16px;
+    font-family: "Comic Relief", system-ui;
+    font-weight: 400;
+}
+footer p span {
+    display: inline-block;
+    color: #f00;
+    font-size: 16px;
+}
+footer p span:nth-child(1) {
+    transform: scale(1.5);
+    margin: 0 3px;
+}
+footer .footer-desc {
+    font-size: 14px;
+    margin: 3px 0 0 0;
+}
+/* Media Query */
+@media (max-width: 767px) {
+    .wrapper {
+        max-width: 500px;
+    }
+    .inputs {
+        gap: 20px;
+    }
+    .inputs .input-group {
+        width: 100%;
+    }
+    .submitBtn {
+        padding: 10px 30px;
+    }
+    .result-holer {
+        padding: 0 20px;
+    }
+    .section-desc {
+        font-size: 24px;
+    }
+    header .brand-slogan {
+        font-size: 22px;
+        letter-spacing: 1px;
+    }
+}
+@media (max-width: 575px) {
+    header .header-logo {
+        width: 240px;
+    }
+    header .brand-promotion {
+        font-size: 10px;
+    }
+    header .brand-slogan {
+        font-size: 18px;
+        letter-spacing: 0px;
+    }
+    .section-desc {
+        font-size: 24px;
+    }
+    .inputs .input-group label {
+        font-size: 20px;
+    }
+    .inputs .input-group .data-input {
+        margin: 5px 0;
+    }
+    .submitBtn {
+        font-size: 16px;
+    }
+    .err,
+    footer .footer-desc {
+        font-size: 12px;
+    }
+    .wrapper {
+        max-width: 95%;
+        padding: 50px 15px;
+    }
+    .result-description,
+    footer p {
+        font-size: 14px;
+    }
+    .refresh-btn {
+        width: 30px;
+        height: 30px;
+        transform: translate(5px, -35px) rotate(0deg);
+    }
+    .refresh-btn .waterdrop-icon {
+        width: 12px;
+    }
+    .result-holer {
+        padding: 0 10px;
+    }
+}
