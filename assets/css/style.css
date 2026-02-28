@@ -15,6 +15,15 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   z-index: 999;
+  height: 32px;
+  width: 32px;
+}
+
+.phone-btn{
+    bottom: 70px;
+}
+.phone-btn i{
+    font-size: 14px;
 }
 
 .attractive-btn {
@@ -32,9 +41,29 @@ a:focus-visible{
     outline: none;
 }
 
-/* Smaller logo on mobile */
-@media (max-width: 576px) {
-    .logo {
+.hydro-banner {
+  min-height: 85vh;
+  padding: 60px 0;
+}
+
+.hydro-banner h1 {
+  font-size: 2.5rem;
+}
+
+.hydro-banner p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.banner-img {
+  max-height: 420px;
+}
+
+@media (max-width: 768px) {
+  .hydro-banner h1 {
+    font-size: 2rem;
+  }
+  .logo {
         max-height: 40px;
     }
 }
