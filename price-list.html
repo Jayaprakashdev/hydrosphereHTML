@@ -95,9 +95,6 @@
                         <a class="nav-link text-dark" href="#">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="/price-list">Price List</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link text-dark" href="/offer" target="_blank">Get Offer</a>
                     </li>
                     <li class="nav-item">
@@ -120,41 +117,30 @@
     <main class="flex-fill">
         <section class="hydro-banner d-flex align-items-center">
             <div class="container">
-                <div class="row align-items-center">
-
-                    <!-- Text Content -->
-                    <div class="col-lg-6 col-md-12">
-                        <span class="badge bg-light text-success mb-3">
-                            Sales | Installation | Service
-                        </span>
-
-                        <h1 class="fw-bold mt-3">
-                            WATER SOLUTIONS FOR A <br class="d-none d-md-block"> HEALTHIER LIFE
-                        </h1>
-
-                        <p class="mt-3">
-                            At <strong>Hydrosphere</strong>, we believe that pure water is the foundation of a healthy
-                            life.
-                            We provide smart, reliable, and affordable water purification solutions for
-                            <strong>home, commercial, and industrial</strong> needs.
-                        </p>
-
-                        <div class="mt-4">
-                            <a href="tel:9087667766" class="btn btn-success me-2 mb-2">
-                                <i class="fa-solid fa-phone me-2"></i> Call Now
-                            </a>
-                            <a href="https://wa.me/919087667766?text=Hello%20Hydrosphere," target="_blank" class="btn btn-outline-success mb-2">
-                                Get Free Demo
-                            </a>
+                <div class="my-3">
+                    <div class="row">
+                        <div class="col-12 col-md-6 ms-auto">
+                            <input type="text" id="searchInput" class="form-control"
+                                placeholder="🔍 Search by Model, Brand, Category...">
                         </div>
                     </div>
-
-                    <!-- Image -->
-                    <div class="col-lg-6 col-md-12 text-center mt-4 mt-lg-0">
-                        <img src="/assets/images/banner-image.png" alt="Hydrosphere Water Purifier"
-                            class="img-fluid banner-img">
-                    </div>
-
+                </div>
+                <div class="table-responsive">
+                    <table id="priceTable" class="table table-striped table-bordered align-middle text-nowrap">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>S.No</th>
+                                <th>Model</th>
+                                <th>Brand</th>
+                                <th>Price (₹)</th>
+                                <th>Discount Price (₹)</th>
+                                <th>Color</th>
+                                <th>Machine / Kit</th>
+                                <th>Validity</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -248,8 +234,84 @@
     </a>
 
     <!-- Bootstrap JS -->
+    <script>
+        const priceList = [
+
+            /* ================= WATER PURIFIERS ================= */
+            { id: 1, category: "Purifier", model: "CHROME CLASSIC +", brand: "CHROME", price: 21000, offer: 18000 },
+            { id: 2, category: "Purifier", model: "CHROME UNIQUE", brand: "CHROME", price: 19999, offer: 17000 },
+            { id: 3, category: "Purifier", model: "SS MISTY NORMAL", brand: "MISTY", price: 17990, offer: 15000 },
+            { id: 4, category: "Purifier", model: "SS MISTY HOT & NORMAL (WHITE)", brand: "MISTY", price: 26990, offer: 24000 },
+            { id: 5, category: "Purifier", model: "SS MISTY HOT & NORMAL (GOLD)", brand: "MISTY", price: 29990, offer: 25000 },
+            { id: 6, category: "Purifier", model: "NOBACT UNDERSINK", brand: "MISTY", price: 17900, offer: 15000 },
+            { id: 7, category: "Purifier", model: "SS MISTY HNC", brand: "MISTY", price: 49000, offer: 37000 },
+            { id: 8, category: "Purifier", model: "WHALE", brand: "MISTY", price: 20000, offer: 17000 },
+            { id: 9, category: "Purifier", model: "GENPURE", brand: "MISTY", price: 14900, offer: 11900 },
+            { id: 10, category: "Purifier", model: "PYOORN", brand: "MISTY", price: 19990, offer: 16990 },
+            { id: 11, category: "Purifier", model: "OLIVAR", brand: "OLIVAR", price: 14500, offer: 11500 },
+            { id: 12, category: "Purifier", model: "M PURE", brand: "MISTY", price: 14999, offer: 11999 },
+            { id: 13, category: "Purifier", model: "SWAN", brand: "MISTY", price: 13900, offer: 10900 },
+
+            /* ================= HYDROSPHERE MODELS ================= */
+            { id: 14, category: "Hydrosphere", model: "DOLPIN", price: 11000, offer: 8000 },
+            { id: 15, category: "Hydrosphere", model: "AQUA 2090", price: 13000, offer: 10000 },
+            { id: 16, category: "Hydrosphere", model: "AQUA GRAND +", price: 13000, offer: 10000 },
+            { id: 17, category: "Hydrosphere", model: "AQUA LEXZON", price: 12000, offer: 9000 },
+            { id: 18, category: "Hydrosphere", model: "AQUA 9090", price: 14500, offer: 11500 },
+            { id: 19, category: "Hydrosphere", model: "AQUA JADE", price: 13000, offer: 10000 },
+            { id: 20, category: "Hydrosphere", model: "AQUA XL", price: 13000, offer: 10000 },
+            { id: 21, category: "Hydrosphere", model: "PUROSIS", price: 14500, offer: 11500 },
+            { id: 22, category: "Hydrosphere", model: "URBAN", price: 13500, offer: 10500 },
+            { id: 23, category: "Hydrosphere", model: "MEGANA", price: 12000, offer: 9000 },
+            { id: 24, category: "Hydrosphere", model: "HI FLOW", price: 12500, offer: 9500 },
+            { id: 25, category: "Hydrosphere", model: "STROM", price: 13000, offer: 10000 },
+            { id: 26, category: "Hydrosphere", model: "VIVA", price: 14500, offer: 11500 },
+            { id: 27, category: "Hydrosphere", model: "LXONE", price: 14500, offer: 11500 },
+            { id: 28, category: "Hydrosphere", model: "NEXON UNDERSINK", price: 16500, offer: 13500 },
+            { id: 29, category: "Hydrosphere", model: "I PEARS", price: 14500, offer: 11500 },
+            { id: 30, category: "Hydrosphere", model: "ROMA", price: 13000, offer: 11000 },
+            { id: 31, category: "Hydrosphere", model: "INNOVICA", price: 15500, offer: 12500 },
+
+            /* ================= JUMBO / SCALE FREE ================= */
+            { id: 32, category: "Jumbo", model: "JUMBO 10 INC", price: 5500 },
+            { id: 33, category: "Jumbo", model: "JUMBO 20 INC VIRGIN (HEAVY)", price: 9500 },
+            { id: 34, category: "Jumbo", model: "JUMBO 20 INC WHITE (HEAVY)", price: 9000 },
+            { id: 35, category: "Scale Free", model: "TAP SCALE FREE", price: 1800 },
+            { id: 36, category: "Scale Free", model: "SHOWER SCALE FREE", price: 1800 },
+            { id: 37, category: "Scale Free", model: "WASHING MACHINE SCALE FREE", price: 2500 },
+            { id: 38, category: "Scale Free", model: "JUMBO 10 INC SCALE FREE", price: 7500 },
+
+            /* ================= SOFTENER ================= */
+            { id: 39, category: "Softener", model: "MINI SOFTENER", price: 12000 },
+            { id: 40, category: "Softener", model: "32 LTR VESSEL SOFTENER", price: 28000 },
+            { id: 41, category: "Softener", model: "50 LTR VESSEL SOFTENER", price: 35000 },
+            { id: 42, category: "Softener", model: "75 LTR VESSEL SOFTENER", price: 48000 },
+            { id: 43, category: "Softener", model: "100 LTR VESSEL SOFTENER (AUTO)", price: 65000 },
+            { id: 44, category: "Softener", model: "150 LTR VESSEL SOFTENER (AUTO)", price: 85000 },
+
+            /* ================= FULL CLOSED ================= */
+            { id: 45, category: "Full Closed", model: "10A TABLE TOP – FULL CLOSED", price: 18000 },
+            { id: 46, category: "Full Closed", model: "BATHROOM SOFTENER – AUTO", price: 22000 },
+            { id: 47, category: "Full Closed", model: "C-20 FULL CLOSED WITH BRINE", price: 45000 },
+            { id: 48, category: "Full Closed", model: "C-45AD FULL CLOSED WITH BRINE", price: 75000 },
+
+            /* ================= ACCESSORIES ================= */
+            { id: 49, category: "Accessory", model: "MOTOR", price: 1800 },
+            { id: 50, category: "Accessory", model: "ADAPTOR", price: 350 },
+            { id: 51, category: "Accessory", model: "SV", price: 600 },
+            { id: 52, category: "Accessory", model: "FILTER KIT", price: 3600 },
+            { id: 53, category: "Accessory", model: "FLOAT (KENT)", price: 450 },
+            { id: 54, category: "Accessory", model: "TUBE (MISTY)", price: 250 },
+            { id: 55, category: "Accessory", model: "PER BLOW HEAVY", price: 650 },
+            { id: 56, category: "Accessory", model: "PER BLOW TRANSPARENT HEAVY", price: 750 },
+            { id: 57, category: "Accessory", model: "CANDLE (AQUA GUARD)", price: 850 },
+            { id: 58, category: "Accessory", model: "AQUA GUARD BLOW", price: 900 }
+
+        ];
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/js/script.js"></script>
+
 </body>
 
 </html>

@@ -97,3 +97,4 @@ function hasClicked() {
         itsClicked = true;
     }
 }
+
