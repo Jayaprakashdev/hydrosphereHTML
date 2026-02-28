@@ -60,6 +60,17 @@ a:focus-visible {
     max-height: 420px;
 }
 
+.qr-box {
+    max-width: 380px;
+    margin: auto;
+}
+
+.qr-img {
+    max-width: 220px;
+    margin: 15px auto;
+    display: none;
+}
+
 @media (max-width: 768px) {
     .hydro-banner h1 {
         font-size: 2rem;
