@@ -71,6 +71,39 @@ a:focus-visible {
     display: none;
 }
 
+.table-wrapper {
+    max-height: 400px;        /* adjust height */
+    overflow-y: auto;
+}
+
+/* Fixed header */
+#priceTable thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #212529;     /* same as table-dark */
+    color: #fff;
+}
+
+/* Optional: smoother mobile scrolling */
+.table-wrapper {
+    -webkit-overflow-scrolling: touch;
+}
+
+.navbar .nav-link.active {
+    color: #198754 !important;
+    font-weight: 600;
+    border-bottom: 2px solid #198754;
+}
+
+.body {
+    overflow-x: visible;
+}
+
+#header, .navbar {
+    overflow: visible;
+}
+
 @media (max-width: 768px) {
     .hydro-banner h1 {
         font-size: 2rem;
@@ -92,5 +125,8 @@ a:focus-visible {
 
     .hydro-banner {
         padding: 30px 0;
+    }
+    .min-height-auto{
+        min-height: auto;
     }
 }

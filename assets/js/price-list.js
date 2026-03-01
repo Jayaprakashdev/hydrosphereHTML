@@ -1,6 +1,3 @@
-document.getElementById("year").textContent = new Date().getFullYear();
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const tableBody = document.querySelector("#priceTable tbody");
     const searchInput = document.getElementById("searchInput");
@@ -25,12 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
             row.innerHTML = `
                     <td>${index + 1}</td>
                     <td>${item.model || "-"}</td>
-                    <td>${item.brand || "HYDROSPHERE"}</td>
                     <td>₹${item.price?.toLocaleString() || "-"}</td>
                     <td>₹${item.offer?.toLocaleString() || "-"}</td>
                     <td>${item.color || "-"}</td>
                     <td>${item.kit || "-"}</td>
-                    <td>${item.validity || "01-02-2026 to 28-02-2026"}</td>
+                    <td>${item.validity || "01-03-2026 to 31-03-2026"}</td>
                 `;
 
             tableBody.appendChild(row);
@@ -53,33 +49,3 @@ document.addEventListener("DOMContentLoaded", () => {
         renderTable(filteredData);
     });
 });
-
-function generateQR() {
-    const amount = document.getElementById("amount").value;
-    const qrImage = document.getElementById("qrImage");
-    const payText = document.getElementById("payText");
-    const whatsappBtn = document.getElementById("whatsappBtn");
-
-    if (!amount || amount <= 0) {
-        alert("Please enter a valid amount");
-        return;
-    }
-
-    // 🔴 CHANGE YOUR UPI ID HERE
-    const upiId = "8825939355@ybl";
-    const name = "Hydrosphere";
-    const note = "Payment";
-
-    const upiUrl = `upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR&tn=${note}`;
-
-    // QR Code Image (Google API)
-    qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(upiUrl)}`;
-    qrImage.style.display = "block";
-
-    payText.innerText = `Pay ₹${amount} using the QR code`;
-
-    // WhatsApp Share
-    const message = `Please pay ₹${amount} using this QR:\n${upiUrl}`;
-    whatsappBtn.href = `https://wa.me/?text=${encodeURIComponent(message)}`;
-    whatsappBtn.classList.remove("d-none");
-}
