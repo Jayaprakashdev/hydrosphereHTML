@@ -1,0 +1,38 @@
+[
+    {
+        "title": "ORG Water Softener 75R Automatic",
+        "image": "assets/images/products/softener/org-softener.png",
+        "mrp": 68000,
+        "offerPrice": 58000,
+        "emi": true,
+        "freeInstallation": true,
+        "gstIncluded": true
+    },
+    {
+        "title": "ORG Water Softener 100R Automatic",
+        "image": "assets/images/products/softener/org-softener.png",
+        "mrp": 85000,
+        "offerPrice": 82000,
+        "emi": true,
+        "freeInstallation": true,
+        "gstIncluded": true
+    },
+    {
+        "title": "ORG Water Softener 150R Automatic",
+        "image": "assets/images/products/softener/org-softener.png",
+        "mrp": 95000,
+        "offerPrice": 92000,
+        "emi": true,
+        "freeInstallation": true,
+        "gstIncluded": true
+    },
+    {
+        "title": "ORG Bathroom Softener Automatic",
+        "image": "assets/images/products/softener/org-softener.png",
+        "mrp": 35000,
+        "offerPrice": 29999,
+        "emi": true,
+        "freeInstallation": true,
+        "gstIncluded": true
+    }
+]
