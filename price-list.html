@@ -19,103 +19,10 @@
 
 <body class="d-flex flex-column min-vh-100">
 
-    <!-- TOP HEADER START -->
-    <div class="bg-dark text-white py-2">
-        <div class="container">
-            <div class="row text-center text-md-start align-items-center">
-
-                <!-- Help Line -->
-                <div class="col-12 col-md-4 mb-2 mb-md-0">
-                    <div class="d-flex justify-content-center justify-content-md-start align-items-center">
-                        <i class="fa-solid fa-phone me-2"></i>
-                        <small>
-                            Help Line:
-                            <a href="tel:9087667766" class="text-white text-decoration-none">
-                                908 766 7766
-                            </a>
-                        </small>
-                    </div>
-                </div>
-
-                <!-- Service -->
-                <div class="col-12 col-md-4 mb-2 mb-md-0">
-                    <div class="d-flex justify-content-center align-items-center">
-                        <i class="fa-solid fa-headset me-2"></i>
-                        <small>
-                            Service:
-                            <a href="tel:8122037766" class="text-white text-decoration-none">
-                                812 203 7766
-                            </a>
-                        </small>
-                    </div>
-                </div>
-
-                <!-- Complaint -->
-                <div class="col-12 col-md-4">
-                    <div class="d-flex justify-content-center justify-content-md-end align-items-center">
-                        <i class="fa-solid fa-file-circle-exclamation me-2"></i>
-                        <small>
-                            Complaint:
-                            <a href="tel:9087667706" class="text-white text-decoration-none">
-                                908 766 7706
-                            </a>
-                        </small>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- TOP HEADER END -->
-
-    <!-- HEADER START -->
-    <nav class="navbar navbar-expand-lg sticky-top shadow bg-white">
-        <div class="container">
-
-            <!-- Logo -->
-            <a class="navbar-brand" href="/">
-                <img src="/assets/images/hydrosphere-logo.png" alt="Hydrosphere Logo" class="img-fluid logo">
-            </a>
-
-            <!-- Mobile Toggle Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Menu -->
-            <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Products</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="/offer" target="_blank">Get Offer</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://wa.me/919087667766?text=Hello%20Hydrosphere," target="_blank"
-                            class="btn btn-success rounded-pill px-4 py-2 shadow-lg">
-                            <i class="fa-brands fa-whatsapp me-2"></i>
-                            Book Free Demo
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
-    <!-- HEADER END -->
+    <div id="header"></div> 
 
     <main class="flex-fill">
-        <section class="hydro-banner d-flex align-items-center">
+        <section class="hydro-banner min-height-auto d-flex align-items-center">
             <div class="container">
                 <div class="my-3">
                     <div class="row">
@@ -125,193 +32,35 @@
                         </div>
                     </div>
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive table-wrapper">
                     <table id="priceTable" class="table table-striped table-bordered align-middle text-nowrap">
                         <thead class="table-dark">
                             <tr>
                                 <th>S.No</th>
                                 <th>Model</th>
-                                <th>Brand</th>
+                                <!-- <th>Brand</th> -->
                                 <th>Price (₹)</th>
                                 <th>Discount Price (₹)</th>
                                 <th>Color</th>
-                                <th>Machine / Kit</th>
+                                <th>Machine / Kit Price (₹)</th>
                                 <th>Validity</th>
                             </tr>
                         </thead>
-                        <tbody></tbody>
+                        <tbody>
+                            <!-- rows -->
+                        </tbody>
                     </table>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER START -->
-    <footer class="pt-4 pb-3 mt-auto shadow">
-        <div class="container">
-            <div class="row text-center text-md-start">
-
-                <!-- Company Info -->
-                <div class="col-md-4 mb-3">
-                    <a class="navbar-brand" href="/">
-                        <img src="/assets/images/hydrosphere-logo.png" alt="Hydrosphere Logo" class="img-fluid logo">
-                    </a>
-                    <p class="mt-4">At Hydrosphere, we believe that pure water is the foundation of a healthy life.
-                        We provide smart, reliable, and affordable water purification solutions for every need — home,
-                        commercial, and industrial.
-                    </p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="col-md-4 mb-3">
-                    <h5 class="fw-bold">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="/" class="text-decoration-none text-dark">Home</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Products</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Services</a></li>
-                        <li><a href="#" class="text-decoration-none text-dark">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info -->
-                <div class="col-md-4 mb-3">
-                    <h5 class="fw-bold">Contact Us</h5>
-
-                    <p class="mb-1">
-                        <small>Help Line:</small>
-                        <a href="tel:9087667766" class="text-dark text-decoration-none">
-                            908 766 7766
-                        </a>
-                    </p>
-
-                    <p class="mb-1">
-                        <small>Service No:</small>
-                        <a href="tel:8122037766" class="text-dark text-decoration-none">
-                            812 203 7766
-                        </a>
-                    </p>
-
-                    <p class="mb-1">
-                        <small>Complaint No:</small>
-                        <a href="tel:9087667706" class="text-dark text-decoration-none">
-                            908 766 7706
-                        </a>
-                    </p>
-
-                    <p class="mb-1">
-                        <small>Head Office:</small>
-                        <span>No: 1/67, Main Road,
-                            Madambakkam,<br>
-                            Chennai - 603 202.</span>
-                    </p>
-
-                    <p class="mb-0">
-                        <small>Email:</small>
-                        <a href="mailto:contactus@hydrosphere.co.in" class="text-dark text-decoration-none">
-                            contactus@hydrosphere.co.in
-                        </a>
-                    </p>
-                </div>
-
-            </div>
-
-            <!-- Bottom Line -->
-            <hr class="bg-light">
-            <div class="text-center">
-                <p class="mb-0">© <span id="year"></span> Hydrosphere. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-    <!-- FOOTER END -->
-
-    <!-- WhatsApp phone Floating Button -->
-    <a href="tel:9087667766" class="whatsapp-btn phone-btn btn btn-success px-2 py-2 shadow-lg">
-        <i class="fa-solid fa-phone"></i>
-    </a>
-    <a href="https://wa.me/919087667766?text=Hello%20Hydrosphere," target="_blank"
-        class="whatsapp-btn btn btn-success px-2 py-2 shadow-lg">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
+    <div id="footer"></div>
 
     <!-- Bootstrap JS -->
-    <script>
-        const priceList = [
-
-            /* ================= WATER PURIFIERS ================= */
-            { id: 1, category: "Purifier", model: "CHROME CLASSIC +", brand: "CHROME", price: 21000, offer: 18000 },
-            { id: 2, category: "Purifier", model: "CHROME UNIQUE", brand: "CHROME", price: 19999, offer: 17000 },
-            { id: 3, category: "Purifier", model: "SS MISTY NORMAL", brand: "MISTY", price: 17990, offer: 15000 },
-            { id: 4, category: "Purifier", model: "SS MISTY HOT & NORMAL (WHITE)", brand: "MISTY", price: 26990, offer: 24000 },
-            { id: 5, category: "Purifier", model: "SS MISTY HOT & NORMAL (GOLD)", brand: "MISTY", price: 29990, offer: 25000 },
-            { id: 6, category: "Purifier", model: "NOBACT UNDERSINK", brand: "MISTY", price: 17900, offer: 15000 },
-            { id: 7, category: "Purifier", model: "SS MISTY HNC", brand: "MISTY", price: 49000, offer: 37000 },
-            { id: 8, category: "Purifier", model: "WHALE", brand: "MISTY", price: 20000, offer: 17000 },
-            { id: 9, category: "Purifier", model: "GENPURE", brand: "MISTY", price: 14900, offer: 11900 },
-            { id: 10, category: "Purifier", model: "PYOORN", brand: "MISTY", price: 19990, offer: 16990 },
-            { id: 11, category: "Purifier", model: "OLIVAR", brand: "OLIVAR", price: 14500, offer: 11500 },
-            { id: 12, category: "Purifier", model: "M PURE", brand: "MISTY", price: 14999, offer: 11999 },
-            { id: 13, category: "Purifier", model: "SWAN", brand: "MISTY", price: 13900, offer: 10900 },
-
-            /* ================= HYDROSPHERE MODELS ================= */
-            { id: 14, category: "Hydrosphere", model: "DOLPIN", price: 11000, offer: 8000 },
-            { id: 15, category: "Hydrosphere", model: "AQUA 2090", price: 13000, offer: 10000 },
-            { id: 16, category: "Hydrosphere", model: "AQUA GRAND +", price: 13000, offer: 10000 },
-            { id: 17, category: "Hydrosphere", model: "AQUA LEXZON", price: 12000, offer: 9000 },
-            { id: 18, category: "Hydrosphere", model: "AQUA 9090", price: 14500, offer: 11500 },
-            { id: 19, category: "Hydrosphere", model: "AQUA JADE", price: 13000, offer: 10000 },
-            { id: 20, category: "Hydrosphere", model: "AQUA XL", price: 13000, offer: 10000 },
-            { id: 21, category: "Hydrosphere", model: "PUROSIS", price: 14500, offer: 11500 },
-            { id: 22, category: "Hydrosphere", model: "URBAN", price: 13500, offer: 10500 },
-            { id: 23, category: "Hydrosphere", model: "MEGANA", price: 12000, offer: 9000 },
-            { id: 24, category: "Hydrosphere", model: "HI FLOW", price: 12500, offer: 9500 },
-            { id: 25, category: "Hydrosphere", model: "STROM", price: 13000, offer: 10000 },
-            { id: 26, category: "Hydrosphere", model: "VIVA", price: 14500, offer: 11500 },
-            { id: 27, category: "Hydrosphere", model: "LXONE", price: 14500, offer: 11500 },
-            { id: 28, category: "Hydrosphere", model: "NEXON UNDERSINK", price: 16500, offer: 13500 },
-            { id: 29, category: "Hydrosphere", model: "I PEARS", price: 14500, offer: 11500 },
-            { id: 30, category: "Hydrosphere", model: "ROMA", price: 13000, offer: 11000 },
-            { id: 31, category: "Hydrosphere", model: "INNOVICA", price: 15500, offer: 12500 },
-
-            /* ================= JUMBO / SCALE FREE ================= */
-            { id: 32, category: "Jumbo", model: "JUMBO 10 INC", price: 5500 },
-            { id: 33, category: "Jumbo", model: "JUMBO 20 INC VIRGIN (HEAVY)", price: 9500 },
-            { id: 34, category: "Jumbo", model: "JUMBO 20 INC WHITE (HEAVY)", price: 9000 },
-            { id: 35, category: "Scale Free", model: "TAP SCALE FREE", price: 1800 },
-            { id: 36, category: "Scale Free", model: "SHOWER SCALE FREE", price: 1800 },
-            { id: 37, category: "Scale Free", model: "WASHING MACHINE SCALE FREE", price: 2500 },
-            { id: 38, category: "Scale Free", model: "JUMBO 10 INC SCALE FREE", price: 7500 },
-
-            /* ================= SOFTENER ================= */
-            { id: 39, category: "Softener", model: "MINI SOFTENER", price: 12000 },
-            { id: 40, category: "Softener", model: "32 LTR VESSEL SOFTENER", price: 28000 },
-            { id: 41, category: "Softener", model: "50 LTR VESSEL SOFTENER", price: 35000 },
-            { id: 42, category: "Softener", model: "75 LTR VESSEL SOFTENER", price: 48000 },
-            { id: 43, category: "Softener", model: "100 LTR VESSEL SOFTENER (AUTO)", price: 65000 },
-            { id: 44, category: "Softener", model: "150 LTR VESSEL SOFTENER (AUTO)", price: 85000 },
-
-            /* ================= FULL CLOSED ================= */
-            { id: 45, category: "Full Closed", model: "10A TABLE TOP – FULL CLOSED", price: 18000 },
-            { id: 46, category: "Full Closed", model: "BATHROOM SOFTENER – AUTO", price: 22000 },
-            { id: 47, category: "Full Closed", model: "C-20 FULL CLOSED WITH BRINE", price: 45000 },
-            { id: 48, category: "Full Closed", model: "C-45AD FULL CLOSED WITH BRINE", price: 75000 },
-
-            /* ================= ACCESSORIES ================= */
-            { id: 49, category: "Accessory", model: "MOTOR", price: 1800 },
-            { id: 50, category: "Accessory", model: "ADAPTOR", price: 350 },
-            { id: 51, category: "Accessory", model: "SV", price: 600 },
-            { id: 52, category: "Accessory", model: "FILTER KIT", price: 3600 },
-            { id: 53, category: "Accessory", model: "FLOAT (KENT)", price: 450 },
-            { id: 54, category: "Accessory", model: "TUBE (MISTY)", price: 250 },
-            { id: 55, category: "Accessory", model: "PER BLOW HEAVY", price: 650 },
-            { id: 56, category: "Accessory", model: "PER BLOW TRANSPARENT HEAVY", price: 750 },
-            { id: 57, category: "Accessory", model: "CANDLE (AQUA GUARD)", price: 850 },
-            { id: 58, category: "Accessory", model: "AQUA GUARD BLOW", price: 900 }
-
-        ];
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/js/script.js"></script>
-
+    <script src="/assets/js/include.js"></script>
+    <script src="/assets/js/data.js"></script>
+    <script src="/assets/js/price-list.js"></script>
 </body>
 
 </html>
