@@ -72,7 +72,8 @@ a:focus-visible {
 }
 
 .table-wrapper {
-    max-height: 400px;        /* adjust height */
+    max-height: 400px;
+    /* adjust height */
     overflow-y: auto;
 }
 
@@ -81,7 +82,8 @@ a:focus-visible {
     position: sticky;
     top: 0;
     z-index: 10;
-    background: #212529;     /* same as table-dark */
+    background: #212529;
+    /* same as table-dark */
     color: #fff;
 }
 
@@ -100,104 +102,153 @@ a:focus-visible {
     overflow-x: visible;
 }
 
-#header, .navbar {
+#header,
+.navbar {
     overflow: visible;
 }
 
 .products {
-  background: #f8f9fa;
+    background: #f8f9fa;
 }
 
 .product-card {
-  position: relative;   /* ⭐ THIS IS THE FIX */
-  background: #fff;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+    position: relative;
+    /* ⭐ THIS IS THE FIX */
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
 }
 
 .product-img {
-  background: #f1f3f5;
-  height: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    background: #f1f3f5;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-img img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
 }
 
 .product-body {
-  padding: 16px;
+    padding: 16px;
 }
 
 .product-title {
-  font-weight: 600;
-  font-size: 15px;
-  min-height: 38px;
+    font-weight: 600;
+    font-size: 15px;
+    min-height: 38px;
 }
 
 .price {
-  font-size: 18px;
-  font-weight: 700;
-  color: #0d6efd;
-  margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0d6efd;
+    margin-bottom: 12px;
 }
 
 /* EMI badge */
 .emi-badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background: #198754;
-  color: #fff;
-  padding: 4px 10px;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: 20px;
-  z-index: 10;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #198754;
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 20px;
+    z-index: 10;
 }
 
 .original-price {
-  text-decoration: line-through;
-  color: #6c757d;
-  font-size: 14px;
+    text-decoration: line-through;
+    color: #6c757d;
+    font-size: 14px;
 }
 
 .offer-price {
-  font-size: 20px;
-  font-weight: 700;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .save-text {
-  font-size: 13px;
-  color: #198754;
-  font-weight: 600;
+    font-size: 13px;
+    color: #198754;
+    font-weight: 600;
 }
 
 .gst-text,
 .install-text {
-  font-size: 13px;
-  color: #6c757d;
+    font-size: 13px;
+    color: #6c757d;
 }
 
 .btn-whatsapp {
-  background: #25d366;
-  color: #fff;
+    background: #25d366;
+    color: #fff;
 }
 
 .btn-whatsapp:hover {
-  background: #1ebe5b;
-  color: #fff;
+    background: #1ebe5b;
+    color: #fff;
+}
+
+.category-title {
+    margin-top: 0;
+    padding-top: 6px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.category-group {
+    margin-bottom: 60px;
+}
+
+.product-detail-img {
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.price-box span {
+  display: inline-block;
+}
+
+.badge {
+  font-size: 0.85rem;
+  padding: 8px 12px;
+}
+
+#playVideoBtn {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.play-video-btn{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.video-close-btn {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  z-index: 1056; /* above modal */
 }
 
 @media (max-width: 768px) {
@@ -222,7 +273,12 @@ a:focus-visible {
     .hydro-banner {
         padding: 30px 0;
     }
-    .min-height-auto{
+
+    .min-height-auto {
         min-height: auto;
+    }
+
+    .category-group {
+        margin-bottom: 30px;
     }
 }
