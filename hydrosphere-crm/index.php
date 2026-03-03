@@ -362,7 +362,7 @@ if($row['status']=="Open"){
 
 <td>
 <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-<a href="delete.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm"
+<a href="delete.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm d-none"
 onclick="return confirm('Are you sure?')">Delete</a>
 </td>
 </tr>

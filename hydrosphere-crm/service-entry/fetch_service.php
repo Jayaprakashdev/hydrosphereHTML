@@ -14,7 +14,7 @@ while($row = mysqli_fetch_assoc($result)){
 
     $action = "
         <button class='btn btn-sm btn-primary editBtn' data-id='{$row['id']}'>Edit</button>
-        <button class='btn btn-sm btn-danger deleteBtn ms-1' data-id='{$row['id']}'>Delete</button>
+        <button class='btn btn-sm btn-danger deleteBtn ms-1 d-none' data-id='{$row['id']}'>Delete</button>
     ";
 
     $data[] = [
