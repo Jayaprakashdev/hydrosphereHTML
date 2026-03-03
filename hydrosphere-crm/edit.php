@@ -12,58 +12,81 @@ if(!$data){ die("Record Not Found"); }
 
 if(isset($_POST['update'])){
 
-$id = $_POST['id'];
+    $id = $_POST['id'];
 
-$sql = "UPDATE customers SET
-customer_type=?,
-priority=?,
-enquiry_source=?,
-other_source=?,
-customer_name=?,
-mobile=?,
-address=?,
-requirement=?,
-product_name=?,
-service_done=?,
-appointment_datetime=?,
-price=?,
-followed_by=?,
-cancel_reason=?,
-last_followup=?,
-last_followed_by=?,
-payment_mode=?,
-status=?
-WHERE id=?";
+    // Format datetime values properly
+    $enquiry_time = !empty($_POST['enquiry_data_and_time']) 
+        ? date("Y-m-d H:i:s", strtotime($_POST['enquiry_data_and_time'])) 
+        : NULL;
 
-$stmt = $conn->prepare($sql);
+    $appointment_time = !empty($_POST['appointment_datetime']) 
+        ? date("Y-m-d H:i:s", strtotime($_POST['appointment_datetime'])) 
+        : NULL;
 
-$stmt->bind_param(
-"sssssssssssdssssssi",
-$_POST['customer_type'],
-$_POST['priority'],
-$_POST['enquiry_source'],
-$_POST['other_source'],
-$_POST['customer_name'],
-$_POST['mobile'],
-$_POST['address'],
-$_POST['requirement'],
-$_POST['product_name'],
-$_POST['service_done'],
-$_POST['appointment_datetime'],
-$_POST['price'],
-$_POST['followed_by'],
-$_POST['cancel_reason'],
-$_POST['last_followup'],
-$_POST['last_followed_by'],
-$_POST['payment_mode'],
-$_POST['status'],
-$id
-);
+    $last_followup = !empty($_POST['last_followup']) 
+        ? date("Y-m-d H:i:s", strtotime($_POST['last_followup'])) 
+        : NULL;
 
-$stmt->execute();
+    $price = !empty($_POST['price']) ? $_POST['price'] : 0;
 
-header("Location: index.php");
-exit();
+    $sql = "UPDATE customers SET
+    customer_type=?,
+    priority=?,
+    enquiry_source=?,
+    other_source=?,
+    enquiry_data_and_time=?,
+    customer_name=?,
+    mobile=?,
+    address=?,
+    requirement=?,
+    product_name=?,
+    service_done=?,
+    appointment_datetime=?,
+    price=?,
+    followed_by=?,
+    cancel_reason=?,
+    last_followup=?,
+    last_followed_by=?,
+    payment_mode=?,
+    status=?
+    WHERE id=?";
+
+    $stmt = $conn->prepare($sql);
+
+    if(!$stmt){
+        die("Prepare Failed: " . $conn->error);
+    }
+
+    $stmt->bind_param(
+        "ssssssssssssdssssssi",
+        $_POST['customer_type'],
+        $_POST['priority'],
+        $_POST['enquiry_source'],
+        $_POST['other_source'],
+        $enquiry_time,
+        $_POST['customer_name'],
+        $_POST['mobile'],
+        $_POST['address'],
+        $_POST['requirement'],
+        $_POST['product_name'],
+        $_POST['service_done'],
+        $appointment_time,
+        $price,
+        $_POST['followed_by'],
+        $_POST['cancel_reason'],
+        $last_followup,
+        $_POST['last_followed_by'],
+        $_POST['payment_mode'],
+        $_POST['status'],
+        $id
+    );
+
+    if($stmt->execute()){
+        header("Location: index.php");
+        exit();
+    }else{
+        echo "Update Failed: " . $stmt->error;
+    }
 }
 ?>
 
@@ -80,6 +103,7 @@ exit();
 <h3>✏ Edit Customer</h3>
 
 <form method="POST" class="card p-4 shadow">
+    <input type="hidden" name="id" value="<?= $data['id'] ?>">
 <div class="row">
 
 <!-- Customer Type -->
@@ -135,6 +159,14 @@ foreach($sources as $s){
 <div class="col-md-3 mb-3">
 <label>Other Source</label>
 <input type="text" name="other_source" class="form-control" value="<?= $data['other_source'] ?>">
+</div>
+
+<div class="col-md-3 mb-3">
+<label>Enquiry Date & Time</label>
+<input type="datetime-local" 
+name="enquiry_data_and_time"
+class="form-control"
+value="<?= !empty($data['enquiry_data_and_time']) ? date('Y-m-d\TH:i', strtotime($data['enquiry_data_and_time'])) : '' ?>">
 </div>
 
 <!-- Basic Fields -->

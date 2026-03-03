@@ -18,6 +18,10 @@ $requirement = $_POST['requirement'];
 $product_name = $_POST['product_name'];
 $service_done = $_POST['service_done'];
 
+$enquiry_data_and_time = !empty($_POST['enquiry_data_and_time']) 
+    ? date("Y-m-d H:i:s", strtotime($_POST['enquiry_data_and_time'])) 
+    : NULL;
+
 $appointment_datetime = !empty($_POST['appointment_datetime']) 
     ? date("Y-m-d H:i:s", strtotime($_POST['appointment_datetime'])) 
     : NULL;
@@ -35,17 +39,18 @@ $payment_mode = $_POST['payment_mode'];
 $status = $_POST['status'];
 
 $sql = "INSERT INTO customers
-(customer_type,priority,enquiry_source,other_source,customer_name,mobile,address,requirement,product_name,service_done,appointment_datetime,price,followed_by,cancel_reason,last_followup,last_followed_by,payment_mode,status)
-VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+(customer_type,priority,enquiry_source,other_source,enquiry_data_and_time,customer_name,mobile,address,requirement,product_name,service_done,appointment_datetime,price,followed_by,cancel_reason,last_followup,last_followed_by,payment_mode,status)
+VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 $stmt = $conn->prepare($sql);
 
 $stmt->bind_param(
-"sssssssssssdssssss",
+"ssssssssssssdssssss",
 $customer_type,
 $priority,
 $enquiry_source,
 $other_source,
+$enquiry_data_and_time,
 $customer_name,
 $mobile,
 $address,
@@ -123,9 +128,14 @@ exit();
 </select>
 </div>
 
-<div class="col-md-3 mb-3" id="other_box" style="display:none;">
+<div class="col-md-3 mb-3" id="other_box">
 <label>Other Source</label>
 <input type="text" name="other_source" class="form-control">
+</div>
+
+<div class="col-md-3 mb-3">
+<label>Enquiry Date and Time</label>
+<input type="datetime-local" name="enquiry_data_and_time" class="form-control">
 </div>
 
 <!-- Basic Info -->
@@ -172,6 +182,7 @@ exit();
 <div class="col-md-3 mb-3">
 <label>Followed By</label>
 <select name="followed_by" class="form-control">
+<option>select follow by<option>     
 <option>Dinesh</option>
 <option>Karthick</option>
 <option>Vicky</option>
@@ -206,6 +217,7 @@ exit();
 <div class="col-md-3 mb-3">
 <label>Last Followed By</label>
 <select name="last_followed_by" class="form-control">
+<option>Select Last follow by<option>    
 <option>Dinesh</option>
 <option>Karthick</option>
 <option>Vicky</option>
@@ -286,6 +298,7 @@ exit();
 <th>Priority</th>
 <th>Enquiry Source</th>
 <th>Other Source</th>
+<th>Enquiry Date</th>
 <th>Customer Name</th>
 <th>Mobile</th>
 <th>Address</th>
@@ -319,6 +332,7 @@ while($row = mysqli_fetch_assoc($result)){
 <td><?= $row['priority'] ?></td>
 <td><?= $row['enquiry_source'] ?></td>
 <td><?= $row['other_source'] ?></td>
+<td><?= $row['enquiry_data_and_time'] ?></td>
 <td><?= htmlspecialchars($row['customer_name']) ?></td>
 <td><?= $row['mobile'] ?></td>
 <td><?= $row['address'] ?></td>

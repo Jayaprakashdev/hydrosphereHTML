@@ -63,6 +63,7 @@ while($row = $result->fetch_assoc()){
 <td><?= htmlspecialchars($row['priority']) ?></td>
 <td><?= htmlspecialchars($row['enquiry_source']) ?></td>
 <td><?= htmlspecialchars($row['other_source']) ?></td>
+<td><?= $row['enquiry_data_and_time'] ?></td>
 <td><?= htmlspecialchars($row['customer_name']) ?></td>
 <td><?= htmlspecialchars($row['mobile']) ?></td>
 <td><?= htmlspecialchars($row['address']) ?></td>
