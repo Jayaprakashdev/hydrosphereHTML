@@ -84,14 +84,14 @@ if($row['status']=="Open"){
 }elseif($row['status']=="Closed"){
     echo "<span class='badge bg-success'>Closed</span>";
 }else{
-    echo "<span class='badge bg-warning text-dark'>Pending</span>";
+    echo "<span class='badge bg-warning text-dark'>Inprocess</span>";
 }
 ?>
 </td>
 <td><?= $row['created_at'] ?></td>
 <td>
 <a href="edit.php?id=<?= $row['id'] ?>" class="btn btn-warning btn-sm">Edit</a>
-<a href="delete.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm">Delete</a>
+<a href="delete.php?id=<?= $row['id'] ?>" class="btn btn-danger btn-sm d-none">Delete</a>
 </td>
 </tr>
 <?php } ?>

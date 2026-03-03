@@ -8,9 +8,15 @@ $data = [];
 
 while($row = mysqli_fetch_assoc($result)){
 
-    $status_badge = $row['status'] == "Closed"
-    ? "<span class='badge bg-success'>Closed</span>"
-    : "<span class='badge bg-danger'>Open</span>";
+   if ($row['status'] == "Closed") {
+    $status_badge = "<span class='badge bg-success'>Closed</span>";
+    }
+    elseif ($row['status'] == "Inprogress") {
+        $status_badge = "<span class='badge bg-warning text-dark'>Inprogress</span>";
+    }
+    else {
+        $status_badge = "<span class='badge bg-danger'>Open</span>";
+    }
 
     $action = "
         <button class='btn btn-sm btn-primary editBtn' data-id='{$row['id']}'>Edit</button>
