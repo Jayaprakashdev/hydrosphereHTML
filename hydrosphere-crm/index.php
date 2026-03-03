@@ -166,7 +166,7 @@ exit();
 </div>
 
 <div class="col-md-6 mb-3">
-<label>Service Done</label>
+<label>Instalation Status</label>
 <input type="text" name="service_done" class="form-control">
 </div>
 
@@ -232,6 +232,7 @@ exit();
 <select name="status" class="form-control">
 <option>Open</option>
 <option>Closed</option>
+<option>Inprocess</option>
 </select>
 </div>
 
@@ -271,6 +272,7 @@ exit();
 <option value="">All Status</option>
 <option>Open</option>
 <option>Closed</option>
+<option>Inprocess</option>
 </select>
 </div>
 
@@ -354,7 +356,7 @@ if($row['status']=="Open"){
 }elseif($row['status']=="Closed"){
     echo "<span class='badge bg-success'>Closed</span>";
 }else{
-    echo "<span class='badge bg-warning text-dark'>Pending</span>";
+    echo "<span class='badge bg-warning text-dark'>Inprocess</span>";
 }
 ?>
 </td>

@@ -265,7 +265,7 @@ foreach($persons as $person){
 <label>Status</label>
 <select name="status" class="form-control">
 <?php
-$statuses = ["Open","Closed"];
+$statuses = ["Open","Closed","Inprocess"];
 foreach($statuses as $st){
     $selected = ($data['status']==$st) ? "selected" : "";
     echo "<option $selected>$st</option>";
