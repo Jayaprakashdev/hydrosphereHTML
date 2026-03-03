@@ -6,39 +6,66 @@ ini_set('display_errors', 1);
 <?php
 // CREATE
 if(isset($_POST['submit'])){
-    $customer_type = $_POST['customer_type'];
-    $priority = $_POST['priority'];
-    $enquiry_source = $_POST['enquiry_source'];
-    $other_source = $_POST['other_source'];
-    $customer_name = $_POST['customer_name'];
-    $mobile = $_POST['mobile'];
-    $address = $_POST['address'];
-    $requirement = $_POST['requirement'];
-    $product_name = $_POST['product_name'];
-    $service_done = $_POST['service_done'];
-    $appointment_datetime = !empty($_POST['appointment_datetime']) 
+
+$customer_type = $_POST['customer_type'];
+$priority = $_POST['priority'];
+$enquiry_source = $_POST['enquiry_source'];
+$other_source = $_POST['other_source'];
+$customer_name = $_POST['customer_name'];
+$mobile = $_POST['mobile'];
+$address = $_POST['address'];
+$requirement = $_POST['requirement'];
+$product_name = $_POST['product_name'];
+$service_done = $_POST['service_done'];
+
+$appointment_datetime = !empty($_POST['appointment_datetime']) 
     ? date("Y-m-d H:i:s", strtotime($_POST['appointment_datetime'])) 
     : NULL;
-    $price = $_POST['price'];
-    $followed_by = $_POST['followed_by'];
-    $cancel_reason = $_POST['cancel_reason'];
-    $last_followup = !empty($_POST['last_followup']) 
+
+$price = $_POST['price'];
+$followed_by = $_POST['followed_by'];
+$cancel_reason = $_POST['cancel_reason'];
+
+$last_followup = !empty($_POST['last_followup']) 
     ? date("Y-m-d H:i:s", strtotime($_POST['last_followup'])) 
     : NULL;
-    $last_followed_by = $_POST['last_followed_by'];
-    $payment_mode = $_POST['payment_mode'];
-    $status = $_POST['status'];
 
-    $sql = "INSERT INTO customers 
+$last_followed_by = $_POST['last_followed_by'];
+$payment_mode = $_POST['payment_mode'];
+$status = $_POST['status'];
+
+$sql = "INSERT INTO customers
 (customer_type,priority,enquiry_source,other_source,customer_name,mobile,address,requirement,product_name,service_done,appointment_datetime,price,followed_by,cancel_reason,last_followup,last_followed_by,payment_mode,status)
-VALUES
-('$customer_type','$priority','$enquiry_source','$other_source','$customer_name','$mobile','$address','$requirement','$product_name','$service_done',
-".($appointment_datetime ? "'$appointment_datetime'" : "NULL").",
-'$price','$followed_by','$cancel_reason',
-".($last_followup ? "'$last_followup'" : "NULL").",
-'$last_followed_by','$payment_mode','$status')";
+VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
-mysqli_query($conn,$sql) or die(mysqli_error($conn));
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param(
+"sssssssssssdssssss",
+$customer_type,
+$priority,
+$enquiry_source,
+$other_source,
+$customer_name,
+$mobile,
+$address,
+$requirement,
+$product_name,
+$service_done,
+$appointment_datetime,
+$price,
+$followed_by,
+$cancel_reason,
+$last_followup,
+$last_followed_by,
+$payment_mode,
+$status
+);
+
+$stmt->execute();
+
+header("Location: index.php");
+exit();
 }
 ?>
 
@@ -231,7 +258,17 @@ mysqli_query($conn,$sql) or die(mysqli_error($conn));
 <option value="">All Status</option>
 <option>Open</option>
 <option>Closed</option>
-<option>Pending</option>
+</select>
+</div>
+
+<div class="col-md-3 mb-3">
+<select id="search_followed_by" class="form-control">
+<option value="">All</option>
+<option value="Dinesh">Dinesh</option>
+<option value="Karthick">Karthick</option>
+<option value="Vicky">Vicky</option>
+<option value="Thanvath">Thanvath</option>
+<option value="Jayaprakash">Jayaprakash</option>
 </select>
 </div>
 
@@ -282,7 +319,7 @@ while($row = mysqli_fetch_assoc($result)){
 <td><?= $row['priority'] ?></td>
 <td><?= $row['enquiry_source'] ?></td>
 <td><?= $row['other_source'] ?></td>
-<td><?= $row['customer_name'] ?></td>
+<td><?= htmlspecialchars($row['customer_name']) ?></td>
 <td><?= $row['mobile'] ?></td>
 <td><?= $row['address'] ?></td>
 <td><?= $row['requirement'] ?></td>
@@ -334,7 +371,8 @@ function loadData(){
             mobile: $("#search_mobile").val(),
             customer_name: $("#search_name").val(),
             customer_type: $("#search_type").val(),
-            status: $("#search_status").val()
+            status: $("#search_status").val(),
+            followed_by: $("#search_followed_by").val()   // ✅ ADD THIS
         },
         success: function(data){
             $("tbody").html(data);
@@ -346,7 +384,7 @@ $("#search_mobile, #search_name").on("keyup", function(){
     loadData();
 });
 
-$("#search_type, #search_status").on("change", function(){
+$("#search_type, #search_status, #search_followed_by").on("change", function(){   // ✅ ADD HERE
     loadData();
 });
 

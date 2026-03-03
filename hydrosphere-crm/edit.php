@@ -12,58 +12,58 @@ if(!$data){ die("Record Not Found"); }
 
 if(isset($_POST['update'])){
 
-    $customer_type = $_POST['customer_type'] ?? '';
-    $priority = $_POST['priority'] ?? '';
-    $enquiry_source = $_POST['enquiry_source'] ?? '';
-    $other_source = $_POST['other_source'] ?? '';
-    $customer_name = $_POST['customer_name'] ?? '';
-    $mobile = $_POST['mobile'] ?? '';
-    $address = $_POST['address'] ?? '';
-    $requirement = $_POST['requirement'] ?? '';
-    $product_name = $_POST['product_name'] ?? '';
-    $service_done = $_POST['service_done'] ?? '';
+$id = $_POST['id'];
 
-    $appointment_datetime = !empty($_POST['appointment_datetime']) 
-        ? date("Y-m-d H:i:s", strtotime($_POST['appointment_datetime'])) 
-        : NULL;
+$sql = "UPDATE customers SET
+customer_type=?,
+priority=?,
+enquiry_source=?,
+other_source=?,
+customer_name=?,
+mobile=?,
+address=?,
+requirement=?,
+product_name=?,
+service_done=?,
+appointment_datetime=?,
+price=?,
+followed_by=?,
+cancel_reason=?,
+last_followup=?,
+last_followed_by=?,
+payment_mode=?,
+status=?
+WHERE id=?";
 
-    $price = $_POST['price'] ?? 0;
-    $followed_by = $_POST['followed_by'] ?? '';
-    $cancel_reason = $_POST['cancel_reason'] ?? '';
+$stmt = $conn->prepare($sql);
 
-    $last_followup = !empty($_POST['last_followup']) 
-        ? date("Y-m-d H:i:s", strtotime($_POST['last_followup'])) 
-        : NULL;
+$stmt->bind_param(
+"sssssssssssdssssssi",
+$_POST['customer_type'],
+$_POST['priority'],
+$_POST['enquiry_source'],
+$_POST['other_source'],
+$_POST['customer_name'],
+$_POST['mobile'],
+$_POST['address'],
+$_POST['requirement'],
+$_POST['product_name'],
+$_POST['service_done'],
+$_POST['appointment_datetime'],
+$_POST['price'],
+$_POST['followed_by'],
+$_POST['cancel_reason'],
+$_POST['last_followup'],
+$_POST['last_followed_by'],
+$_POST['payment_mode'],
+$_POST['status'],
+$id
+);
 
-    $last_followed_by = $_POST['last_followed_by'] ?? '';
-    $payment_mode = $_POST['payment_mode'] ?? '';
-    $status = $_POST['status'] ?? '';
+$stmt->execute();
 
-    $sql = "UPDATE customers SET
-        customer_type='$customer_type',
-        priority='$priority',
-        enquiry_source='$enquiry_source',
-        other_source='$other_source',
-        customer_name='$customer_name',
-        mobile='$mobile',
-        address='$address',
-        requirement='$requirement',
-        product_name='$product_name',
-        service_done='$service_done',
-        appointment_datetime=".($appointment_datetime ? "'$appointment_datetime'" : "NULL").",
-        price='$price',
-        followed_by='$followed_by',
-        cancel_reason='$cancel_reason',
-        last_followup=".($last_followup ? "'$last_followup'" : "NULL").",
-        last_followed_by='$last_followed_by',
-        payment_mode='$payment_mode',
-        status='$status'
-        WHERE id='$id'";
-
-    mysqli_query($conn,$sql) or die(mysqli_error($conn));
-
-    header("Location: index.php");
-    exit;
+header("Location: index.php");
+exit();
 }
 ?>
 

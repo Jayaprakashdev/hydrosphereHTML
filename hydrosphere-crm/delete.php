@@ -1,6 +1,15 @@
 <?php
 include 'config/db.php';
+
+if(isset($_GET['id'])){
+
 $id = $_GET['id'];
-mysqli_query($conn,"DELETE FROM customers WHERE id=$id");
+
+$stmt = $conn->prepare("DELETE FROM customers WHERE id=?");
+$stmt->bind_param("i",$id);
+$stmt->execute();
+
 header("Location: index.php");
+exit();
+}
 ?>
