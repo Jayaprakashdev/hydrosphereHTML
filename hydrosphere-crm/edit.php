@@ -216,8 +216,9 @@ value="<?= $data['appointment_datetime'] ? date('Y-m-d\TH:i', strtotime($data['a
 <div class="col-md-3 mb-3">
 <label>Followed By</label>
 <select name="followed_by" class="form-control">
+    <option value="">-- Select Followed By --</option>
 <?php
-$persons = ["Dinesh","Karthick","Vicky","Jayaprakash"];
+$persons = ["Dinesh","Karthick","Vicky","Thanvath","Jayaprakash"];
 foreach($persons as $person){
     $selected = ($data['followed_by']==$person) ? "selected" : "";
     echo "<option $selected>$person</option>";
@@ -253,6 +254,7 @@ value="<?= $data['last_followup'] ? date('Y-m-d\TH:i', strtotime($data['last_fol
 <div class="col-md-3 mb-3">
 <label>Last Followed By</label>
 <select name="last_followed_by" class="form-control">
+    <option value="">-- Select Last Followed By --</option>
 <?php
 foreach($persons as $person){
     $selected = ($data['last_followed_by']==$person) ? "selected" : "";

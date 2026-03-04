@@ -188,12 +188,12 @@ exit();
 <div class="col-md-3 mb-3">
 <label>Followed By</label>
 <select name="followed_by" class="form-control">
-<option>select follow by<option>     
-<option>Dinesh</option>
-<option>Karthick</option>
-<option>Vicky</option>
-<option>Thanvath</option>
-<option>Jayaprakash</option>
+<option value="">-- Select Followed By --</option>
+<option value="Dinesh">Dinesh</option>
+<option value="Karthick">Karthick</option>
+<option value="Vicky">Vicky</option>
+<option value="Thanvath">Thanvath</option>
+<option value="Jayaprakash">Jayaprakash</option>
 </select>
 </div>
 
@@ -223,12 +223,12 @@ exit();
 <div class="col-md-3 mb-3">
 <label>Last Followed By</label>
 <select name="last_followed_by" class="form-control">
-<option>Select Last follow by<option>    
-<option>Dinesh</option>
-<option>Karthick</option>
-<option>Vicky</option>
-<option>Thanvath</option>
-<option>Jayaprakash</option>
+<option value="">-- Select Last Followed By --</option>
+<option value="Dinesh">Dinesh</option>
+<option value="Karthick">Karthick</option>
+<option value="Vicky">Vicky</option>
+<option value="Thanvath">Thanvath</option>
+<option value="Jayaprakash">Jayaprakash</option>
 </select>
 </div>
 
