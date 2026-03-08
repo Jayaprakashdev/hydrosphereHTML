@@ -1,7 +1,7 @@
 <?php
 
 $host = "localhost";  // usually localhost
-$username = "servicetrack";  
+$username = "hydrosph_servicetrack";  
 $password = "servicetract012983$$%^#";
 $database = "hydrosph_service_tracking";
 
