@@ -218,6 +218,11 @@ a:focus-visible {
 .product-detail-img {
   background: #fff;
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  align-items: center;
+}
+
+.product-detail-img img{
+    width: 300px;
 }
 
 .price-box span {
@@ -280,5 +285,9 @@ a:focus-visible {
 
     .category-group {
         margin-bottom: 30px;
+    }
+
+    .product-detail-img img {
+        width: 150px;
     }
 }
