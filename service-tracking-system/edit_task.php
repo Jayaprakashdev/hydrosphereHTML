@@ -147,12 +147,13 @@ placeholder="Note"><?php echo $row['note']; ?></textarea>
 
 </select>
 
-<button class="btn btn-success w-100">Update Task</button>
+<button type="submit" class="btn btn-success w-100">Update Task</button>
 
 </form>
 
 </div>
 
+<script src="form.js"></script>
 </body>
 
 </html>
