@@ -1,3 +1,9 @@
+<?php
+// Prevent browser cache
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+?>
 <!DOCTYPE html>
 <html>
 
@@ -103,6 +109,6 @@ onkeypress="return onlyNumber(event)"
 </form>
 
 </div>
-
+<script src="form.js"></script>
 </body>
 </html>

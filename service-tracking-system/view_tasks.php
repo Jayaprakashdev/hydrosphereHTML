@@ -63,8 +63,10 @@ cards[i].style.display = "none";
 <body>
 
 <div class="container mt-3">
-
-<h4>Service Tasks</h4>
+<div class="mb-4 d-flex justify-content-between">
+<h4 class="mb-0">Service Tasks</h4>
+<a href="index.php" class="btn btn-dark btn-sm">Dashboard</a>
+</div>
 
 <!-- SEARCH BOX -->
 
@@ -161,6 +163,7 @@ Complete
 
 </div>
 
+<script src="pbb.js"></script>
 </body>
 
 </html>
