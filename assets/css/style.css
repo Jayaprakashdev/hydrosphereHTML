@@ -247,6 +247,7 @@ a:focus-visible {
     font-weight: 600;
     border-radius: 20px;
     z-index: 10;
+    height: 38px;
 }
 
 .video-close-btn {

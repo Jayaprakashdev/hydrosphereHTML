@@ -2,67 +2,311 @@
   {
     "Softener": [
       {
-        "title": "ORG Water Softener 75R Automatic",
+        "title": "ORG 200L Automatic Water Softener",
         "image": "assets/images/products/softener/org-softener.png",
-        "mrp": 68000,
-        "offerPrice": 58000,
+        "mrp": 124999,
+        "offerPrice": 113999,
         "emi": true,
         "freeInstallation": true,
         "gstIncluded": true,
-
         "videoUrl": "https://www.youtube.com/watch?v=jsFvuRNbPr4",
-
-        "description": "Fully automatic water softener designed to remove hardness minerals like calcium and magnesium, ensuring scale-free water for your home.",
-
-        "specifications": [
-          "Capacity: 75 Liters",
-          "Operation: Fully Automatic",
-          "Application: Whole House",
-          "Regeneration Type: Automatic",
-          "Resin Type: Food Grade Resin",
-          "Power Supply: 230V AC"
-        ],
-
+        "description": "ORG Automatic Water Softener removes hardness minerals like calcium and magnesium from water. It provides soft, scale-free water for the entire home, protecting plumbing, appliances, skin, and hair.",
         "benefits": [
-          "Prevents scale formation in pipelines and appliances",
-          "Improves lifespan of geyser, washing machine and RO",
-          "Provides softer water for better skin and hair",
-          "Reduces soap and detergent consumption",
-          "Low maintenance and long-lasting performance"
+          "Keeps skin soft and prevents dryness",
+          "Makes hair smooth and healthy",
+          "Keeps clothes looking fresh and bright",
+          "Prevents scale buildup in plumbing and taps",
+          "Protects appliances like water heaters and washing machines",
+          "Provides soft water for the entire house"
+        ],
+        "specifications": [
+          "Max Flow Rate: 2500 – 3500 LPH",
+          "Working Temperature: 5°C – 50°C",
+          "Working Pressure: 1.5 – 4 Kg",
+          "Resin Quantity: 175 Liters (Tekleen Brand)",
+          "Brine Tank Capacity: 200 Liters",
+          "Salt Required per Regeneration: 25 Kg",
+          "Inlet / Outlet Size: 1 Inch",
+          "Vessel Type: FRP 1665",
+          "Multiport Valve: Automatic Runxin (63604)",
+          "Power Supply: 220V AC",
+          "Application: Sump to Overhead Tank"
         ]
       },
-
       {
-        "title": "ORG Water Softener 100R Automatic",
+        "title": "ORG 150L Automatic Water Softener",
         "image": "assets/images/products/softener/org-softener.png",
-        "mrp": 85000,
-        "offerPrice": 82000,
+        "mrp": 99999,
+        "offerPrice": 92999,
         "emi": true,
         "freeInstallation": true,
         "gstIncluded": true,
-
         "videoUrl": "https://www.youtube.com/watch?v=jsFvuRNbPr4",
-
-        "description": "High-capacity automatic water softener suitable for apartments and villas with higher water usage.",
-
-        "specifications": [
-          "Capacity: 100 Liters",
-          "Operation: Fully Automatic",
-          "Application: Apartment / Villa",
-          "Resin Type: Premium Resin",
-          "Power Supply: 230V AC"
-        ],
-
+        "description": "ORG 150L Automatic Water Softener removes hardness minerals like calcium and magnesium from water and provides soft, scale-free water for the entire home. It protects plumbing, appliances, skin, and hair.",
         "benefits": [
-          "Handles high water demand efficiently",
-          "Protects plumbing from scaling",
-          "Improves bathing experience",
-          "Energy-efficient operation"
+          "Prevents skin dryness and keeps skin soft",
+          "Makes hair smooth and damage free",
+          "Keeps clothes looking fresh and bright",
+          "Prevents scaling in appliances like water heaters and washing machines",
+          "Prevents scaling in taps, showers, and plumbing lines",
+          "Provides soft water for the entire house"
+        ],
+        "specifications": [
+          "Product Code: 3704",
+          "Max Flow Rate: 2000 – 3000 LPH",
+          "Working Temperature: 5°C – 50°C",
+          "Working Pressure: 1.5 – 4 Kg",
+          "Resin Quantity: 125 Liters (Tekleen Brand)",
+          "Salt Required per Regeneration: 18 Kg",
+          "Brine Tank Capacity: 200 Liters",
+          "Inlet / Outlet Size: 1 Inch",
+          "Vessel Type: FRP 1465",
+          "Multiport Valve: Automatic Runxin (63604)",
+          "Power Supply: 220V AC",
+          "Application: Sump to Overhead Tank"
+        ]
+      },
+      {
+        "title": "ORG 100R Automatic Water Softener",
+        "image": "assets/images/products/softener/org-softener.png",
+        "mrp": 89999,
+        "offerPrice": 79999,
+        "emi": true,
+        "freeInstallation": true,
+        "gstIncluded": true,
+        "videoUrl": "https://www.youtube.com/watch?v=jsFvuRNbPr4",
+        "description": "ORG 100R Automatic Water Softener removes hardness minerals like calcium and magnesium from water and provides soft, scale-free water for your home. It protects plumbing, appliances, skin, and hair while improving the overall water quality.",
+        "benefits": [
+          "Prevents skin dryness and keeps skin soft",
+          "Makes hair smooth and damage free",
+          "Keeps clothes looking fresh and bright",
+          "Prevents scaling in appliances like water heaters, washing machines, dishwashers, and water purifiers",
+          "Prevents scaling in taps, showers, and plumbing lines",
+          "Provides soft water for the entire house"
+        ],
+        "specifications": [
+          "Product Code: 3703",
+          "Max Flow Rate: 1500 – 2500 LPH",
+          "Working Temperature: 5°C – 50°C",
+          "Working Pressure: 1.5 – 4 Kg",
+          "Resin Quantity: 80 Liters (Tekleen Brand)",
+          "Salt Required per Regeneration: 12 Kg",
+          "Brine Tank Capacity: 100 Liters",
+          "Inlet / Outlet Size: 1 Inch",
+          "Vessel Type: ORG FRP 1354",
+          "Multiport Valve: Automatic Runxin Softener with Flow Controller (63604)",
+          "Power Supply: 220V AC",
+          "Application: Sump to Overhead Water Tank"
         ]
       }
     ]
   },
-
+  {
+    "Ultra Filter": [
+      {
+        "title": "Jumbo UF with Auto MPV",
+        "image": "assets/images/products/uf/ultra-filter-auto.png",
+        "mrp": 26999,
+        "offerPrice": 24200,
+        "emi": true,
+        "freeInstallation": true,
+        "gstIncluded": true,
+        "videoUrl": "https://www.youtube.com/watch?v=jsFvuRNbPr4",
+        "description": "Jumbo UF with Automatic Multiport Valve is designed to remove turbidity, bacteria, viruses, and suspended particles from water. The system includes an automatic backwash feature that keeps the UF membrane clean and ensures continuous filtration performance.",
+        "benefits": [
+          "Removes turbidity and suspended particles from water",
+          "Helps remove bacteria, viruses, and parasites",
+          "Improves water clarity and quality",
+          "Protects RO systems and softeners from clogging",
+          "Automatic backwash for easy maintenance",
+          "Compact design suitable for small commercial applications"
+        ],
+        "specifications": [
+          "Product Code: 3751",
+          "Max Flow Rate: 1000 LPH (depending on TSS)",
+          "Working Temperature: 15°C – 35°C",
+          "Working Pressure: Up to 2 Kg",
+          "Filtration: Up to 0.01 Micron",
+          "MPV Make: Runxin 25NB TMF Q - 55604",
+          "Inlet / Outlet Size: 1 Inch",
+          "UF Type: Out to In",
+          "UF Material: PVDF",
+          "UF Housing Material: PP",
+          "Backwash: Automatic Control",
+          "Backwash Interval: Approx. every 30 minutes (depending on TSS)",
+          "Type: Mini Commercial",
+          "Country of Origin: India"
+        ]
+      },
+      {
+        "title": "Jumbo UF with MPV",
+        "image": "assets/images/products/uf/ultra-filter.png",
+        "mrp": 16200,
+        "offerPrice": 14094,
+        "emi": true,
+        "freeInstallation": true,
+        "gstIncluded": true,
+        "videoUrl": "https://www.youtube.com/watch?v=jsFvuRNbPr4",
+        "description": "Jumbo UF Filter with Multiport Valve is designed to remove turbidity, bacteria, viruses, and suspended particles from water. It provides efficient filtration without electricity and is ideal as a pre-treatment filter before softeners, RO plants, and other water treatment systems.",
+        "benefits": [
+          "Removes turbidity and suspended particles from water",
+          "Helps remove bacteria, viruses, and parasites",
+          "Improves water clarity and quality",
+          "Protects RO systems and softeners from clogging",
+          "No electricity required for operation",
+          "Easy maintenance with backwash facility"
+        ],
+        "specifications": [
+          "Product Code: 3750",
+          "Max Flow Rate: <1000 LPH (depending on TSS)",
+          "Working Temperature: 15°C – 35°C",
+          "Working Pressure: 1.5 – 2 Kg",
+          "Filtration: Up to 0.01 Micron",
+          "MPV Make: Solo",
+          "Inlet / Outlet Size: 1 Inch",
+          "UF Type: Out to In",
+          "UF Material: PVDC",
+          "UF Housing Material: PP",
+          "Backwash: Manual Control",
+          "Backwashing Interval: Approx. every 30 minutes (depending on TSS)",
+          "Type: Mini Commercial",
+          "Country of Origin: India"
+        ]
+      }
+    ]
+  },
+  {
+    "Domestic RO System": [
+      {
+        "title": "Generous HNC RO Water Dispenser (Hot, Normal, Cold)",
+        "image": "assets/images/products/domestic-ro-system/generous.png",
+        "mrp": 54999,
+        "offerPrice": 49000,
+        "emi": true,
+        "freeInstallation": true,
+        "gstIncluded": true,
+        "videoUrl": "",
+        "description": "Generous HNC is a premium RO water purifier with Hot, Normal, and Cold water dispensing. Built with durable SS 304 stainless steel cabinet and tanks, it is ideal for kitchens, offices, hospitals, institutions, and public places. The system delivers purified drinking water with convenient temperature options.",
+        "benefits": [
+          "Provides Hot, Normal, and Cold purified drinking water",
+          "304 grade stainless steel body for durability and hygiene",
+          "Suitable for homes, offices, hospitals, and institutions",
+          "Advanced RO + UV purification for safe drinking water",
+          "Compressor-based cooling system for efficient cold water supply",
+          "Compact design with elegant finish"
+        ],
+        "specifications": [
+          "Product Code: 2095HJ",
+          "Model: Generous HNC",
+          "Purification Technology: RO + UV (Tank LED Type)",
+          "Membrane: HJC - 100 GPD",
+          "Pump: ECHEN 103 - 75 GPD",
+          "Filters: Sediment, Pre Carbon, Post Carbon",
+          "Purification Capacity: 15 Liters per Hour",
+          "Storage Capacity: Hot - 1L, Normal - 5L, Cold - 5.5L",
+          "Max Operation TDS: 3000 PPM",
+          "Input Voltage: 230V AC (50Hz)",
+          "Total Power Consumption: 900W",
+          "Cooling Technology: Compressor Type",
+          "Refrigerant: R-134a",
+          "Temperature Limit: Cold 10–25°C, Hot up to 80°C",
+          "Installation Type: Table Top / Wall Mount with Stand",
+          "Product Dimension: H580 x L405 x W380 mm",
+          "System Weight: 24 Kg (Approx)",
+          "Gross Weight: 26 Kg",
+          "Material: SS 304 Storage Tank & Cabinet",
+          "Colour: Silver Finish",
+          "Country of Origin: India"
+        ]
+      },
+      {
+        "title": "MDRO Gold RO Water Purifier (Hot + Normal)",
+        "image": "assets/images/products/domestic-ro-system/mdro-gold.png",
+        "mrp": 33999,
+        "offerPrice": 29990,
+        "emi": true,
+        "freeInstallation": true,
+        "gstIncluded": true,
+        "videoUrl": "",
+        "description": "MDRO Gold is a premium RO water purifier with Hot and Normal water dispensing. It uses advanced RO, UF, and Mineral filtration technology to deliver safe and healthy drinking water. The system is designed with a durable SS 304 storage tank and cabinet, making it ideal for homes and offices.",
+        "benefits": [
+          "Provides hot and normal purified drinking water",
+          "Advanced RO + UF + Mineral filtration technology",
+          "Removes bacteria, viruses, and harmful impurities",
+          "Improves taste and adds essential minerals to water",
+          "Durable SS 304 storage tank for hygienic water storage",
+          "Compact and stylish design suitable for home or office"
+        ],
+        "specifications": [
+          "Product Code: 2098MBMA",
+          "Model: MDRO Gold (Hot Water + Normal Water)",
+          "Purification Technology: RO + UF + Minerals",
+          "Membrane: Membrella Alpha 80 GPD",
+          "Pump: Membrella 75 GPD",
+          "Filters: Sediment, Pre Carbon, Post Carbon",
+          "Special Filters: UF & Mineral Cartridge",
+          "Purification Capacity: 12 Liters per Hour",
+          "Storage Capacity: Normal Water - 8L, Hot Water - 1L",
+          "Max Operation TDS: Up to 3000 PPM",
+          "Recovery Rate: More than 40% at 27°C ± 2°C",
+          "Input Voltage: 230V AC (50Hz)",
+          "Total Power Consumption: 560W",
+          "Installation Type: Wall Mount (with clamp) / Counter Top",
+          "Product Dimension: 540(H) x 270(W) x 380(L) mm",
+          "System Weight: 12.68 Kg (Approx)",
+          "Gross Weight: 15 Kg",
+          "Temperature Limit: 55°C – 70°C",
+          "Tube Length: 5 Meters",
+          "Material: SS 304 Storage Tank & Cabinet",
+          "Colour: Gold Finish Front Side, Silver Finish Body",
+          "Country of Origin: India"
+        ]
+      },
+      {
+        "title": "MDRO SS RO Water Purifier (Hot + Normal)",
+        "image": "assets/images/products/domestic-ro-system/mdro-ss.png",
+        "mrp": 29999,
+        "offerPrice": 26990,
+        "emi": true,
+        "freeInstallation": true,
+        "gstIncluded": true,
+        "videoUrl": "",
+        "description": "MDRO SS is a stainless-steel RO water purifier with Hot and Normal water dispensing. It uses advanced RO, UF, and Mineral filtration technology to provide safe and healthy drinking water. The SS 304 storage tank and cabinet ensure durability, hygiene, and long service life.",
+        "benefits": [
+          "Provides hot and normal purified drinking water",
+          "Advanced RO + UF + Mineral filtration technology",
+          "Removes bacteria, viruses, and harmful impurities",
+          "Improves taste and restores essential minerals",
+          "Durable SS 304 storage tank for hygienic water storage",
+          "Compact and elegant stainless steel design"
+        ],
+        "specifications": [
+          "Product Code: 2097MBMA",
+          "Model: MDRO SS (Hot Water + Normal Water)",
+          "Purification Technology: RO + UF + Minerals",
+          "Membrane: Membrella Alpha 80 GPD",
+          "Pump: Membrella 75 GPD",
+          "Filters: Sediment, Pre Carbon, Post Carbon",
+          "Special Filters: UF & Mineral Cartridge",
+          "Purification Capacity: 12 Liters per Hour",
+          "Storage Capacity: Normal Water - 8L, Hot Water - 1L",
+          "Max Operation TDS: Up to 3000 PPM",
+          "Recovery Rate: More than 40% at 27°C ± 2°C",
+          "Input Voltage: 230V AC (50Hz)",
+          "Total Power Consumption: 560W",
+          "Installation Type: Wall Mount (with clamp) / Counter Top",
+          "Product Dimension: 540(H) x 270(W) x 380(L) mm",
+          "System Weight: 12.68 Kg (Approx)",
+          "Gross Weight: 15 Kg",
+          "Temperature Limit: 55°C – 70°C",
+          "Tube Length: 5 Meters",
+          "Material: SS 304 Storage Tank & Cabinet",
+          "Colour: Silver Finish",
+          "Country of Origin: India"
+        ]
+      }
+    ]
+  },
   {
     "Industrial RO Plants": [
       {
@@ -73,18 +317,14 @@
         "emi": true,
         "freeInstallation": true,
         "gstIncluded": true,
-
         "videoUrl": "https://www.youtube.com/watch?v=jsFvuRNbPr4",
-
         "description": "Advanced RO water purifier with multi-stage filtration to deliver safe and great-tasting drinking water.",
-
         "specifications": [
           "Purification Technology: RO + UV + UF",
           "Storage Capacity: 10 Liters",
           "Mount Type: Wall / Counter",
           "Power Consumption: 60W"
         ],
-
         "benefits": [
           "Removes bacteria, viruses, and heavy metals",
           "Improves taste and odor of water",
@@ -94,7 +334,6 @@
       }
     ]
   },
-
   {
     "DMF and Iron Removal": [
       {
@@ -105,18 +344,14 @@
         "emi": true,
         "freeInstallation": true,
         "gstIncluded": true,
-
         "videoUrl": "https://www.youtube.com/watch?v=jsFvuRNbPr4",
-
         "description": "Advanced RO water purifier with multi-stage filtration to deliver safe and great-tasting drinking water.",
-
         "specifications": [
           "Purification Technology: RO + UV + UF",
           "Storage Capacity: 10 Liters",
           "Mount Type: Wall / Counter",
           "Power Consumption: 60W"
         ],
-
         "benefits": [
           "Removes bacteria, viruses, and heavy metals",
           "Improves taste and odor of water",
