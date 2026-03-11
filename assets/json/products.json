@@ -604,59 +604,5 @@
         ]
       }
     ]
-  },
-  {
-    "Industrial RO Plants": [
-      {
-        "title": "ORG RO Water Purifier Advanced",
-        "image": "assets/images/products/softener/org-softener.png",
-        "mrp": 25000,
-        "offerPrice": 21500,
-        "emi": true,
-        "freeInstallation": true,
-        "gstIncluded": true,
-        "videoUrl": "https://www.youtube.com/watch?v=jsFvuRNbPr4",
-        "description": "Advanced RO water purifier with multi-stage filtration to deliver safe and great-tasting drinking water.",
-        "specifications": [
-          "Purification Technology: RO + UV + UF",
-          "Storage Capacity: 10 Liters",
-          "Mount Type: Wall / Counter",
-          "Power Consumption: 60W"
-        ],
-        "benefits": [
-          "Removes bacteria, viruses, and heavy metals",
-          "Improves taste and odor of water",
-          "Safe drinking water for the whole family",
-          "Energy-efficient and reliable"
-        ]
-      }
-    ]
-  },
-  {
-    "DMF and Iron Removal": [
-      {
-        "title": "ORG RO Water Purifier Advanced",
-        "image": "assets/images/products/softener/org-softener.png",
-        "mrp": 25000,
-        "offerPrice": 21500,
-        "emi": true,
-        "freeInstallation": true,
-        "gstIncluded": true,
-        "videoUrl": "https://www.youtube.com/watch?v=jsFvuRNbPr4",
-        "description": "Advanced RO water purifier with multi-stage filtration to deliver safe and great-tasting drinking water.",
-        "specifications": [
-          "Purification Technology: RO + UV + UF",
-          "Storage Capacity: 10 Liters",
-          "Mount Type: Wall / Counter",
-          "Power Consumption: 60W"
-        ],
-        "benefits": [
-          "Removes bacteria, viruses, and heavy metals",
-          "Improves taste and odor of water",
-          "Safe drinking water for the whole family",
-          "Energy-efficient and reliable"
-        ]
-      }
-    ]
   }
 ]
