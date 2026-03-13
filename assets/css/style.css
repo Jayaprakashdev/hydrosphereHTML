@@ -216,30 +216,30 @@ a:focus-visible {
 }
 
 .product-detail-img {
-  background: #fff;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-  align-items: center;
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    align-items: center;
 }
 
-.product-detail-img img{
+.product-detail-img img {
     width: 300px;
 }
 
 .price-box span {
-  display: inline-block;
+    display: inline-block;
 }
 
 .badge {
-  font-size: 0.85rem;
-  padding: 8px 12px;
+    font-size: 0.85rem;
+    padding: 8px 12px;
 }
 
 #playVideoBtn {
-  width: 100%;
-  border-radius: 8px;
+    width: 100%;
+    border-radius: 8px;
 }
 
-.play-video-btn{
+.play-video-btn {
     position: absolute;
     top: 12px;
     right: 12px;
@@ -251,10 +251,54 @@ a:focus-visible {
 }
 
 .video-close-btn {
-  position: absolute;
-  top: -50px;
-  right: 0;
-  z-index: 1056; /* above modal */
+    position: absolute;
+    top: -50px;
+    right: 0;
+    z-index: 1056;
+    /* above modal */
+}
+
+.book-service-container {
+    max-width: 500px;
+    margin: auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-service-container h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+.book-service-container label{
+font-weight:600;
+margin-top:10px;
+display:block;
+}
+
+.book-service-container  input, .book-service-container  select, .book-service-container textarea{
+width:100%;
+padding:12px;
+margin-top:5px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:15px;
+box-sizing:border-box;
+}
+
+.book-service-container textarea{
+resize:none;
+height:80px;
+}
+
+.book-service-container button{
+width:100%;
+font-size:16px;
+border-radius:6px;
+margin-top:15px;
+cursor:pointer;
 }
 
 @media (max-width: 768px) {
