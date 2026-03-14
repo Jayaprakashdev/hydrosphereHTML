@@ -260,7 +260,146 @@
           "Individual Home",
           "Individual Flat"
         ]
-      }
+      },
+      {
+  "title": "ORG Auto Water Softener C-20",
+  "image": "assets/images/products/softener/org-auto-water-softener-c20.png",
+  "mrp": 48000,
+  "offerPrice": 45400,
+  "emi": true,
+  "freeInstallation": true,
+  "gstIncluded": true,
+  "videoUrl": "",
+  "description": "ORG Auto Water Softener C-20 is a fully automatic water softening system designed for individual homes and flats. It removes hardness from water through an efficient ion exchange process, protecting household appliances, plumbing lines, and bathroom fittings from scaling. The system features a microprocessor-controlled automatic regeneration process, inbuilt bypass valve, and LCD display for easy monitoring.",
+  "benefits": [
+    "Prevents dryness of skin and keeps it soft",
+    "Helps maintain smooth and damage-free hair",
+    "Keeps clothes color fresh and prevents fabric damage",
+    "Protects appliances like water heater, washing machine, dishwasher, and water purifier from scaling",
+    "Prevents scaling in taps, showers, and plumbing lines",
+    "Improves efficiency and lifespan of household appliances"
+  ],
+  "features": [
+    "Fully automatic microprocessor-controlled operation",
+    "Compact and stylish long durable cabinet design",
+    "High intensity inbuilt FRP resin tank with brine valve assembly",
+    "High quality resin for long life and efficient ion exchange",
+    "Inbuilt bypass control valve with softening controller",
+    "Raw water available even during regeneration process",
+    "Self operation without technician assistance during regeneration",
+    "LCD display on front panel for easy monitoring"
+  ],
+  "specifications": [
+    "Product Code: 3727",
+    "Brand: ORG",
+    "Application: Individual Home / Individual Flat",
+    "Max Flow Rate: 1200 LPH",
+    "Working Temperature: 5°C - 50°C",
+    "Working Pressure: 1.5 - 6 Kg",
+    "OBR (Based on hardness 400 ppm): 1875 Liters",
+    "Resin Quantity: 15 Liters",
+    "Salt Required per Regeneration: 2.3 Kg",
+    "Brine Tank: Inbuilt",
+    "Inlet / Outlet Size: 3/4 inch",
+    "Power: 220V AC",
+    "Dimensions: 320(L) x 580(W) x 620(H) mm",
+    "Usage: Sump to Overhead Water Tank",
+    "Special Function: Continuous water output during regeneration with inbuilt bypass valve and automatic OBR setting",
+    "Country of Origin: China"
+  ]
+},
+{
+  "title": "ORG Individual Flat Water Softener C45AD",
+  "image": "assets/images/products/softener/org-individual-flat-softener-c45ad.png",
+  "mrp": 74500,
+  "offerPrice": 71100,
+  "emi": true,
+  "freeInstallation": true,
+  "gstIncluded": true,
+  "videoUrl": "",
+  "description": "ORG Individual Flat Water Softener C45AD is a fully automatic water softening system designed for individual homes and apartments. It efficiently removes hardness from water through a high-capacity ion exchange process, protecting plumbing systems, bathroom fittings, and household appliances from scale buildup. The system includes a microprocessor-controlled regeneration process with an inbuilt bypass valve to ensure continuous water supply during regeneration.",
+  "benefits": [
+    "Prevents dryness of skin and keeps it soft",
+    "Helps maintain smooth and healthy hair",
+    "Keeps clothes color fresh and prevents fabric damage",
+    "Protects appliances like water heater, washing machine, dishwasher, and water purifier from scaling",
+    "Prevents scaling in taps, showers, and plumbing lines",
+    "Improves efficiency and lifespan of household appliances"
+  ],
+  "features": [
+    "Fully automatic microprocessor-controlled operation",
+    "Compact and durable cabinet design",
+    "High intensity inbuilt FRP resin tank with brine valve assembly",
+    "High quality resin for long life and efficient ion exchange process",
+    "Inbuilt bypass control valve with softening controller",
+    "Continuous water output during regeneration",
+    "Self-operation without technician assistance during regeneration",
+    "LCD display on front cover for easy monitoring"
+  ],
+  "specifications": [
+    "Product Code: 3717",
+    "Brand: ORG",
+    "Application: Individual Home / Individual Flat",
+    "Max Flow Rate: 2000 LPH",
+    "Working Temperature: 5°C - 50°C",
+    "Working Pressure: 1.5 - 6 Kg",
+    "OBR (Based on hardness 400 ppm): 3750 Liters",
+    "Resin Quantity: 30 Liters",
+    "Salt Required per Regeneration: 4.5 Kg",
+    "Brine Tank: Inbuilt",
+    "Inlet / Outlet Size: 3/4 inch",
+    "Power: 220V AC",
+    "Dimensions: 320(L) x 580(W) x 1080(H) mm",
+    "Usage: Sump to Overhead Water Tank",
+    "Special Function: Continuous water output during regeneration with inbuilt bypass valve and automatic OBR setting",
+    "Country of Origin: China"
+  ]
+},
+{
+  "title": "ORG Bungalow Water Softener C1044 BFT",
+  "image": "assets/images/products/softener/org-bungalow-softener-c1044-bft.png",
+  "mrp": 81000,
+  "offerPrice": 77400,
+  "emi": true,
+  "freeInstallation": true,
+  "gstIncluded": true,
+  "videoUrl": "",
+  "description": "ORG Bungalow Water Softener C1044 BFT is a high-capacity automatic water softening system designed for bungalows, independent homes, and large flats. It efficiently removes hardness from water using an advanced ion exchange process, protecting plumbing systems, bathroom fittings, and household appliances from scale buildup. The system features a microprocessor-controlled operation with a durable resin tank and inbuilt brine valve for efficient regeneration.",
+  "benefits": [
+    "Prevents dryness of skin and keeps it soft",
+    "Helps maintain smooth and healthy hair",
+    "Keeps clothes color fresh and prevents fabric damage",
+    "Protects appliances like water heater, washing machine, dishwasher, and water purifier from scaling",
+    "Prevents scaling in taps, showers, and plumbing lines",
+    "Improves efficiency and lifespan of household appliances"
+  ],
+  "features": [
+    "Fully automatic microprocessor-controlled operation",
+    "Unique LP-BFT function for long life and efficient ion exchange process",
+    "High quality resin for long life and better performance",
+    "Compact and stylish cabinet design",
+    "High intensity inbuilt FRP resin tank with brine valve assembly",
+    "Inbuilt bypass control valve with softening controller",
+    "Easy installation and ready to use system"
+  ],
+  "specifications": [
+    "Product Code: 3701",
+    "Brand: ORG",
+    "Application: Individual Bungalow / Individual Home / Individual Flat",
+    "Max Flow Rate: 2000 LPH",
+    "Working Temperature: 5°C - 50°C",
+    "Working Pressure: 1.5 - 6 Kg",
+    "OBR (Based on hardness 400 ppm): 5750 Liters",
+    "Resin Quantity: 46 Liters",
+    "Salt Required per Regeneration: 7 Kg",
+    "Brine Tank: Inbuilt with Brine Valve",
+    "Inlet / Outlet Size: 1 inch",
+    "Power: 220V AC",
+    "Dimensions: 392(L) x 484(W) x 1300(H) mm",
+    "Usage: Sump to Overhead Water Tank",
+    "Country of Origin: India"
+  ]
+}
     ]
   },
   {
