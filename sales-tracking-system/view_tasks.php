@@ -4,6 +4,28 @@
 
 $where="";
 
+$today=date("Y-m-d");
+
+/* FOLLOWUP FILTER */
+
+if(isset($_GET['followup'])){
+
+if($_GET['followup']=="overdue"){
+$where="WHERE followup_date < '$today' AND status!='Completed'";
+}
+
+if($_GET['followup']=="today"){
+$where="WHERE followup_date='$today' AND status!='Completed'";
+}
+
+if($_GET['followup']=="upcoming"){
+$where="WHERE followup_date > '$today' AND status!='Completed'";
+}
+
+}
+
+/* ENGINEER FILTER */
+
 if(isset($_GET['engineer']) && isset($_GET['status'])){
 
 $engineer=$_GET['engineer'];
@@ -107,17 +129,45 @@ $whatsapp_link = "https://wa.me/91".$row['mobile']."?text=".$encoded_message;
 
 $call_link = "tel:".$row['mobile'];
 
+$message="Hello ".$row['customer_name']."
+Hydrosphere following up regarding your ".$row['task_type']." enquiry.
+Please let us know a convenient time.";
+
+$encoded_message=urlencode($message);
+
+$whatsapp_link="https://wa.me/91".$row['mobile']."?text=".$encoded_message;
+
+?>
+
+<?php
+$today = date("Y-m-d");
+$isTodayFollowup = ($row['followup_date'] == $today);
 ?>
 
 <div class="card mb-2 task-card">
 
 <div class="card-body">
+    
 
-<h6><?php echo $row['customer_name']; ?></h6>
+<h6>
+<?php echo $row['customer_name']; ?>
 
+<?php if($isTodayFollowup){ ?>
+<span class="badge bg-danger">Today Followup</span>
+<?php } ?>
+
+</h6>
 <p>
 
-📅 <?php echo $row['task_date']; ?><br>
+📅 Enquiry: <?php echo $row['task_date']; ?><br>
+
+<?php if($row['followup_date']!=''){ ?>
+🔔 Followup: <?php echo $row['followup_date']; ?><br>
+<?php } ?>
+
+<?php if($row['appointment_date']!=''){ ?>
+📍 Appointment: <?php echo $row['appointment_date']; ?><br>
+<?php } ?>
 
 📞 <?php echo $row['mobile']; ?><br>
 
@@ -130,6 +180,9 @@ $call_link = "tel:".$row['mobile'];
 💰 ₹<?php echo $row['amount']; ?>
 
 </p>
+<a href="<?php echo $whatsapp_link; ?>" target="_blank" class="btn btn-success btn-sm">
+💬 Send Followup
+</a>
 
 <span class="badge bg-primary">
 <?php echo $row['status']; ?>
