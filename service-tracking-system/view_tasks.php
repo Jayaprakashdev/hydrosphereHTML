@@ -13,7 +13,11 @@ $where="WHERE assigned_to='$engineer' AND status='$status'";
 
 }
 
-$query="SELECT * FROM tasks $where ORDER BY id DESC";
+$query="SELECT t.*, e.mobile as engineer_mobile 
+FROM tasks t
+LEFT JOIN engineers e ON t.assigned_to = e.name
+$where
+ORDER BY t.id DESC";
 
 $result=mysqli_query($conn,$query);
 
@@ -107,6 +111,20 @@ $whatsapp_link = "https://wa.me/91".$row['mobile']."?text=".$encoded_message;
 
 $call_link = "tel:".$row['mobile'];
 
+$engineer_message = "🚀 New Service Task
+
+Customer: ".$row['customer_name']."
+Mobile: ".$row['mobile']."
+Location: ".$row['location']."
+Service: ".$row['task_type']."
+Date: ".$row['task_date']."
+
+Please complete the service. - Hydrosphere";
+
+$engineer_encoded = urlencode($engineer_message);
+
+$engineer_whatsapp = "https://wa.me/91".$row['engineer_mobile']."?text=".$engineer_encoded;
+
 ?>
 
 <div class="card mb-2 task-card">
@@ -136,6 +154,10 @@ $call_link = "tel:".$row['mobile'];
 </span>
 
 <div class="mt-2 d-flex gap-2 flex-wrap">
+
+<a href="<?php echo $engineer_whatsapp; ?>" class="btn btn-success btn-sm" target="_blank">
+👨‍🔧 Send to Engineer
+</a>
 
 <a href="<?php echo $call_link; ?>" class="btn btn-primary btn-sm">
 📞 Call
