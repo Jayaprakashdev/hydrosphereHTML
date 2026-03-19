@@ -1,34 +1,32 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 include 'config/db.php';
 
-$date = $_POST['task_date'] ?? '';
-$name = $_POST['customer_name'] ?? '';
-$mobile = $_POST['mobile'] ?? '';
-$location = $_POST['location'] ?? '';
-$type = $_POST['task_type'] ?? '';
-$desc = $_POST['description'] ?? '';
-$amount = $_POST['amount'] ?? 0;
-$assign = $_POST['assigned_to'] ?? '';
-$note = $_POST['note'] ?? '';
-$status = $_POST['status'] ?? '';
+$mobile = $_POST['mobile'];
 
-// Fix for empty amount
-if ($amount == '' || !is_numeric($amount)) {
-    $amount = 0;
+// Check if mobile already exists
+$check = mysqli_query($conn, "SELECT * FROM tasks WHERE mobile='$mobile'");
+
+if(mysqli_num_rows($check) > 0){
+    echo "<script>alert('Customer already exists with this mobile number'); window.history.back();</script>";
+    exit;
 }
 
-$sql = "INSERT INTO tasks
-(task_date,customer_name,mobile,location,task_type,description,amount,assigned_to,note,status)
-VALUES
-('$date','$name','$mobile','$location','$type','$desc','$amount','$assign','$note','$status')";
+// Insert data if not duplicate
+$query = "INSERT INTO tasks (task_date, customer_name, mobile, location, task_type, description, amount, assigned_to, note, status)
+VALUES (
+'".$_POST['task_date']."',
+'".$_POST['customer_name']."',
+'".$_POST['mobile']."',
+'".$_POST['location']."',
+'".$_POST['task_type']."',
+'".$_POST['description']."',
+'".$_POST['amount']."',
+'".$_POST['assigned_to']."',
+'".$_POST['note']."',
+'".$_POST['status']."'
+)";
 
-if(mysqli_query($conn,$sql)){
-    header("Location: index.php");
-    exit();
-}else{
-    echo "Error: " . mysqli_error($conn);
-}
+mysqli_query($conn, $query);
+
+echo "<script>alert('Task Added Successfully'); window.location='index.php';</script>";
 ?>
