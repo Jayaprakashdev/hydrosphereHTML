@@ -3,15 +3,15 @@ include 'config/db.php';
 
 $mobile = $_POST['mobile'];
 
-// Check if mobile already exists
-$check = mysqli_query($conn, "SELECT * FROM tasks WHERE mobile='$mobile'");
+// Check existing active tasks (NOT completed)
+$check = mysqli_query($conn, "SELECT * FROM tasks WHERE mobile='$mobile' AND status!='Completed'");
 
 if(mysqli_num_rows($check) > 0){
-    echo "<script>alert('Customer already exists with this mobile number'); window.history.back();</script>";
+    echo "<script>alert('This customer already has an active task (Open/Inprogress)'); window.history.back();</script>";
     exit;
 }
 
-// Insert data if not duplicate
+// Insert new task
 $query = "INSERT INTO tasks (task_date, customer_name, mobile, location, task_type, description, amount, assigned_to, note, status)
 VALUES (
 '".$_POST['task_date']."',
