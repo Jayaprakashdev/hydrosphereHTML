@@ -29,6 +29,6 @@ status='$status'
 
 WHERE id='$id'");
 
-header("Location:view_tasks.php");
+header("Location:index.php");
 
 ?>
