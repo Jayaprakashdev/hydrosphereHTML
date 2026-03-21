@@ -129,6 +129,7 @@ placeholder="Amount"
 <option <?php if($row['assigned_to']=="Vicky") echo "selected"; ?>>Vicky</option>
 <option <?php if($row['assigned_to']=="Karthik") echo "selected"; ?>>Karthik</option>
 <option <?php if($row['assigned_to']=="Jayaprakash") echo "selected"; ?>>Jayaprakash</option>
+<option <?php if($row['assigned_to']=="Abdulla") echo "selected"; ?>>Abdulla</option>
 
 </select>
 

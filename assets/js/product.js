@@ -28,7 +28,7 @@ const categoryMap = {
     "Domestic RO System 12 LPH": { label: "Domestic RO System 12 LPH", icon: "fa-droplet", color: "text-primary" },
     "Domestic RO System 25 LPH": { label: "Domestic RO System 25 LPH", icon: "fa-droplet", color: "text-primary" },
     "Domestic RO System 40 LPH": { label: "Domestic RO System 40 LPH", icon: "fa-droplet", color: "text-primary" },
-    "Ultra Filter": { label: "Ultra Filters", icon: "fa-droplet", color: "text-primary" },
+    "Ultra Filter": { label: "Ultra Filter", icon: "fa-droplet", color: "text-primary" },
     "Alkaline Ioniser": { label: "Alkaline Ionisers", icon: "fa-bolt", color: "text-warning" }
 };
 
@@ -36,28 +36,30 @@ function renderHomepageProducts(data) {
     const container = document.getElementById("productList");
     if (!container) return;
 
-    // ✅ Check if page wants only a specific category
-    const filterCategory = container.getAttribute("data-category");
+    // ✅ Support multiple categories e.g. "Domestic RO System 12 LPH,Ultra Filter"
+    const filterAttr = container.getAttribute("data-category");
+    const filterCategories = filterAttr
+        ? filterAttr.split(",").map(s => s.trim())
+        : null;
 
     container.innerHTML = "";
 
     data.forEach(categoryObj => {
         const categoryName = Object.keys(categoryObj)[0];
 
-        // ✅ Skip categories not matching the filter (on product-specific pages)
-        if (filterCategory && categoryName !== filterCategory) return;
+        // ✅ Skip if filter is set and this category isn't in the list
+        if (filterCategories && !filterCategories.includes(categoryName)) return;
 
         const products = categoryObj[categoryName];
-        const displayName = categoryMap[categoryName]?.label || categoryName;
 
         container.innerHTML += `
       <div class="category-group">
-        <h4 class="category-title">${displayName}</h4>
-        <div class="row g-4" id="${categoryName.replace(/\s/g, "")}"></div>
+        <h4 class="category-title">${categoryName}</h4>
+        <div class="row g-4" id="cat-${categoryName.replace(/\s/g, "")}"></div>
       </div>
     `;
 
-        const productContainer = document.getElementById(categoryName.replace(/\s/g, ""));
+        const productContainer = document.getElementById(`cat-${categoryName.replace(/\s/g, "")}`);
 
         products.forEach(p => {
             const saveAmount = p.mrp && p.offerPrice ? p.mrp - p.offerPrice : null;

@@ -3,7 +3,7 @@
         "Softener": [
             {
                 "title": "ORG HWS 20000 Automatic Water Softener",
-                "image": "assets/images/products/softener/org-softener.png",
+                "image": "/assets/images/products/softener/org-softener.png",
                 "mrp": 166999,
                 "offerPrice": 151970,
                 "emi": true,
@@ -35,7 +35,7 @@
             },
             {
                 "title": "ORG HWS 15000 Automatic Water Softener",
-                "image": "assets/images/products/softener/org-softener.png",
+                "image": "/assets/images/products/softener/org-softener.png",
                 "mrp": 136999,
                 "offerPrice": 124670,
                 "emi": true,
@@ -68,7 +68,7 @@
             },
             {
                 "title": "ORG HWS 10000 Automatic Water Softener",
-                "image": "assets/images/products/softener/org-softener.png",
+                "image": "/assets/images/products/softener/org-softener.png",
                 "mrp": 106999,
                 "offerPrice": 97390,
                 "emi": true,
@@ -101,7 +101,7 @@
             },
             {
                 "title": "ORG Bathroom Softener",
-                "image": "assets/images/products/softener/org-bathroom-softener.png",
+                "image": "/assets/images/products/softener/org-bathroom-softener.png",
                 "mrp": 40000,
                 "offerPrice": 35000,
                 "emi": true,
@@ -141,7 +141,7 @@
             },
             {
                 "title": "ORG Softener 10A",
-                "image": "assets/images/products/softener/org-softener-10a.png",
+                "image": "/assets/images/products/softener/org-softener-10a.png",
                 "mrp": 31999,
                 "offerPrice": 27000,
                 "emi": true,
@@ -182,7 +182,7 @@
             },
             {
                 "title": "ORG Water Softener Mini Pro",
-                "image": "assets/images/products/softener/org-mini-pro.png",
+                "image": "/assets/images/products/softener/org-mini-pro.png",
                 "mrp": 16000,
                 "offerPrice": 12975,
                 "emi": true,
@@ -217,7 +217,7 @@
             },
             {
                 "title": "ORG Water Softener with Sand Filter 150R-BFT",
-                "image": "assets/images/products/softener/org-softener-150r-bft.png",
+                "image": "/assets/images/products/softener/org-softener-150r-bft.png",
                 "mrp": 160499,
                 "offerPrice": 152170,
                 "emi": true,
@@ -263,7 +263,7 @@
             },
             {
                 "title": "ORG Auto Water Softener C-20",
-                "image": "assets/images/products/softener/org-auto-water-softener-c20.png",
+                "image": "/assets/images/products/softener/org-auto-water-softener-c20.png",
                 "mrp": 48000,
                 "offerPrice": 45400,
                 "emi": true,
@@ -310,7 +310,7 @@
             },
             {
                 "title": "ORG Individual Flat Water Softener C45AD",
-                "image": "assets/images/products/softener/org-individual-flat-softener-c45ad.png",
+                "image": "/assets/images/products/softener/org-individual-flat-softener-c45ad.png",
                 "mrp": 74500,
                 "offerPrice": 71100,
                 "emi": true,
@@ -357,7 +357,7 @@
             },
             {
                 "title": "ORG Bungalow Water Softener C1044 BFT",
-                "image": "assets/images/products/softener/org-bungalow-softener-c1044-bft.png",
+                "image": "/assets/images/products/softener/org-bungalow-softener-c1044-bft.png",
                 "mrp": 81000,
                 "offerPrice": 77400,
                 "emi": true,
@@ -406,7 +406,7 @@
         "Domestic RO System 12 LPH": [
             {
                 "title": "Generous HNC RO Water Dispenser (Hot, Normal, Cold)",
-                "image": "assets/images/products/domestic-ro-system/generous.png",
+                "image": "/assets/images/products/domestic-ro-system/generous.png",
                 "mrp": 54999,
                 "offerPrice": 34999,
                 "emi": true,
@@ -448,7 +448,7 @@
             },
             {
                 "title": "MDRO Gold RO Water Purifier (Hot + Normal)",
-                "image": "assets/images/products/domestic-ro-system/mdro-gold.png",
+                "image": "/assets/images/products/domestic-ro-system/mdro-gold.png",
                 "mrp": 33999,
                 "offerPrice": 24999,
                 "emi": true,
@@ -491,7 +491,7 @@
             },
             {
                 "title": "MDRO SS RO Water Purifier (Hot + Normal)",
-                "image": "assets/images/products/domestic-ro-system/mdro-ss.png",
+                "image": "/assets/images/products/domestic-ro-system/mdro-ss.png",
                 "mrp": 29999,
                 "offerPrice": 23999,
                 "emi": true,
@@ -534,7 +534,7 @@
             },
             {
                 "title": "MISTY MDRO Regular - ST (BIS)",
-                "image": "assets/images/products/domestic-ro-system/misty-mdro-regular-st.png",
+                "image": "/assets/images/products/domestic-ro-system/misty-mdro-regular-st.png",
                 "mrp": 19990,
                 "offerPrice": 16999,
                 "emi": true,
@@ -584,7 +584,7 @@
             },
             {
                 "title": "PYOORON RO Water Purifier (BIS)",
-                "image": "assets/images/products/domestic-ro-system/pyooron.png",
+                "image": "/assets/images/products/domestic-ro-system/pyooron.png",
                 "mrp": 22990,
                 "offerPrice": 17999,
                 "emi": true,
@@ -638,7 +638,7 @@
             },
             {
                 "title": "NOBACT UNDERSINK RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/nobact-undersink.png",
+                "image": "/assets/images/products/domestic-ro-system/nobact-undersink.png",
                 "mrp": 19900,
                 "offerPrice": 17900,
                 "emi": true,
@@ -686,7 +686,7 @@
             },
             {
                 "title": "Wall Mount with Undersink RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/wall-mount-undersink.png",
+                "image": "/assets/images/products/domestic-ro-system/wall-mount-undersink.png",
                 "mrp": 16500,
                 "offerPrice": 13999,
                 "emi": true,
@@ -734,7 +734,7 @@
             },
             {
                 "title": "Wall Mount RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/wall-mount.png",
+                "image": "/assets/images/products/domestic-ro-system/wall-mount.png",
                 "mrp": 14500,
                 "offerPrice": 11999,
                 "emi": true,
@@ -780,7 +780,7 @@
             },
             {
                 "title": "Chrome Classic + RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/chrome-classic-plus.png",
+                "image": "/assets/images/products/domestic-ro-system/chrome-classic-plus.png",
                 "mrp": 23990,
                 "offerPrice": 17999,
                 "emi": true,
@@ -832,7 +832,7 @@
             },
             {
                 "title": "Chrome Smart + RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/chrome-smart-plus.png",
+                "image": "/assets/images/products/domestic-ro-system/chrome-smart-plus.png",
                 "mrp": 23990,
                 "offerPrice": 21500,
                 "emi": true,
@@ -884,7 +884,7 @@
             },
             {
                 "title": "Chrome 1st Choice Copper RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/chrome-1st-choice-copper.png",
+                "image": "/assets/images/products/domestic-ro-system/chrome-1st-choice-copper.png",
                 "mrp": 25999,
                 "offerPrice": 23999,
                 "emi": true,
@@ -936,7 +936,7 @@
             },
             {
                 "title": "Chrome Unique White Copper RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/chrome-unique-white-copper.png",
+                "image": "/assets/images/products/domestic-ro-system/chrome-unique-white-copper.png",
                 "mrp": 22999,
                 "offerPrice": 17999,
                 "emi": true,
@@ -989,7 +989,7 @@
             },
             {
                 "title": "Chrome Unique Black Copper RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/chrome-unique-black-copper.png",
+                "image": "/assets/images/products/domestic-ro-system/chrome-unique-black-copper.png",
                 "mrp": 22999,
                 "offerPrice": 17999,
                 "emi": true,
@@ -1043,7 +1043,7 @@
             },
             {
                 "title": "Chrome Unique Full Black RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/chrome-unique-full-black.png",
+                "image": "/assets/images/products/domestic-ro-system/chrome-unique-full-black.png",
                 "mrp": 22999,
                 "offerPrice": 17999,
                 "emi": true,
@@ -1096,7 +1096,7 @@
             },
             {
                 "title": "Chrome Curve Pro White Copper RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/chrome-curve-pro-white-copper.png",
+                "image": "/assets/images/products/domestic-ro-system/chrome-curve-pro-white-copper.png",
                 "mrp": 23500,
                 "offerPrice": 19999,
                 "emi": true,
@@ -1149,7 +1149,7 @@
             },
             {
                 "title": "Chrome Curve Pro Black Copper RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/chrome-curve-pro-black-copper.png",
+                "image": "/assets/images/products/domestic-ro-system/chrome-curve-pro-black-copper.png",
                 "mrp": 23500,
                 "offerPrice": 19999,
                 "emi": true,
@@ -1202,7 +1202,7 @@
             },
             {
                 "title": "Wave Krystal Transparent RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/wave-krystal-transparent.png",
+                "image": "/assets/images/products/domestic-ro-system/wave-krystal-transparent.png",
                 "mrp": 17500,
                 "offerPrice": 15500,
                 "emi": true,
@@ -1249,7 +1249,7 @@
             },
             {
                 "title": "Wave Krystal Transparent RO+UV+UF Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/wave-krystal-transparent.png",
+                "image": "/assets/images/products/domestic-ro-system/wave-krystal-transparent.png",
                 "mrp": 18990,
                 "offerPrice": 16990,
                 "emi": true,
@@ -1296,7 +1296,7 @@
             },
             {
                 "title": "Wave Krystal Transparent Blue Auto TDS RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/wave-krystal-transparent-blue-auto-tds.png",
+                "image": "/assets/images/products/domestic-ro-system/wave-krystal-transparent-blue-auto-tds.png",
                 "mrp": 21000,
                 "offerPrice": 19000,
                 "emi": true,
@@ -1344,7 +1344,7 @@
             },
             {
                 "title": "Wave Kombo RO+UV+UF Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/wave-kombo-ro-uv-uf.png",
+                "image": "/assets/images/products/domestic-ro-system/wave-kombo-ro-uv-uf.png",
                 "mrp": 18999,
                 "offerPrice": 16999,
                 "emi": true,
@@ -1391,7 +1391,7 @@
             },
             {
                 "title": "Wave Deluxe RO+UV+UF Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/wave-deluxe-ro-uv-uf.png",
+                "image": "/assets/images/products/domestic-ro-system/wave-deluxe-ro-uv-uf.png",
                 "mrp": 18999,
                 "offerPrice": 16999,
                 "emi": true,
@@ -1439,7 +1439,7 @@
             },
             {
                 "title": "Wave 5G Pro Hot & Cold RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/wave-5g-pro-hot-cold.png",
+                "image": "/assets/images/products/domestic-ro-system/wave-5g-pro-hot-cold.png",
                 "mrp": 35900,
                 "offerPrice": 33400,
                 "emi": true,
@@ -1485,7 +1485,7 @@
             },
             {
                 "title": "Wave 4G ACE Hot & Cold RO Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/wave-4g-ace-hot-cold.png",
+                "image": "/assets/images/products/domestic-ro-system/wave-4g-ace-hot-cold.png",
                 "mrp": 30500,
                 "offerPrice": 28200,
                 "emi": true,
@@ -1528,7 +1528,7 @@
             },
             {
                 "title": "Wave S-100 RO+UV+UF Water Purifier with Automatic TDS Controller",
-                "image": "assets/images/products/domestic-ro-system/wave-s100.png",
+                "image": "/assets/images/products/domestic-ro-system/wave-s100.png",
                 "mrp": 18990,
                 "offerPrice": 16990,
                 "emi": true,
@@ -1576,7 +1576,7 @@
             },
             {
                 "title": "Wave Deluxe RO Only Water Purifier",
-                "image": "assets/images/products/domestic-ro-system/wave-deluxe-ro-only.png",
+                "image": "/assets/images/products/domestic-ro-system/wave-deluxe-ro-only.png",
                 "mrp": 18999,
                 "offerPrice": 16999,
                 "emi": true,
@@ -1628,7 +1628,7 @@
         "Domestic RO System 25 LPH": [
             {
                 "title": "SKID 25 LPH RO System",
-                "image": "assets/images/products/domestic-ro-system/skid-25lph.png",
+                "image": "/assets/images/products/domestic-ro-system/skid-25lph.png",
                 "mrp": 21500,
                 "offerPrice": 19999,
                 "emi": false,
@@ -1674,7 +1674,7 @@
             },
             {
                 "title": "OPEN 25 LPH RO System",
-                "image": "assets/images/products/domestic-ro-system/open-25lph.png",
+                "image": "/assets/images/products/domestic-ro-system/open-25lph.png",
                 "mrp": 18500,
                 "offerPrice": 15999,
                 "emi": false,
@@ -1720,7 +1720,7 @@
             },
             {
                 "title": "MISTY WHALE 25 LPH (BIS) RO System",
-                "image": "assets/images/products/domestic-ro-system/misty-whale-25lph.png",
+                "image": "/assets/images/products/domestic-ro-system/misty-whale-25lph.png",
                 "mrp": 21500,
                 "offerPrice": 18500,
                 "emi": false,
@@ -1773,7 +1773,7 @@
         "Domestic RO System 40 LPH": [
             {
                 "title": "WHALE 40 LPH RO System",
-                "image": "assets/images/products/domestic-ro-system/misty-whale-25lph.png",
+                "image": "/assets/images/products/domestic-ro-system/misty-whale-25lph.png",
                 "mrp": 24500,
                 "offerPrice": 21999,
                 "emi": false,
@@ -1821,7 +1821,7 @@
             },
             {
                 "title": "NOBACT 40 LPH On-Demand RO System",
-                "image": "assets/images/products/domestic-ro-system/nobact-40lph.png",
+                "image": "/assets/images/products/domestic-ro-system/nobact-40lph.png",
                 "mrp": 24500,
                 "offerPrice": 21600,
                 "emi": false,
@@ -1870,7 +1870,7 @@
         "Ultra Filter": [
             {
                 "title": "Jumbo UF with Auto MPV",
-                "image": "assets/images/products/uf/ultra-filter-auto.png",
+                "image": "/assets/images/products/uf/ultra-filter-auto.png",
                 "mrp": 26999,
                 "offerPrice": 24200,
                 "emi": true,
@@ -1905,7 +1905,7 @@
             },
             {
                 "title": "Jumbo UF with MPV",
-                "image": "assets/images/products/uf/ultra-filter.png",
+                "image": "/assets/images/products/uf/ultra-filter.png",
                 "mrp": 16200,
                 "offerPrice": 14094,
                 "emi": true,

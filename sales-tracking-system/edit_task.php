@@ -2,14 +2,13 @@
 
 include 'config/db.php';
 
-$id=$_GET['id'];
+$id = $_GET['id'];
 
-$result=mysqli_query($conn,"SELECT * FROM tasks WHERE id='$id'");
+$result = mysqli_query($conn,"SELECT * FROM tasks WHERE id='$id'");
 
-$row=mysqli_fetch_assoc($result);
+$row = mysqli_fetch_assoc($result);
 
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -60,6 +59,7 @@ return true;
 
 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
 
+<label>Enquiry Date</label><br>
 <input 
 type="date"
 name="task_date"
@@ -67,6 +67,12 @@ value="<?php echo $row['task_date']; ?>"
 class="form-control mb-2"
 required
 >
+
+<label>Followup Date</label><br>
+<input type="date" name="followup_date" value="<?php echo $row['followup_date']; ?>" class="form-control mb-2">
+
+<label>Appointment Date</label><br>
+<input type="date" name="appointment_date" value="<?php echo $row['appointment_date']; ?>" class="form-control mb-2">
 
 <input 
 type="text"
@@ -136,6 +142,7 @@ placeholder="Amount"
 <option <?php if($row['assigned_to']=="Vicky") echo "selected"; ?>>Vicky</option>
 <option <?php if($row['assigned_to']=="Karthik") echo "selected"; ?>>Karthik</option>
 <option <?php if($row['assigned_to']=="Jayaprakash") echo "selected"; ?>>Jayaprakash</option>
+<option <?php if($row['assigned_to']=="Abdulla") echo "selected"; ?>>Abdulla</option>
 
 </select>
 
@@ -151,6 +158,7 @@ placeholder="Note"><?php echo $row['note']; ?></textarea>
 <option <?php if($row['status']=="Open") echo "selected"; ?>>Open</option>
 <option <?php if($row['status']=="Inprogress") echo "selected"; ?>>Inprogress</option>
 <option <?php if($row['status']=="Completed") echo "selected"; ?>>Completed</option>
+<option <?php if($row['status']=="Cancel") echo "selected"; ?>>Cancel</option>
 
 </select>
 
