@@ -1,7 +1,7 @@
-
+// ✅ Single DOMContentLoaded listener
 document.addEventListener("DOMContentLoaded", () => {
-    loadPartial("header", "assets/component/header.html", setActiveMenu);
-    loadPartial("footer", "assets/component/footer.html");
+    loadPartial("header", "/assets/component/header.html", setActiveMenu);
+    loadPartial("footer", "/assets/component/footer.html", setYear);
 });
 
 function loadPartial(id, file, callback) {
@@ -36,8 +36,3 @@ function setYear() {
     const y = document.getElementById("year");
     if (y) y.textContent = new Date().getFullYear();
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    loadPartial("header", "assets/component/header.html", setActiveMenu);
-    loadPartial("footer", "assets/component/footer.html", setYear);
-});
