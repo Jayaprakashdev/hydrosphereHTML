@@ -352,6 +352,28 @@ a:focus-visible {
     }
 }
 
+@media (max-width: 992px) {
+    .navbar-nav .dropdown-menu {
+        width: fit-content;
+        margin: auto;
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .navbar-nav .dropdown-menu.show {
+        height: 140px;
+    }
+
+    .navbar-collapse {
+        padding: 10px 0 20px 0;
+    }
+}
+
 @media (max-width: 768px) {
     .dropdown-menu-transition {
         transition: opacity 0.3s;
