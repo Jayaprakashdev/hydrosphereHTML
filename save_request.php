@@ -16,7 +16,7 @@ $date    = !empty($_POST['date']) ? $_POST['date'] : NULL;
 $time    = $_POST['time'] ?? '';
 
 $sql = "INSERT INTO book_service
-(customer_name,mobile,address,service_type,problem,service_date,service_time)
+(customer_name,mobile,customer_address,service_type,problem,service_date,service_time)
 VALUES
 ('$name','$mobile','$address','$service','$problem','$date','$time')";
 

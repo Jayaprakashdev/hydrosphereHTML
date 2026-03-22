@@ -24,7 +24,7 @@ fetch(PRODUCTS_URL)
 // ============================================================
 // Category to dropdown nav mapping
 const categoryMap = {
-    "Softener": { label: "Water Softeners", icon: "fa-filter", color: "text-info" },
+    "Softeners": { label: "Water Softeners", icon: "fa-filter", color: "text-info" },
     "Domestic RO System 12 LPH": { label: "Domestic RO System 12 LPH", icon: "fa-droplet", color: "text-primary" },
     "Domestic RO System 25 LPH": { label: "Domestic RO System 25 LPH", icon: "fa-droplet", color: "text-primary" },
     "Domestic RO System 40 LPH": { label: "Domestic RO System 40 LPH", icon: "fa-droplet", color: "text-primary" },

@@ -43,7 +43,7 @@ a:focus-visible {
 }
 
 .hydro-banner {
-    min-height: 85vh;
+    min-height: 85dvh;
     padding: 60px 0;
 }
 
@@ -329,10 +329,14 @@ a:focus-visible {
     transform: translateY(0);
 }
 
+.dropdown-menu-end[data-bs-popper] {
+    left: 10px;
+}
+
 @media (min-width: 992px) {
 
     /* .navbar .dropdown:hover .dropdown-menu {
-        display: block;
+        opacity: 1;
         margin-top: 0;
     } */
     .dropdown-menu {
