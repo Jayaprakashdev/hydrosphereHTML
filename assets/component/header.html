@@ -1,26 +1,59 @@
 <!-- TOP HEADER START -->
-<div class="bg-dark text-white py-2">
+<div class="desktop-top-header d-none d-md-block  bg-dark text-white py-2">
     <div class="container">
         <div class="row text-center text-md-start align-items-center">
             <!-- Help Line -->
-            <div class="col-12 col-md-4 mb-2 mb-md-0">
-                <div class="d-flex justify-content-center justify-content-md-start align-items-center">
+            <div class="col-2 col-md-4">
+                <div class="d-flex justify-content-start align-items-center">
                     <i class="fa-solid fa-phone me-2"></i>
                     <small> Help Line: <a href="tel:9087667766" class="text-white text-decoration-none"> 908 766 7766 </a></small>
                 </div>
             </div>
             <!-- Service -->
-            <div class="col-12 col-md-4 mb-2 mb-md-0">
+            <div class="col-2 col-md-4">
                 <div class="d-flex justify-content-center align-items-center">
                     <i class="fa-solid fa-headset me-2"></i>
                     <small> Service: <a href="tel:8122037766" class="text-white text-decoration-none"> 812 203 7766 </a></small>
                 </div>
             </div>
             <!-- Complaint -->
-            <div class="col-12 col-md-4">
-                <div class="d-flex justify-content-center justify-content-md-end align-items-center">
+            <div class="col-2 col-md-4">
+                <div class="d-flex justify-content-end align-items-center">
                     <i class="fa-solid fa-file-circle-exclamation me-2"></i>
                     <small> Complaint: <a href="tel:9087667706" class="text-white text-decoration-none"> 908 766 7706 </a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mobile-top-header d-block d-md-none bg-dark text-white py-2">
+    <div class="container">
+        <div class="row text-center text-md-start align-items-center">
+            <!-- Help Line -->
+            <div class="col-4 col-md-4">
+                <div class="d-flex justify-content-start align-items-center">
+                    <i class="fa-solid fa-phone me-2"></i>
+                    <a href="tel:9087667766" class="text-decoration-none text-white">
+                        <small> Help Line</small>
+                    </a>
+                </div>
+            </div>
+            <!-- Service -->
+            <div class="col-4 col-md-4">
+                <div class="d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-headset me-2"></i>
+                    <a href="tel:8122037766" class="text-decoration-none text-white">
+                        <small> Service</small>
+                    </a>
+                </div>
+            </div>
+            <!-- Complaint -->
+            <div class="col-4 col-md-4">
+                <div class="d-flex justify-content-end align-items-center">
+                    <i class="fa-solid fa-file-circle-exclamation me-2"></i>
+                    <a href="tel:9087667706" class="text-decoration-none text-white">
+                        <small> Complaint</small>
+                    </a>
                 </div>
             </div>
         </div>
@@ -44,6 +77,9 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark" href="/">Home</a>
                 </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link text-dark" href="/softeners">Softeners</a>
+                </li> -->
                 <!-- ✅ Products Dropdown -->
                 <li class="nav-item dropdown">
                     <a class="nav-link text-dark dropdown-toggle" href="/products" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Products </a>
@@ -53,14 +89,19 @@
                                 Water Softeners
                             </a>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a class="dropdown-item d-flex align-items-center gap-2" href="/products/alkaline-ionisers/">
                                 Alkaline Ionisers
                             </a>
-                        </li>
+                        </li> -->
                         <li>
                             <a class="dropdown-item d-flex align-items-center gap-2" href="/products/water-purifiers">
                                 Water Purifiers
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center gap-2" href="/products/ultra-filters/">
+                                Ultra Filters
                             </a>
                         </li>
                         <li>
@@ -72,7 +113,7 @@
                 </li>
                 <!-- ✅ Products Dropdown END -->
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/book-service.html">Book a Service</a>
+                    <a class="nav-link text-dark" href="/book-service">Book a Service</a>
                 </li>
                 <!-- <li class="nav-item">
                     <a class="nav-link text-dark" href="/price-list">Price List</a>
