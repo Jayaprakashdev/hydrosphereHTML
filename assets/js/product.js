@@ -14,6 +14,16 @@ fetch(PRODUCTS_URL)
 // ============================================================
 // 1. HOMEPAGE - Render all product categories and cards
 // ============================================================
+// Category to dropdown nav mapping
+// const categoryMap = {
+//     "Softeners": { label: "Water Softeners", icon: "fa-filter", color: "text-info" },
+//     "Domestic RO System 12 LPH": { label: "Domestic RO System 12 LPH", icon: "fa-droplet", color: "text-primary" },
+//     "Domestic RO System 25 LPH": { label: "Domestic RO System 25 LPH", icon: "fa-droplet", color: "text-primary" },
+//     "Domestic RO System 40 LPH": { label: "Domestic RO System 40 LPH", icon: "fa-droplet", color: "text-primary" },
+//     "Ultra Filter": { label: "Ultra Filter", icon: "fa-droplet", color: "text-primary" },
+//     "Alkaline Ioniser": { label: "Alkaline Ionisers", icon: "fa-bolt", color: "text-warning" }
+// };
+
 function renderHomepageProducts(data) {
     const container = document.getElementById("productList");
     if (!container) return;
