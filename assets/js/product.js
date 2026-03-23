@@ -3,14 +3,6 @@
 // ============================================================
 
 const PRODUCTS_URL = "/assets/json/products.json";
-
-// Category to dropdown nav mapping
-// const categoryMap = {
-//     "Softener": { label: "Water Softeners", icon: "fa-filter", color: "text-info" },
-//     "Domestic RO System": { label: "Water Purifiers", icon: "fa-droplet", color: "text-primary" },
-//     "Ultra Filter": { label: "Alkaline Ionisers", icon: "fa-bolt", color: "text-warning" }
-// };
-
 // ✅ Fetch once, use everywhere
 fetch(PRODUCTS_URL)
     .then(res => res.json())

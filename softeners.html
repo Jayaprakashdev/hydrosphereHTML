@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <title>Hydrosphere - Home</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- css -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/products/water-softeners/style.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <div id="header"></div>
+    <main class="flex-fill">
+
+        <!-- HERO SECTION -->
+        <section class="softener-hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-6">
+                        <div class="soft-hero-content text-center text-md-start">
+                            <span class="badge rounded-pill text-bg-light">Water Softener Specialists</span>
+                            <h1 class="text-white my-2">Water Softeners</h1>
+                            <p class="text-warning fw-bold">Protect Your Home from Hard Water</p>
+                            <p class="text-white">
+                                We are water softener specialists providing reliable solutions to eliminate hard water problems for homes, apartments, and industries. Our high-quality systems improve water quality, protect appliances, and ensure long-lasting performance with expert support.
+                            </p>
+                            <span class="badge text-bg-light">Sales | Installation | Service</span>
+                            <div class="btn-flex d-flex align-items-center justify-content-center justify-content-md-start gap-3 mt-3">
+                                <!-- ✅ Scroll to form on click -->
+                                <a href="#waterTestForm" class="text-decoration-none btn btn-warning scroll-to-form">
+                                    Get a Free Water Test
+                                </a>
+                                <a href="tel:9087667766" class="text-decoration-none btn btn-warning">
+                                    <i class="fa-solid fa-phone me-2"></i> Call Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <img src="/assets/images/products/softener/soft-hero-img.png" alt="Softeners" class="img-fluid soft-hero-img" />
+                    </div>
+                </div>
+            </div>
+            <img src="assets/images/wave.png" alt="Wave" class="img-fluid wave-svg">
+        </section>
+
+        <!-- ✅ FREE WATER TEST FORM -->
+        <section id="waterTestForm" class="pb-5 d-none">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="card shadow border-0 p-4">
+                            <h4 class="fw-bold text-center mb-1">
+                                <i class="fa-solid fa-flask-vial text-success me-2"></i>
+                                Book Free Water Testing
+                            </h4>
+                            <p class="text-muted text-center mb-4">Fill in the details below and our team will contact you shortly.</p>
+
+                            <form id="waterTestFormFields" novalidate>
+
+                                <!-- Full Name -->
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label fw-semibold">
+                                        Full Name <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+                                    <div class="invalid-feedback">Please enter your full name.</div>
+                                </div>
+
+                                <!-- Contact Number -->
+                                <div class="mb-3">
+                                    <label for="contactNumber" class="form-label fw-semibold">
+                                        Contact Number <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="tel" class="form-control" id="contactNumber" placeholder="Enter your 10-digit mobile number" maxlength="10" pattern="[0-9]{10}" required>
+                                    <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+                                </div>
+
+                                <!-- Address / Area -->
+                                <div class="mb-4">
+                                    <label for="address" class="form-label fw-semibold">
+                                        Address / Area <span class="text-danger">*</span>
+                                    </label>
+                                    <textarea class="form-control" id="address" rows="3" placeholder="Enter your address or area" required></textarea>
+                                    <div class="invalid-feedback">Please enter your address or area.</div>
+                                </div>
+
+                                <!-- Submit -->
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-success btn-lg">
+                                        <i class="fa-solid fa-paper-plane me-2"></i> Submit Request
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Softeners Definition Section  -->
+        <section class="about-softener-section pb-5">
+            <div class="container">
+                <div class="definition-content text-center text-md-start">
+                    <div class="soft-def-content">
+                        <span class="d-block text-uppercase text-success fw-bold letter-spacing-1">about</span>
+                        <h2 class="fw-bold text-success my-1 my-md-2">What is a Water Softener?</h2>
+                        <p>
+                            A water softener is a filtration system that removes calcium and magnesium ions - the minerals responsible for water hardness through a process called ion exchange. Hard water affects more than 85% of Indian homes, causing scale buildup, appliance damage, and poor lathering.
+                        </p>
+                        <P class="my-3">
+                            Hydrosphere water softeners are engineered for Indian water conditions, providing consistent soft water to every tap in your home.
+                        </P>
+                    </div>
+                </div>
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="def-parent d-flex align-items-center justify-content-around">
+                            <div class="def-icon">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2C12 2 4 10 4 15a8 8 0 0016 0c0-5-8-13-8-13z" />
+                                </svg>
+                            </div>
+                            <div class="def-text">
+                                <strong>Whole-home softening</strong>
+                                <span class="d-block">Every tap delivers soft, mineral-free water</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 my-4 my-md-0">
+                        <div class="def-parent d-flex align-items-center justify-content-around">
+                            <div class="def-icon">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M9 12l2 2 4-4" />
+                                </svg>
+                            </div>
+                            <div class="def-text">
+                                <strong>NSF certified resin</strong>
+                                <span class="d-block">High-capacity ion exchange for long-lasting results</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mt-0 mt-md-4 mt-lg-0">
+                        <div class="def-parent d-flex align-items-center justify-content-around">
+                            <div class="def-icon">
+                                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="7" height="7" />
+                                    <rect x="14" y="3" width="7" height="7" />
+                                    <rect x="14" y="14" width="7" height="7" />
+                                    <rect x="3" y="14" width="7" height="7" />
+                                </svg>
+                            </div>
+                            <div class="def-text">
+                                <strong>Salt-efficient regeneration</strong>
+                                <span class="d-block">Smart regeneration cycle reduces salt & water use</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS SECTION -->
+        <section class="process-section py-5">
+            <div class="container">
+                <div class="process-content text-center text-md-start">
+                    <span class="d-block text-uppercase text-success fw-bold letter-spacing-1">process</span>
+                    <h2 class="fw-bold text-success my-1 my-md-2">How a Water Softener Works</h2>
+                    <p>
+                        A simple 4-step ion exchange process transforms hard water into soft water-silently and automatically.
+                    </p>
+                </div>
+                <div class="row align-items-stretch justify-content-center flex-wrap">
+                    <div class="col-lg-3 col-sm-6 mt-3">
+                        <div class="step-card text-center shadow">
+                            <div class="step-num">1</div>
+                            <h3>Hard Water Enters</h3>
+                            <div class="step-icon">🚰</div>
+                            <p>Hard water from your supply line enters the softener tank, carrying dissolved calcium (Ca²⁺) and magnesium (Mg²⁺) ions that cause scaling and damage.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-3 mt-3">
+                        <div class="step-card text-center shadow">
+                            <div class="step-num">2</div>
+                            <h3>Resin Removes Minerals</h3>
+                            <div class="step-icon">⚗️</div>
+                            <p>Thousands of tiny resin beads attract and trap Ca²⁺ & Mg²⁺ ions through ion exchange, replacing them with harmless sodium ions removing hardness at the source.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-3 mt-3">
+                        <div class="step-card text-center shadow">
+                            <div class="step-num">3</div>
+                            <h3>Soft Water Flows Out</h3>
+                            <div class="step-icon">💧</div>
+                            <p>Pure, soft water travels to every tap in your home, no scale, no deposits, no damage. The resin regenerates automatically using salt brine when needed.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-3 mt-3">
+                        <div class="step-card text-center shadow">
+                            <div class="step-num">4</div>
+                            <h3>Auto Regeneration</h3>
+                            <div class="step-icon">🔄</div>
+                            <p>When the resin becomes saturated, the system automatically regenerates using a salt brine solution, flushing away collected minerals and restoring full softening capacity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROBLEMS SECTIOM -->
+        <section class="problems-section py-5">
+            <div class="container">
+                <div class="process-content text-center text-md-start">
+                    <span class="d-block text-uppercase text-success fw-bold letter-spacing-1">Why It Matters</span>
+                    <h2 class="fw-bold text-success my-1 my-md-2">Problems Caused by Hard Water</h2>
+                    <p>
+                        Hard water silently damages your home, appliances and health every single day.
+                    </p>
+                </div>
+                <div class="row align-items-stretch justify-content-center flex-wrap">
+                    <div class="col-lg-3 col-sm-6 mt-3">
+                        <div class="problem-card text-center text-md-start shadow">
+                            <div class="problem-card-img">🔩</div>
+                            <div class="problem-card-body">
+                                <span class="problem-tag">Pipes & Plumbing</span>
+                                <h3>Scale Buildup in Pipes</h3>
+                                <p>Mineral deposits narrow and clog pipes over time, reducing water pressure and eventually causing costly pipe replacements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-3">
+                        <div class="problem-card text-center text-md-start shadow">
+                            <div class="problem-card-img">🫧</div>
+                            <div class="problem-card-body">
+                                <span class="problem-tag">Appliances</span>
+                                <h3>Damage to Appliances</h3>
+                                <p>Washing machines, geysers, dishwashers and water heaters scale up internally — cutting efficiency by up to 30% and slashing their lifespan.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-3">
+                        <div class="problem-card text-center text-md-start shadow">
+                            <div class="problem-card-img">🧴</div>
+                            <div class="problem-card-body">
+                                <span class="problem-tag">Personal Care</span>
+                                <h3>Dry Skin & Hair Issues</h3>
+                                <p>Hard water reacts with soap to form insoluble salts that strip natural oils from skin and hair, causing dryness, dandruff and itchiness.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mt-3">
+                        <div class="problem-card text-center text-md-start shadow">
+                            <div class="problem-card-img">🧼</div>
+                            <div class="problem-card-body">
+                                <span class="problem-tag">Daily Use</span>
+                                <h3>Soap Doesn't Lather</h3>
+                                <p>Calcium and magnesium react with soap to form scum instead of foam. You end up using far more detergent, shampoo and soap to get the same clean.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUTION SECTION -->
+        <section class="solutions-section">
+            <div class="container">
+                <div class="solution-content text-center text-md-start">
+                    <span class="d-block text-uppercase text-white fw-bold letter-spacing-1">The Fix</span>
+                    <h2 class="fw-bold text-warning my-1 my-md-2">Why Choose a Water Softener?</h2>
+                    <p class="text-white">
+                        One installation solves all hard water problems — permanently and automatically.
+                    </p>
+                </div>
+                <div class="row align-items-start justify-content-center flex-wrap">
+                    <div class="col-lg-6 mt-3">
+                        <div class="solution-item">
+                            <div class="solution-icon">💎</div>
+                            <div>
+                                <h3>Removes Hardness (Ca & Mg)</h3>
+                                <p>Eliminates the root cause of all hard water problems through proven ion exchange technology. Water hardness reduced to near zero.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-3">
+                        <div class="solution-item">
+                            <div class="solution-icon">⚡</div>
+                            <div>
+                                <h3>Increases Appliance Life</h3>
+                                <p>Protect your geyser, washing machine and dishwasher from scale — extending appliance lifespan by 30–50% and reducing electricity bills.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-3">
+                        <div class="solution-item">
+                            <div class="solution-icon">🛁</div>
+                            <div>
+                                <h3>Better Bathing Experience</h3>
+                                <p>Soft water leaves skin silky, hair shiny and scalp healthy. Experience the difference from the very first shower.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-3">
+                        <div class="solution-item">
+                            <div class="solution-icon">🪙</div>
+                            <div>
+                                <h3>Saves Detergent & Soap</h3>
+                                <p>Soft water lathers easily and rinses completely — you'll use up to 50% less detergent, shampoo and soap every month.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-3">
+                        <div class="solution-item">
+                            <div class="solution-icon">🏠</div>
+                            <div>
+                                <h3>No More White Stains</h3>
+                                <p>Say goodbye to unsightly white scale deposits on taps, tiles, shower heads and bathroom fixtures.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-3">
+                        <div class="solution-item">
+                            <div class="solution-icon">🔧</div>
+                            <div>
+                                <h3>Minimal Maintenance</h3>
+                                <p>Auto-regeneration means almost zero manual intervention. Simply refill the salt brine tank every few weeks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPARISON SECTION -->
+        <section class="comparison-section py-5">
+            <div class="container">
+                <div class="comparison-content text-center text-md-start">
+                    <span class="d-block text-uppercase text-success  fw-bold letter-spacing-1">See the Difference</span>
+                    <h2 class="fw-bold text-success my-1 my-md-2">Hard Water vs. Soft Water</h2>
+                    <p>
+                        The difference is visible, touchable and measurable in your home.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-2">
+                        <div class="compare-card bad shadow">
+                            <div class="compare-header">
+                                <span>❌</span> Hard Water Problems
+                            </div>
+                            <div class="compare-body">
+                                <div class="compare-row"><span class="dot"></span><span>White chalky deposits on taps & tiles</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Scale clogs pipes and reduces pressure</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Geyser & washing machine break down faster</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Dry, itchy skin and dull, brittle hair</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Soap won't lather — you use 2× more</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Clothes turn dull and feel rough after washing</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Higher electricity bills from scaled heating elements</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <div class="compare-card good shadow">
+                            <div class="compare-header">
+                                <span>✅</span> Soft Water Benefits
+                            </div>
+                            <div class="compare-body">
+                                <div class="compare-row"><span class="dot"></span><span>Spotless, streak-free taps and glass surfaces</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Full water pressure — clean pipes always</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Appliances last 30–50% longer</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Soft, glowing skin and strong, shiny hair</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Rich lather — use up to 50% less soap</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Clothes stay bright, soft and last longer</span></div>
+                                <div class="compare-row"><span class="dot"></span><span>Better energy efficiency — lower bills</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/include.js"></script>
+    <script src="/assets/js/product.js"></script>
+    <script src="/assets/js/commen.js"></script>
+</body>
+</html>
