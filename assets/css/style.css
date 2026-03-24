@@ -341,7 +341,8 @@ a:focus-visible {
 
 .dropdown-item.active,
 .dropdown-item:active {
-    background: #28a745 !important;
+    background: #7cb79c2b !important;
+    color: #28a745 !important;
 }
 
 @media (min-width: 992px) {
