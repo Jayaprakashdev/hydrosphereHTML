@@ -403,6 +403,84 @@
         ]
     },
     {
+        "Salt Tablets": [
+            {
+                "title": "Water Softener Salt Tablets (10 KG)",
+                "image": "/assets/images/products/softener/salt-tablet-10.png",
+                "mrp": 400,
+                "offerPrice": 300,
+                "emi": false,
+                "freeInstallation": true,
+                "gstIncluded": true,
+                "videoUrl": "",
+                "description": "High-quality refined non-iodised salt tablets designed for efficient water softener regeneration. These tablets effectively remove hardness-causing minerals like calcium and magnesium, ensuring better water quality, reduced scaling, and improved appliance lifespan.",
+                "benefits": [
+                    "Effectively removes hardness minerals like calcium and magnesium",
+                    "Prevents scale build-up in pipes, heaters, and appliances",
+                    "Improves performance and life of water softeners",
+                    "Uniform tablet size ensures accurate dosage control",
+                    "Quick dissolving formula for efficient regeneration",
+                    "Reduces blockages and maintenance issues",
+                    "Food-grade quality with 99.5% high purity salt",
+                    "Cost-effective and long-lasting solution",
+                    "Suitable for all types of water softeners",
+                    "Eco-friendly and additive-free composition"
+                ],
+                "specifications": [
+                    "Product Name: Water Softener Salt Tablets",
+                    "Brand: WOW Salt Tablets",
+                    "Weight: 10 Kilograms",
+                    "Form: Tablet",
+                    "Salt Purity: 99.5% Sodium Chloride",
+                    "Type: Refined Non-Iodised Sea Salt",
+                    "Dissolution: Fast Dissolving",
+                    "Usage: Water Softener Regeneration",
+                    "Compatibility: Suitable for all water softener systems",
+                    "Storage: Long shelf life, moisture-resistant packaging",
+                    "Application: Home, Office, Commercial Use",
+                    "Country of Origin: India"
+                ]
+            },
+            {
+                "title": "Water Softener Salt Tablets (25 KG)",
+                "image": "/assets/images/products/softener/salt-tablet-25.png",
+                "mrp": 800,
+                "offerPrice": 625,
+                "emi": false,
+                "freeInstallation": true,
+                "gstIncluded": true,
+                "videoUrl": "",
+                "description": "High-quality refined non-iodised salt tablets designed for efficient water softener regeneration. These tablets effectively remove hardness-causing minerals like calcium and magnesium, ensuring better water quality, reduced scaling, and improved appliance lifespan.",
+                "benefits": [
+                    "Effectively removes hardness minerals like calcium and magnesium",
+                    "Prevents scale build-up in pipes, heaters, and appliances",
+                    "Improves performance and life of water softeners",
+                    "Uniform tablet size ensures accurate dosage control",
+                    "Quick dissolving formula for efficient regeneration",
+                    "Reduces blockages and maintenance issues",
+                    "Food-grade quality with 99.5% high purity salt",
+                    "Cost-effective and long-lasting solution",
+                    "Suitable for all types of water softeners",
+                    "Eco-friendly and additive-free composition"
+                ],
+                "specifications": [
+                    "Product Name: Water Softener Salt Tablets",
+                    "Brand: WOW Salt Tablets",
+                    "Weight: 25 Kilograms",
+                    "Form: Tablet",
+                    "Salt Purity: 99.5% Sodium Chloride",
+                    "Type: Refined Non-Iodised Sea Salt",
+                    "Dissolution: Fast Dissolving",
+                    "Usage: Water Softener Regeneration",
+                    "Compatibility: Suitable for all water softener systems",
+                    "Storage: Long shelf life, moisture-resistant packaging",
+                    "Application: Home, Office, Commercial Use",
+                    "Country of Origin: India"
+                ]
+            }
+        ]
+    },
+    {
         "Domestic RO System 12 LPH": [
             {
                 "title": "Generous HNC RO Water Dispenser (Hot, Normal, Cold)",
