@@ -1,0 +1,7 @@
+.error { color: red; font-size: 13px; }
+body {
+    background:#f5f7fa;
+}
+.card {
+    border-radius:12px;
+}

@@ -1,0 +1,1 @@
+document.querySelector('[name="enquiry_date"]').valueAsDate = new Date();
