@@ -6,18 +6,44 @@ $status = $_GET['status'] ?? '';
 $from = $_GET['from'] ?? '';
 $to = $_GET['to'] ?? '';
 
+$type = $_GET['type'] ?? '';
+$today = date('Y-m-d');
+
 $where = "WHERE 1";
 
+// Status filter
 if (!empty($status)) {
     $where .= " AND s.status='$status'";
 }
 
+// Engineer filter
 if (!empty($engineer)) {
     $where .= " AND s.assigned_to='$engineer'";
 }
 
+// Date range filter
 if (!empty($from) && !empty($to)) {
     $where .= " AND s.service_date BETWEEN '$from' AND '$to'";
+}
+
+// ❌ Exclude completed & dropped ALWAYS for followup view
+if (!empty($type)) {
+    $where .= " AND s.status NOT IN ('Completed','Drop')";
+}
+
+// 🔴 Overdue
+if ($type == 'overdue') {
+    $where .= " AND s.service_date < '$today'";
+}
+
+// 🟢 Today
+if ($type == 'today') {
+    $where .= " AND s.service_date = '$today'";
+}
+
+// 🔵 Upcoming
+if ($type == 'upcoming') {
+    $where .= " AND s.service_date > '$today'";
 }
 
 $sql = "
@@ -46,11 +72,19 @@ $result = $conn->query($sql);
 
 <h5>
 Services 
-<?php if (!empty($from) && !empty($to)): ?>
+
+<?php if ($type == 'overdue'): ?>
+    (Overdue)
+<?php elseif ($type == 'today'): ?>
+    (Today)
+<?php elseif ($type == 'upcoming'): ?>
+    (Upcoming)
+<?php elseif (!empty($from) && !empty($to)): ?>
     (<?= $from ?> to <?= $to ?>)
 <?php else: ?>
     (All Records)
 <?php endif; ?>
+
 </h5>
 
 <div class="row mb-2">

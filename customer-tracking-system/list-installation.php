@@ -6,6 +6,9 @@ $status = $_GET['status'] ?? '';
 $from = $_GET['from'] ?? '';
 $to = $_GET['to'] ?? '';
 
+$type = $_GET['type'] ?? '';
+$today = date('Y-m-d');
+
 $where = "WHERE 1";
 
 if (!empty($status)) {
@@ -18,6 +21,24 @@ if (!empty($engineer)) {
 
 if (!empty($from) && !empty($to)) {
     $where .= " AND i.installation_date BETWEEN '$from' AND '$to'";
+}
+
+// 🔴 Overdue
+if ($type == 'overdue') {
+    $where .= " AND i.installation_date < '$today'
+                AND i.status NOT IN ('Completed','Drop')";
+}
+
+// 🟢 Today
+if ($type == 'today') {
+    $where .= " AND i.installation_date = '$today'
+                AND i.status NOT IN ('Completed','Drop')";
+}
+
+// 🔵 Upcoming
+if ($type == 'upcoming') {
+    $where .= " AND i.installation_date > '$today'
+                AND i.status NOT IN ('Completed','Drop')";
 }
 
 $sql = "
@@ -85,7 +106,17 @@ Installations
 <?php if ($result->num_rows > 0): ?>
     <?php while($row = $result->fetch_assoc()): ?>
         <tr>
-            <td><?= $row['installation_date'] ?></td>
+            <td>
+                <?php
+                if ($row['installation_date'] < $today) {
+                    echo "<span class='text-danger fw-bold'>{$row['installation_date']}</span>";
+                } elseif ($row['installation_date'] == $today) {
+                    echo "<span class='text-success fw-bold'>{$row['installation_date']}</span>";
+                } else {
+                    echo $row['installation_date'];
+                }
+                ?>
+            </td>
             <td><?= $row['product'] ?></td>
             <td><?= $row['status'] ?></td>
             <td>

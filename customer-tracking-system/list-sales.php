@@ -1,29 +1,72 @@
 <?php
 include 'config/db.php';
 
+// Filters
 $engineer = $_GET['engineer'] ?? '';
-$status = $_GET['status'] ?? '';
-$from = $_GET['from'] ?? '';
-$to = $_GET['to'] ?? '';
+$status   = $_GET['status'] ?? '';
+$from     = $_GET['from'] ?? '';
+$to       = $_GET['to'] ?? '';
+$type     = $_GET['type'] ?? '';
+
+$today = date('Y-m-d');
 
 $where = "WHERE 1";
 
+// Status
 if (!empty($status)) {
     $where .= " AND s.status='$status'";
 }
 
+// Engineer
 if (!empty($engineer)) {
     $where .= " AND s.assigned_to='$engineer'";
 }
 
+// Date filter
 if (!empty($from) && !empty($to)) {
     $where .= " AND s.sale_date BETWEEN '$from' AND '$to'";
 }
 
+// ✅ IMPORTANT: Only pending payments
+// $where .= " AND s.pending_amount > 0";
+
+// ✅ Followup filters
+if ($type == 'overdue') {
+    $where .= " AND s.sale_date < '$today' AND s.status NOT IN ('Completed','Drop')";
+}
+
+if ($type == 'today') {
+    $where .= " AND s.sale_date = '$today' AND s.status NOT IN ('Completed','Drop')";
+}
+
+if ($type == 'upcoming') {
+    $where .= " AND s.sale_date > '$today' AND s.status NOT IN ('Completed','Drop')";
+}
+
+// 💰 Payment Followup Filters
+if ($type == 'overdue_payment') {
+    $where .= " AND s.pending_amount > 0 
+                AND s.sale_date < '$today' 
+                AND s.status NOT IN ('Completed','Drop')";
+}
+
+if ($type == 'today_payment') {
+    $where .= " AND s.pending_amount > 0 
+                AND s.sale_date = '$today' 
+                AND s.status NOT IN ('Completed','Drop')";
+}
+
+if ($type == 'upcoming_payment') {
+    $where .= " AND s.pending_amount > 0 
+                AND s.sale_date > '$today' 
+                AND s.status NOT IN ('Completed','Drop')";
+}
+
+// Query
 $sql = "
 SELECT s.*, se.name as engineer_name
 FROM sales s
-JOIN service_engineers se ON s.assigned_to = se.id
+LEFT JOIN service_engineers se ON s.assigned_to = se.id
 $where
 ORDER BY s.id DESC
 ";
@@ -86,16 +129,39 @@ Sales
 <?php if ($result->num_rows > 0): ?>
     <?php while($row = $result->fetch_assoc()): ?>
         <tr>
-            <td><?= $row['sale_date'] ?></td>
+            <td>
+            <?php
+            if ($row['sale_date'] < $today) {
+                echo "<span class='text-danger fw-bold'>{$row['sale_date']}</span>";
+            } elseif ($row['sale_date'] == $today) {
+                echo "<span class='text-success fw-bold'>{$row['sale_date']}</span>";
+            } else {
+                echo $row['sale_date'];
+            }
+            ?>
+            </td>
             <td><?= $row['product'] ?></td>
             <td><?= $row['total_amount'] ?></td>
             <td><?= $row['advance_amount'] ?></td>
-            <td><?= $row['pending_amount'] ?></td>
+            <td>
+                <?php if ($row['pending_amount'] > 0): ?>
+                    <span class="text-danger fw-bold">₹<?= $row['pending_amount'] ?></span>
+                <?php else: ?>
+                    <span class="text-success">Paid</span>
+                <?php endif; ?>
+            </td>
             <td><?= $row['status'] ?></td>
             <td>
                 <a href="customer-view.php?id=<?= $row['customer_id'] ?>" 
                    class="btn btn-sm btn-primary">
                    View
+                </a>
+                <a href="https://wa.me/91<?= $row['customer_mobile'] ?>?text=<?= urlencode(
+                    "Hello, your pending payment is ₹".$row['pending_amount'].". Please make payment."
+                    ) ?>" 
+                    target="_blank" 
+                    class="btn btn-sm btn-success">
+                    💬
                 </a>
             </td>
         </tr>
