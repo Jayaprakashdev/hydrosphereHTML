@@ -239,6 +239,40 @@ while ($row = $resultComplaint->fetch_assoc()) {
     $complaintEngineerData[] = $row;
 }
 
+$today = date('Y-m-d');
+
+// Base condition (exclude Completed & Drop)
+$followWhere = (!empty($from) && !empty($to)) 
+    ? "AND enquiry_date BETWEEN '$from' AND '$to'" 
+    : "";
+
+// 🔴 Overdue (past followup)
+$overdue = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM enquiries 
+    WHERE followup_date < '$today'
+    AND status NOT IN ('Completed','Drop')
+    $followWhere
+")->fetch_assoc()['total'];
+
+// 🟢 Today Followup
+$todayEnq = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM enquiries 
+    WHERE followup_date = '$today'
+    AND status NOT IN ('Completed','Drop')
+    $followWhere
+")->fetch_assoc()['total'];
+
+// 🔵 Upcoming
+$upcoming = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM enquiries 
+    WHERE followup_date > '$today'
+    AND status NOT IN ('Completed','Drop')
+    $followWhere
+")->fetch_assoc()['total'];
+
 // Chart Data (Last 7 Days)
 $labels = [];
 $salesData = [];
@@ -364,6 +398,419 @@ for ($i = 6; $i >= 0; $i--) {
         </div>
 
     </div>
+
+    <div class="card p-3 mb-4">
+    <h5>Followup Enquiries</h5>
+
+    <div class="row text-center">
+
+        <!-- 🔴 Overdue -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-enquiry.php?type=overdue&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-danger text-white p-2">
+                    <h6>Overdue</h6>
+                    <h4><?= $overdue ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- 🟢 Today -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-enquiry.php?type=today&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-success text-white p-2">
+                    <h6>Today</h6>
+                    <h4><?= $todayEnq ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- 🔵 Upcoming -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-enquiry.php?type=upcoming&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-primary text-white p-2">
+                    <h6>Upcoming</h6>
+                    <h4><?= $upcoming ?></h4>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+<?php
+$today = date('Y-m-d');
+
+$whereSalesFollow = (!empty($from) && !empty($to)) 
+    ? "AND sale_date BETWEEN '$from' AND '$to'" 
+    : "";
+
+// 🔴 Overdue Payment
+$sales_overdue = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM sales 
+    WHERE sale_date < '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereSalesFollow
+")->fetch_assoc()['total'];
+
+// 🟢 Today
+$sales_today = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM sales 
+    WHERE sale_date = '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereSalesFollow
+")->fetch_assoc()['total'];
+
+// 🔵 Upcoming
+$sales_upcoming = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM sales 
+    WHERE sale_date > '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereSalesFollow
+")->fetch_assoc()['total'];
+
+$today = date('Y-m-d');
+
+$whereSalesFollow = (!empty($from) && !empty($to)) 
+    ? "AND sale_date BETWEEN '$from' AND '$to'" 
+    : "";
+
+// 🔴 Overdue Payments
+$sales_overdue = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM sales 
+    WHERE pending_amount > 0
+    AND sale_date < '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereSalesFollow
+")->fetch_assoc()['total'];
+
+// 🟢 Today Payments
+$sales_today = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM sales 
+    WHERE pending_amount > 0
+    AND sale_date = '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereSalesFollow
+")->fetch_assoc()['total'];
+
+// 🔵 Upcoming Payments
+$sales_upcoming = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM sales 
+    WHERE pending_amount > 0
+    AND sale_date > '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereSalesFollow
+")->fetch_assoc()['total'];
+
+// 💰 Total Pending Amount
+$total_pending = $conn->query("
+    SELECT SUM(pending_amount) as total 
+    FROM sales 
+    WHERE pending_amount > 0
+")->fetch_assoc()['total'] ?? 0;
+
+$today = date('Y-m-d');
+
+$whereInstallFollow = (!empty($from) && !empty($to)) 
+    ? "AND installation_date BETWEEN '$from' AND '$to'" 
+    : "";
+
+// 🔴 Overdue Installations
+$inst_overdue = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM installations 
+    WHERE installation_date < '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereInstallFollow
+")->fetch_assoc()['total'];
+
+// 🟢 Today Installations
+$inst_today = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM installations 
+    WHERE installation_date = '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereInstallFollow
+")->fetch_assoc()['total'];
+
+// 🔵 Upcoming Installations
+$inst_upcoming = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM installations 
+    WHERE installation_date > '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereInstallFollow
+")->fetch_assoc()['total'];
+
+$today = date('Y-m-d');
+
+$whereServiceFollow = (!empty($from) && !empty($to)) 
+    ? "AND service_date BETWEEN '$from' AND '$to'" 
+    : "";
+
+// 🔴 Overdue Services
+$service_overdue = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM services 
+    WHERE service_date < '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereServiceFollow
+")->fetch_assoc()['total'];
+
+// 🟢 Today Services
+$service_today = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM services 
+    WHERE service_date = '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereServiceFollow
+")->fetch_assoc()['total'];
+
+// 🔵 Upcoming Services
+$service_upcoming = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM services 
+    WHERE service_date > '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereServiceFollow
+")->fetch_assoc()['total'];
+
+// ================== COMPLAINT FOLLOW-UP ==================
+$today = date('Y-m-d');
+
+$whereComplaintFollow = (!empty($from) && !empty($to)) 
+    ? "AND complaint_date BETWEEN '$from' AND '$to'" 
+    : "";
+
+// 🔴 Overdue Complaints
+$complaint_overdue = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM complaints 
+    WHERE complaint_date < '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereComplaintFollow
+")->fetch_assoc()['total'];
+
+// 🟢 Today Complaints
+$complaint_today = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM complaints 
+    WHERE complaint_date = '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereComplaintFollow
+")->fetch_assoc()['total'];
+
+// 🔵 Upcoming Complaints
+$complaint_upcoming = $conn->query("
+    SELECT COUNT(*) as total 
+    FROM complaints 
+    WHERE complaint_date > '$today'
+    AND status NOT IN ('Completed','Drop')
+    $whereComplaintFollow
+")->fetch_assoc()['total'];
+?>
+
+<div class="card p-3 mb-4">
+    <h5>Sales Payment Followup</h5>
+
+    <div class="row text-center">
+
+        <!-- Overdue -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-sales.php?type=overdue&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-danger text-white p-2">
+                    <h6>Overdue</h6>
+                    <h4><?= $sales_overdue ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Today -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-sales.php?type=today&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-success text-white p-2">
+                    <h6>Today</h6>
+                    <h4><?= $sales_today ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Upcoming -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-sales.php?type=upcoming&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-primary text-white p-2">
+                    <h6>Upcoming</h6>
+                    <h4><?= $sales_upcoming ?></h4>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="card p-3 mb-4">
+    <h5>💰 Payment Follow-up</h5>
+
+    <div class="row text-center">
+
+        <!-- Total Pending -->
+        <div class="col-6 col-md-3 mb-2">
+            <div class="card bg-dark text-white p-2">
+                <h6>Total Pending</h6>
+                <h4>₹<?= number_format($total_pending) ?></h4>
+            </div>
+        </div>
+
+        <!-- Overdue -->
+        <div class="col-6 col-md-3 mb-2">
+            <a href="list-sales.php?type=overdue_payment&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-danger text-white p-2">
+                    <h6>Overdue</h6>
+                    <h4><?= $sales_overdue ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Today -->
+        <div class="col-6 col-md-3 mb-2">
+            <a href="list-sales.php?type=today_payment&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-success text-white p-2">
+                    <h6>Today</h6>
+                    <h4><?= $sales_today ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Upcoming -->
+        <div class="col-6 col-md-3 mb-2">
+            <a href="list-sales.php?type=upcoming_payment&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-primary text-white p-2">
+                    <h6>Upcoming</h6>
+                    <h4><?= $sales_upcoming ?></h4>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="card p-3 mb-4">
+    <h5>🛠 Installation Follow-up</h5>
+
+    <div class="row text-center">
+
+        <!-- Overdue -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-installation.php?type=overdue&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-danger text-white p-2">
+                    <h6>Overdue</h6>
+                    <h4><?= $inst_overdue ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Today -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-installation.php?type=today&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-success text-white p-2">
+                    <h6>Today</h6>
+                    <h4><?= $inst_today ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- Upcoming -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-installation.php?type=upcoming&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-primary text-white p-2">
+                    <h6>Upcoming</h6>
+                    <h4><?= $inst_upcoming ?></h4>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="card p-3 mb-4">
+    <h5>Service Follow-up</h5>
+
+    <div class="row text-center">
+
+        <!-- 🔴 Overdue -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-service.php?type=overdue&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-danger text-white p-2">
+                    <h6>Overdue</h6>
+                    <h4><?= $service_overdue ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- 🟢 Today -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-service.php?type=today&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-success text-white p-2">
+                    <h6>Today</h6>
+                    <h4><?= $service_today ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- 🔵 Upcoming -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-service.php?type=upcoming&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-primary text-white p-2">
+                    <h6>Upcoming</h6>
+                    <h4><?= $service_upcoming ?></h4>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="card p-3 mb-4">
+    <h5>Complaint Follow-up</h5>
+
+    <div class="row text-center">
+
+        <!-- 🔴 Overdue -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-complaint.php?type=overdue&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-danger text-white p-2">
+                    <h6>Overdue</h6>
+                    <h4><?= $complaint_overdue ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- 🟢 Today -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-complaint.php?type=today&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-success text-white p-2">
+                    <h6>Today</h6>
+                    <h4><?= $complaint_today ?></h4>
+                </div>
+            </a>
+        </div>
+
+        <!-- 🔵 Upcoming -->
+        <div class="col-6 col-md-4 mb-2">
+            <a href="list-complaint.php?type=upcoming&from=<?= $from ?>&to=<?= $to ?>" class="text-decoration-none">
+                <div class="card bg-primary text-white p-2">
+                    <h6>Upcoming</h6>
+                    <h4><?= $complaint_upcoming ?></h4>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>
 
     <div class="card p-3 mb-4">
     <h5>Enquiry Status</h5>
