@@ -1,21 +1,29 @@
 <?php
 include 'config/db.php';
 
-// ✅ Optimized query with JOIN (latest installation product)
+// ✅ Optimized Query (latest records)
 $sql = "
-SELECT 
-    c.*, 
-    i.product AS installation_product
+SELECT c.*,
+       i.product AS installation_product,
+       e.product AS enquiry_product,
+       s.product AS service_product
 
 FROM customers c
 
-LEFT JOIN (
-    SELECT customer_id, product
-    FROM installations
-    WHERE id IN (
-        SELECT MAX(id) FROM installations GROUP BY customer_id
+LEFT JOIN installations i 
+    ON i.id = (
+        SELECT MAX(id) FROM installations WHERE customer_id = c.id
     )
-) i ON c.id = i.customer_id
+
+LEFT JOIN enquiries e 
+    ON e.id = (
+        SELECT MAX(id) FROM enquiries WHERE customer_id = c.id
+    )
+
+LEFT JOIN services s 
+    ON s.id = (
+        SELECT MAX(id) FROM services WHERE customer_id = c.id
+    )
 
 ORDER BY c.id DESC
 ";
@@ -85,13 +93,15 @@ $result = $conn->query($sql);
                         <th>Mobile</th>
                         <th>Area</th>
                         <th>Pincode</th>
-                        <th>Product</th>
+                        <th>Enquiry Product</th>
+                        <th>Installation Product</th>
+                        <th>Service Product</th>
                         <th>Action</th>
                     </tr>
                 </thead>
 
                 <tbody>
-                    <?php if($result->num_rows > 0): ?>
+                    <?php if($result && $result->num_rows > 0): ?>
                         <?php while($row = $result->fetch_assoc()): ?>
                         <tr>
                             <td><?= $row['id'] ?></td>
@@ -99,19 +109,18 @@ $result = $conn->query($sql);
                             <td><?= $row['mobile'] ?></td>
                             <td><?= $row['area'] ?></td>
                             <td><?= $row['pincode'] ?></td>
+                            <td><?= $row['enquiry_product'] ?? '-' ?></td>
                             <td><?= $row['installation_product'] ?? '-' ?></td>
+                            <td><?= $row['service_product'] ?? '-' ?></td>
                             <td>
                                 <a href="customer-view.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-primary">View</a>
-
-                                <a href="edit-customer.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning">
-                                    Edit
-                                </a>
+                                <a href="edit-customer.php?id=<?= $row['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
                             </td>
                         </tr>
                         <?php endwhile; ?>
                     <?php else: ?>
                         <tr>
-                            <td colspan="7" class="text-center">No customers found</td>
+                            <td colspan="9" class="text-center">No customers found</td>
                         </tr>
                     <?php endif; ?>
                 </tbody>
@@ -125,7 +134,6 @@ $result = $conn->query($sql);
 
 <!-- JS -->
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
@@ -138,7 +146,7 @@ $(document).ready(function() {
         responsive: true
     });
 
-    // Custom Filters
+    // ✅ Column Filters
     $('#nameFilter').on('keyup', function() {
         table.column(1).search(this.value).draw();
     });
@@ -154,8 +162,27 @@ $(document).ready(function() {
     $('#pincodeFilter').on('keyup', function() {
         table.column(4).search(this.value).draw();
     });
-    $('#productFilter').on('change', function() {
-        table.column(5).search(this.value).draw();
+
+    // ✅ Multi-column Product Filter
+    $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+
+        let filter = $('#productFilter').val().toLowerCase();
+
+        let enquiry = (data[5] || '').toLowerCase();
+        let install = (data[6] || '').toLowerCase();
+        let service = (data[7] || '').toLowerCase();
+
+        if (!filter) return true;
+
+        return (
+            enquiry.includes(filter) ||
+            install.includes(filter) ||
+            service.includes(filter)
+        );
+    });
+
+    $('#productFilter').on('change', function () {
+        table.draw();
     });
 
 });
