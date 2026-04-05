@@ -93,35 +93,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // =========================
         // 🔥 AUTO NEXT SERVICE (120 days)
         // =========================
-        if ($status == "completed") {
+        // if ($status == "completed") {
 
-            $next_date = date('Y-m-d', strtotime($service_date . ' +120 days'));
+        //     $next_date = date('Y-m-d', strtotime($service_date . ' +120 days'));
 
-            // ✅ Prevent duplicate next service
-            $check = $conn->prepare("
-                SELECT id FROM services 
-                WHERE customer_id=? AND service_date=? AND status='open'
-            ");
-            $check->bind_param("is", $customer_id, $next_date);
-            $check->execute();
+        //     // ✅ Prevent duplicate next service
+        //     $check = $conn->prepare("
+        //         SELECT id FROM services 
+        //         WHERE customer_id=? AND service_date=? AND status='open'
+        //     ");
+        //     $check->bind_param("is", $customer_id, $next_date);
+        //     $check->execute();
 
-            if ($check->get_result()->num_rows == 0) {
+        //     if ($check->get_result()->num_rows == 0) {
 
-                $stmt2 = $conn->prepare("INSERT INTO services 
-                (customer_id, installation_date, service_date, product, assigned_to, status)
-                VALUES (?, ?, ?, ?, ?, 'open')");
+        //         $stmt2 = $conn->prepare("INSERT INTO services 
+        //         (customer_id, installation_date, service_date, product, assigned_to, status)
+        //         VALUES (?, ?, ?, ?, ?, 'open')");
 
-                $stmt2->bind_param("isssi",
-                    $customer_id,
-                    $installation_date,
-                    $next_date,
-                    $product,
-                    $assigned_to
-                );
+        //         $stmt2->bind_param("isssi",
+        //             $customer_id,
+        //             $installation_date,
+        //             $next_date,
+        //             $product,
+        //             $assigned_to
+        //         );
 
-                $stmt2->execute();
-            }
-        }
+        //         $stmt2->execute();
+        //     }
+        // }
     }
 
     // ✅ Redirect back
