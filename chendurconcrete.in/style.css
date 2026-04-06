@@ -247,6 +247,70 @@ a:hover {
 .ownavigation .navbar-nav li a:focus {
     background-color: transparent;
 }
+.floating-buttons {
+    position: fixed;
+    right: 15px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999;
+}
+
+/* Button Style */
+.floating-buttons a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+/* Icons */
+.floating-buttons i {
+    font-size: 18px;
+}
+
+/* Call Button */
+.call-btn {
+    background: #007bff;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    background: #25D366;
+}
+
+/* Hover */
+.floating-buttons a:hover {
+    transform: translateY(-2px);
+}
+
+/* 📱 Mobile View */
+@media (max-width: 600px) {
+    .floating-buttons {
+        right: 10px;
+        bottom: 15px;
+    }
+
+    .floating-buttons a {
+        padding: 10px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        justify-content: center;
+    }
+
+    .floating-buttons span {
+        display: none; /* hide text on mobile */
+    }
+}
 /* - Nav Dropdown */
 /* ## Responsive ************************************************************************************** */
 /*----------------------------------------------------
