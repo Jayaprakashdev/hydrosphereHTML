@@ -135,10 +135,10 @@ $eng = $conn->query("SELECT id, name FROM service_engineers ORDER BY name ASC");
                 </div>
 
                 <!-- Note -->
-                <!-- <div class="mb-2">
+                <div class="mb-2">
                     <label>Note</label>
                     <textarea name="note" class="form-control"><?= $data['note'] ?? '' ?></textarea>
-                </div> -->
+                </div>
 
                 <!-- Status -->
                 <div class="mb-3">
