@@ -43,7 +43,7 @@ $customer_id = $data['customer_id'] ?? ($_GET['customer_id'] ?? '');
 
                 <!-- Installation Date -->
                 <div class="mb-2">
-                    <label>Installation Date *</label>
+                    <label>Installation or Last Service or last Complaint Date *</label>
                     <input type="date" name="installation_date" id="installation_date"
                            value="<?= $data['installation_date'] ?? '' ?>"
                            class="form-control" required>
