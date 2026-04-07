@@ -71,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         ");
 
-        $stmt->bind_param("issssssdsis",
+        $stmt->bind_param("issssssdiss",
             $customer_id,
             $enquiry_date,
             $followup_date,
