@@ -100,6 +100,7 @@ Enquiries
 <th>Date</th>
 <th>Follow Up Date</th>
 <th>Product</th>
+<th>Engineer</th>
 <th>Status</th>
 <th>Amount</th>
 <th>Action</th>
@@ -127,6 +128,7 @@ Enquiries
             </td>
 
             <td><?= $row['product'] ?></td>
+            <td><?= $row['engineer_name'] ?></td>
             <td><?= $row['status'] ?></td>
             <td><?= $row['amount'] ?? '-' ?></td>
 

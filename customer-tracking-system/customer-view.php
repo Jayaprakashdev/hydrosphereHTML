@@ -127,9 +127,11 @@ $row = $result->fetch_assoc();
                                     <a href="https://wa.me/91<?= $e['engineer_mobile'] ?>?text=<?= urlencode(
                                         "Hello " . $e['engineer_name'] . ",\n\n" .
                                         "You have a new Enquiry task assigned.\n\n" .
+                                        "Date: " . $e['enquiry_date'] . "\n" .
                                         "Customer Name: " . $row['name'] . "\n" .
                                         "Mobile: " . $row['mobile'] . "\n" .
                                         "Product: " . $e['product'] . "\n" .
+                                        "Work and Time: " . $e['description'] . "\n" .
                                         "Stage: " . $e['status'] . "\n\n" .
                                         "Please take action accordingly.\n\n- Hydrosphere CRM"
                                         ) ?>" 
@@ -183,9 +185,11 @@ $row = $result->fetch_assoc();
                                     <a href="https://wa.me/91<?= $s['engineer_mobile'] ?>?text=<?= urlencode(
                                         "Hello " . $s['engineer_name'] . ",\n\n" .
                                         "You have a new Sale task assigned.\n\n" .
+                                        "Date: " . $s['sale_date'] . "\n" .
                                         "Customer Name: " . $row['name'] . "\n" .
                                         "Mobile: " . $row['mobile'] . "\n" .
                                         "Product: " . $s['product'] . "\n" .
+                                        "Work and Time: " . $s['description'] . "\n" .
                                         "Stage: " . $s['status'] . "\n\n" .
                                         "Please take action accordingly.\n\n- Hydrosphere CRM"
                                         ) ?>" 
@@ -235,9 +239,11 @@ $row = $result->fetch_assoc();
                                     <a href="https://wa.me/91<?= $i['engineer_mobile'] ?>?text=<?= urlencode(
                                         "Hello " . $i['engineer_name'] . ",\n\n" .
                                         "You have a new Installation task assigned.\n\n" .
+                                        "Date: " . $i['installation_date'] . "\n" .
                                         "Customer Name: " . $row['name'] . "\n" .
                                         "Mobile: " . $row['mobile'] . "\n" .
                                         "Product: " . $i['product'] . "\n" .
+                                        "Work and Time: " . $i['description'] . "\n" .
                                         "Stage: " . $i['status'] . "\n\n" .
                                         "Please take action accordingly.\n\n- Hydrosphere CRM"
                                         ) ?>" 
@@ -291,9 +297,11 @@ $row = $result->fetch_assoc();
                                     <a href="https://wa.me/91<?= $s['engineer_mobile'] ?>?text=<?= urlencode(
                                         "Hello " . $s['engineer_name'] . ",\n\n" .
                                         "You have a new Service task assigned.\n\n" .
+                                        "Date: " . $s['service_date'] . "\n" .
                                         "Customer Name: " . $row['name'] . "\n" .
                                         "Mobile: " . $row['mobile'] . "\n" .
                                         "Product: " . $s['product'] . "\n" .
+                                        "Work and Time: " . $s['description'] . "\n" .
                                         "Stage: " . $s['status'] . "\n\n" .
                                         "Please take action accordingly.\n\n- Hydrosphere CRM"
                                         ) ?>" 
@@ -365,9 +373,11 @@ $row = $result->fetch_assoc();
                     <a href="https://wa.me/91<?= $c['engineer_mobile'] ?>?text=<?= urlencode(
                         "Hello " . $c['engineer_name'] . ",\n\n" .
                         "You have a new Complaint task assigned.\n\n" .
+                        "Date: " . $c['complaint_date'] . "\n" .
                         "Customer Name: " . $row['name'] . "\n" .
                         "Mobile: " . $row['mobile'] . "\n" .
                         "Product: " . $c['product'] . "\n" .
+                        "Work and Time: " . $c['description'] . "\n" .
                         "Stage: " . $c['status'] . "\n\n" .
                         "Please take action accordingly.\n\n- Hydrosphere CRM"
                         ) ?>" 

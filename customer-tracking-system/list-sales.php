@@ -120,6 +120,7 @@ Sales
 <th>Total</th>
 <th>Advance</th>
 <th>Pending</th>
+<th>Engineer</th>
 <th>Status</th>
 <th>Action</th>
 </tr>
@@ -150,6 +151,7 @@ Sales
                     <span class="text-success">Paid</span>
                 <?php endif; ?>
             </td>
+            <td><?= $row['engineer_name'] ?></td>
             <td><?= $row['status'] ?></td>
             <td>
                 <a href="customer-view.php?id=<?= $row['customer_id'] ?>" 

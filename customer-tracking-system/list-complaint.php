@@ -124,6 +124,7 @@ Complaints
 <tr>
 <th>Date</th>
 <th>Product</th>
+<th>Engineer</th>
 <th>Status</th>
 <th>Action</th>
 </tr>
@@ -135,6 +136,7 @@ Complaints
         <tr>
             <td><?= $row['complaint_date'] ?></td>
             <td><?= $row['product'] ?></td>
+            <td><?= $row['engineer_name'] ?></td>
             <td><?= $row['status'] ?></td>
             <td>
                 <a href="customer-view.php?id=<?= $row['customer_id'] ?>" 
