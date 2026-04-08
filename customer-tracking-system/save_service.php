@@ -6,7 +6,7 @@ include 'config/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    // ✅ Get Data (safe fallback)
+    // ✅ Get Data
     $id               = $_POST['id'] ?? '';
     $customer_id      = $_POST['customer_id'] ?? '';
 
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // =========================
     // ✅ UPDATE (EDIT)
     // =========================
-    if ($id) {
+    if (!empty($id)) {
 
         $stmt = $conn->prepare("UPDATE services SET
             installation_date=?,
@@ -45,6 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             note=?,
             status=?
             WHERE id=?");
+
+        if (!$stmt) {
+            die("Prepare Error: " . $conn->error);
+        }
 
         $stmt->bind_param("ssssdddissi",
             $installation_date,
@@ -60,7 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $id
         );
 
-        $stmt->execute();
+        if (!$stmt->execute()) {
+            die("Update Error: " . $stmt->error);
+        }
     }
 
     // =========================
@@ -73,6 +79,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
          total_amount, advance_amount, pending_amount,
          assigned_to, note, status)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+        if (!$stmt) {
+            die("Prepare Error: " . $conn->error);
+        }
 
         $stmt->bind_param("issssdddiss",
             $customer_id,
@@ -88,43 +98,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $status
         );
 
-        $stmt->execute();
-
-        // =========================
-        // 🔥 AUTO NEXT SERVICE (120 days)
-        // =========================
-        // if ($status == "completed") {
-
-        //     $next_date = date('Y-m-d', strtotime($service_date . ' +120 days'));
-
-        //     // ✅ Prevent duplicate next service
-        //     $check = $conn->prepare("
-        //         SELECT id FROM services 
-        //         WHERE customer_id=? AND service_date=? AND status='open'
-        //     ");
-        //     $check->bind_param("is", $customer_id, $next_date);
-        //     $check->execute();
-
-        //     if ($check->get_result()->num_rows == 0) {
-
-        //         $stmt2 = $conn->prepare("INSERT INTO services 
-        //         (customer_id, installation_date, service_date, product, assigned_to, status)
-        //         VALUES (?, ?, ?, ?, ?, 'open')");
-
-        //         $stmt2->bind_param("isssi",
-        //             $customer_id,
-        //             $installation_date,
-        //             $next_date,
-        //             $product,
-        //             $assigned_to
-        //         );
-
-        //         $stmt2->execute();
-        //     }
-        // }
+        if (!$stmt->execute()) {
+            die("Insert Error: " . $stmt->error);
+        }
     }
 
-    // ✅ Redirect back
+    // =========================
+    // 🔥 AUTO NEXT SERVICE (120 days)
+    // =========================
+    if (!empty($service_date) && trim(strtolower($status)) === "completed") {
+
+        $next_date = date('Y-m-d', strtotime($service_date . ' +120 days'));
+
+        // ✅ Prevent duplicate
+        $check = $conn->prepare("
+            SELECT id FROM services 
+            WHERE customer_id=? AND service_date=? 
+        ");
+        $check->bind_param("is", $customer_id, $next_date);
+        $check->execute();
+
+        if ($check->get_result()->num_rows == 0) {
+
+            $stmt2 = $conn->prepare("INSERT INTO services 
+            (customer_id, service_date, product, assigned_to, status, installation_date)
+            VALUES (?, ?, ?, ?, 'open', ?)");
+
+            if (!$stmt2) {
+                die("Prepare Error (Auto): " . $conn->error);
+            }
+
+            // fallback if installation_date empty
+            $install_date = !empty($installation_date) ? $installation_date : $service_date;
+
+            $stmt2->bind_param("issis",
+                $customer_id,
+                $next_date,
+                $product,
+                $assigned_to,
+                $install_date
+            );
+
+            if (!$stmt2->execute()) {
+                die("Auto Insert Error: " . $stmt2->error);
+            }
+        }
+    }
+
+    // ✅ Redirect
     header("Location: customer-view.php?id=" . $customer_id);
     exit;
 }
