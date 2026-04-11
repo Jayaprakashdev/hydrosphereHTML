@@ -42,9 +42,14 @@ if ($type == 'upcoming') {
 }
 
 $sql = "
-SELECT i.*, se.name as engineer_name
+SELECT 
+    i.*, 
+    se.name as engineer_name,
+    c.name as customer_name,
+    c.mobile as customer_mobile
 FROM installations i
 JOIN service_engineers se ON i.assigned_to = se.id
+LEFT JOIN customers c ON i.customer_id = c.id
 $where
 ORDER BY i.id DESC
 ";
@@ -97,6 +102,7 @@ Installations
 <thead class="table-light">
 <tr>
 <th>Date</th>
+<th>Customer</th>
 <th>Product</th>
 <th>Engineer</th>
 <th>Status</th>
@@ -118,6 +124,17 @@ Installations
                     echo $row['installation_date'];
                 }
                 ?>
+            </td>
+            <td>
+                <?= $row['customer_name'] ?? '-' ?><br>
+
+                <?php if (!empty($row['customer_mobile'])): ?>
+                    <a href="tel:<?= $row['customer_mobile'] ?>">📞</a>
+
+                    <a href="https://wa.me/91<?= $row['customer_mobile'] ?>" target="_blank">
+                        💬
+                    </a>
+                <?php endif; ?>
             </td>
             <td><?= $row['product'] ?></td>
             <td><?= $row['engineer_name'] ?></td>
