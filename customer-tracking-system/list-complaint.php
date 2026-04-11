@@ -61,9 +61,14 @@ if ($type == 'upcoming') {
 }
 
 $sql = "
-SELECT c.*, se.name as engineer_name
+SELECT 
+    c.*, 
+    se.name as engineer_name,
+    cu.name as customer_name,
+    cu.mobile as customer_mobile
 FROM complaints c
 JOIN service_engineers se ON c.assigned_to = se.id
+LEFT JOIN customers cu ON c.customer_id = cu.id
 $where
 ORDER BY c.id DESC
 ";
@@ -124,6 +129,7 @@ Complaints
 <thead class="table-light">
 <tr>
 <th>Date</th>
+<th>Customer</th>
 <th>Product</th>
 <th>Engineer</th>
 <th>Status</th>
@@ -136,6 +142,17 @@ Complaints
     <?php while($row = $result->fetch_assoc()): ?>
         <tr>
             <td><?= $row['complaint_date'] ?></td>
+            <td>
+                <strong><?= $row['customer_name'] ?? '-' ?></strong><br>
+
+                <?php if (!empty($row['customer_mobile'])): ?>
+                    <a href="tel:<?= $row['customer_mobile'] ?>">📞</a>
+
+                    <a href="https://wa.me/91<?= $row['customer_mobile'] ?>" target="_blank">
+                        💬
+                    </a>
+                <?php endif; ?>
+            </td>
             <td><?= $row['product'] ?></td>
             <td><?= $row['engineer_name'] ?></td>
             <td><?= $row['status'] ?></td>

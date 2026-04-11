@@ -64,9 +64,14 @@ if ($type == 'upcoming_payment') {
 
 // Query
 $sql = "
-SELECT s.*, se.name as engineer_name
+SELECT 
+    s.*, 
+    se.name as engineer_name,
+    c.name as customer_name,
+    c.mobile as customer_mobile
 FROM sales s
 LEFT JOIN service_engineers se ON s.assigned_to = se.id
+LEFT JOIN customers c ON s.customer_id = c.id
 $where
 ORDER BY s.id DESC
 ";
@@ -117,6 +122,7 @@ Sales
 <thead class="table-light">
 <tr>
 <th>Date</th>
+<th>Customer</th>
 <th>Product</th>
 <th>Total</th>
 <th>Advance</th>
@@ -141,6 +147,17 @@ Sales
                 echo $row['sale_date'];
             }
             ?>
+            </td>
+            <td>
+                <?= $row['customer_name'] ?? '-' ?><br>
+
+                <?php if (!empty($row['customer_mobile'])): ?>
+                    <a href="tel:<?= $row['customer_mobile'] ?>">📞</a>
+
+                    <a href="https://wa.me/91<?= $row['customer_mobile'] ?>" target="_blank">
+                        💬
+                    </a>
+                <?php endif; ?>
             </td>
             <td><?= $row['product'] ?></td>
             <td><?= $row['total_amount'] ?></td>
