@@ -30,6 +30,9 @@ $row = $result->fetch_assoc();
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/custom-style.css?v1" rel="stylesheet">
+    <link href="assets/css/table.css" rel="stylesheet">
+    <link href="assets/css/tab.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
@@ -79,7 +82,7 @@ $row = $result->fetch_assoc();
             </div>
 
             <!-- Nav Tabs -->
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs jp-tab">
                 <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#enquiry">Enquiry</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#sales">Sales</button></li>
                 <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#installation">Installation</button></li>
@@ -104,8 +107,8 @@ $row = $result->fetch_assoc();
                     $res = $enq->get_result();
                     ?>
                     <a href="enquiry-form.php?customer_id=<?= $id ?>" class="btn btn-primary btn-sm mb-2">+ Add Enquiry </a>
-
-                    <table class="table table-bordered table-sm">
+                    <div class="table-responsive">
+                    <table class="table table-bordered table-sm table-white-space">
                         <tr><th>Date</th><th>Follow-up</th><th>Product</th><th>Status</th><th>Amount</th><th>Engineer</th><th>Action</th></tr>
                         <?php while($e = $res->fetch_assoc()): ?>
                         <tr>
@@ -117,7 +120,7 @@ $row = $result->fetch_assoc();
                             <td><?= $e['status'] ?></td>
                             <td>₹<?= $e['amount'] ?? 0 ?></td>
                             <td>
-                                <?= $e['engineer_name'] ?? 'Not Assigned' ?><br>
+                                <?= $e['engineer_name'] ?? 'Not Assigned' ?>
 
                                 <?php if (!empty($e['engineer_mobile'])): ?>
                                     <a href="tel:<?= $e['engineer_mobile'] ?>" class="btn btn-sm btn-outline-success mt-1">
@@ -146,6 +149,7 @@ $row = $result->fetch_assoc();
                         </tr>
                         <?php endwhile; ?>
                     </table>
+                    </div>
                 </div>
 
                 <!-- SALES -->
@@ -163,8 +167,8 @@ $row = $result->fetch_assoc();
                     $res = $sales->get_result();
                     ?>
                     <a href="sales-form.php?customer_id=<?= $id ?>" class="btn btn-success btn-sm mb-2">+ Add Sales</a>
-
-                    <table class="table table-bordered table-sm">
+                   <div class="table-responsive">                 
+                    <table class="table table-bordered table-sm table-white-space">
                         <tr><th>Date</th><th>Product</th><th>Total</th><th>Advance</th><th>Pending</th><th>Status</th><th>Engineer</th><th>Action</th></tr>
                         <?php while($s = $res->fetch_assoc()): ?>
                         <tr>
@@ -175,7 +179,7 @@ $row = $result->fetch_assoc();
                             <td>₹<?= $s['pending_amount'] ?></td>
                             <td><?= $s['status'] ?></td>
                             <td>
-                                <?= $s['engineer_name'] ?? 'Not Assigned' ?><br>
+                                <?= $s['engineer_name'] ?? 'Not Assigned' ?>
 
                                 <?php if (!empty($s['engineer_mobile'])): ?>
                                     <a href="tel:<?= $s['engineer_mobile'] ?>" class="btn btn-sm btn-outline-success mt-1">
@@ -204,6 +208,7 @@ $row = $result->fetch_assoc();
                         </tr>
                         <?php endwhile; ?>
                     </table>
+                    </div>
                 </div>
 
                 <!-- INSTALLATION -->
@@ -221,43 +226,44 @@ $row = $result->fetch_assoc();
                     $res = $inst->get_result();
                     ?>
                     <a href="installation-form.php?customer_id=<?= $id ?>" class="btn btn-warning btn-sm mb-2">+ Add Installation</a>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm table-white-space">
+                            <tr><th>Date</th><th>Product</th><th>Status</th><th>Engineer</th><th>Action</th></tr>
+                            <?php while($i = $res->fetch_assoc()): ?>
+                            <tr>
+                                <td><?= $i['installation_date'] ?></td>
+                                <td><?= $i['product'] ?></td>
+                                <td><?= $i['status'] ?></td>
+                                <td>
+                                    <?= $i['engineer_name'] ?? 'Not Assigned' ?>
 
-                    <table class="table table-bordered table-sm">
-                        <tr><th>Date</th><th>Product</th><th>Status</th><th>Engineer</th><th>Action</th></tr>
-                        <?php while($i = $res->fetch_assoc()): ?>
-                        <tr>
-                            <td><?= $i['installation_date'] ?></td>
-                            <td><?= $i['product'] ?></td>
-                            <td><?= $i['status'] ?></td>
-                            <td>
-                                <?= $i['engineer_name'] ?? 'Not Assigned' ?><br>
-
-                                <?php if (!empty($i['engineer_mobile'])): ?>
-                                    <a href="tel:<?= $i['engineer_mobile'] ?>" class="btn btn-sm btn-outline-success mt-1">
-                                        📞
-                                    </a>
-                                    <a href="https://wa.me/91<?= $i['engineer_mobile'] ?>?text=<?= urlencode(
-                                        "Hello " . $i['engineer_name'] . ",\n\n" .
-                                        "You have a new Installation task assigned.\n\n" .
-                                        "Date: " . $i['installation_date'] . "\n" .
-                                        "Customer Name: " . $row['name'] . "\n" .
-                                        "Mobile: " . $row['mobile'] . "\n" .
-                                        "Product: " . $i['product'] . "\n" .
-                                        "Work and Time: " . $i['description'] . "\n" .
-                                        "Stage: " . $i['status'] . "\n\n" .
-                                        "Please take action accordingly.\n\n- Hydrosphere CRM"
-                                        ) ?>" 
-                                        target="_blank" class="btn btn-sm btn-outline-success">
-                                        💬
-                                    </a>
-                                <?php endif; ?>
-                            </td>
-                            <td>
-                                <a href="installation-form.php?id=<?= $i['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                            </td>
-                        </tr>
-                        <?php endwhile; ?>
-                    </table>
+                                    <?php if (!empty($i['engineer_mobile'])): ?>
+                                        <a href="tel:<?= $i['engineer_mobile'] ?>" class="btn btn-sm btn-outline-success mt-1">
+                                            📞
+                                        </a>
+                                        <a href="https://wa.me/91<?= $i['engineer_mobile'] ?>?text=<?= urlencode(
+                                            "Hello " . $i['engineer_name'] . ",\n\n" .
+                                            "You have a new Installation task assigned.\n\n" .
+                                            "Date: " . $i['installation_date'] . "\n" .
+                                            "Customer Name: " . $row['name'] . "\n" .
+                                            "Mobile: " . $row['mobile'] . "\n" .
+                                            "Product: " . $i['product'] . "\n" .
+                                            "Work and Time: " . $i['description'] . "\n" .
+                                            "Stage: " . $i['status'] . "\n\n" .
+                                            "Please take action accordingly.\n\n- Hydrosphere CRM"
+                                            ) ?>" 
+                                            target="_blank" class="btn btn-sm btn-outline-success">
+                                            💬
+                                        </a>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <a href="installation-form.php?id=<?= $i['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                                </td>
+                            </tr>
+                            <?php endwhile; ?>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- SERVICE -->
@@ -275,47 +281,48 @@ $row = $result->fetch_assoc();
                     $res = $srv->get_result();
                     ?>
                     <a href="service-form.php?customer_id=<?= $id ?>" class="btn btn-info btn-sm mb-2">+ Add Service</a>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-sm table-white-space">
+                            <tr><th>Date</th><th>Product</th><th>Total</th><th>Advance</th><th>Pending</th><th>Status</th><th>Engineer</th><th>Action</th></tr>
+                            <?php while($s = $res->fetch_assoc()): ?>
+                            <tr>
+                                <td><?= $s['service_date'] ?></td>
+                                <td><?= $s['product'] ?></td>
+                                <td>₹<?= $s['total_amount'] ?></td>
+                                <td>₹<?= $s['advance_amount'] ?></td>
+                                <td>₹<?= $s['pending_amount'] ?></td>
+                                <td><?= $s['status'] ?></td>
+                                <td>
+                                    <?= $s['engineer_name'] ?? 'Not Assigned' ?>
 
-                    <table class="table table-bordered table-sm">
-                        <tr><th>Date</th><th>Product</th><th>Total</th><th>Advance</th><th>Pending</th><th>Status</th><th>Engineer</th><th>Action</th></tr>
-                        <?php while($s = $res->fetch_assoc()): ?>
-                        <tr>
-                            <td><?= $s['service_date'] ?></td>
-                            <td><?= $s['product'] ?></td>
-                            <td>₹<?= $s['total_amount'] ?></td>
-                            <td>₹<?= $s['advance_amount'] ?></td>
-                            <td>₹<?= $s['pending_amount'] ?></td>
-                            <td><?= $s['status'] ?></td>
-                            <td>
-                                <?= $s['engineer_name'] ?? 'Not Assigned' ?><br>
+                                    <?php if (!empty($s['engineer_mobile'])): ?>
+                                        <a href="tel:<?= $s['engineer_mobile'] ?>" class="btn btn-sm btn-outline-success mt-1">
+                                            📞
+                                        </a>
 
-                                <?php if (!empty($s['engineer_mobile'])): ?>
-                                    <a href="tel:<?= $s['engineer_mobile'] ?>" class="btn btn-sm btn-outline-success mt-1">
-                                        📞
-                                    </a>
-
-                                    <a href="https://wa.me/91<?= $s['engineer_mobile'] ?>?text=<?= urlencode(
-                                        "Hello " . $s['engineer_name'] . ",\n\n" .
-                                        "You have a new Service task assigned.\n\n" .
-                                        "Date: " . $s['service_date'] . "\n" .
-                                        "Customer Name: " . $row['name'] . "\n" .
-                                        "Mobile: " . $row['mobile'] . "\n" .
-                                        "Product: " . $s['product'] . "\n" .
-                                        "Work and Time: " . $s['description'] . "\n" .
-                                        "Stage: " . $s['status'] . "\n\n" .
-                                        "Please take action accordingly.\n\n- Hydrosphere CRM"
-                                        ) ?>" 
-                                        target="_blank" class="btn btn-sm btn-outline-success">
-                                        💬
-                                    </a>
-                                <?php endif; ?>
-                            </td>
-                            <td>
-                                <a href="service-form.php?id=<?= $s['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                            </td>
-                        </tr>
-                        <?php endwhile; ?>
-                    </table>
+                                        <a href="https://wa.me/91<?= $s['engineer_mobile'] ?>?text=<?= urlencode(
+                                            "Hello " . $s['engineer_name'] . ",\n\n" .
+                                            "You have a new Service task assigned.\n\n" .
+                                            "Date: " . $s['service_date'] . "\n" .
+                                            "Customer Name: " . $row['name'] . "\n" .
+                                            "Mobile: " . $row['mobile'] . "\n" .
+                                            "Product: " . $s['product'] . "\n" .
+                                            "Work and Time: " . $s['description'] . "\n" .
+                                            "Stage: " . $s['status'] . "\n\n" .
+                                            "Please take action accordingly.\n\n- Hydrosphere CRM"
+                                            ) ?>" 
+                                            target="_blank" class="btn btn-sm btn-outline-success">
+                                            💬
+                                        </a>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <a href="service-form.php?id=<?= $s['id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                                </td>
+                            </tr>
+                            <?php endwhile; ?>
+                        </table>
+                    </div>  
                 </div>
 
                 <!-- COMPLAINT -->
@@ -337,64 +344,65 @@ $row = $result->fetch_assoc();
     <a href="complaint-form.php?customer_id=<?= $id ?>" class="btn btn-danger btn-sm mb-2">
         + Add Complaint
     </a>
+    <div class="table-responsive">
+        <table class="table table-bordered table-sm table-white-space">
+            <tr>
+                <th>Date</th>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Advance</th>
+                <th>Pending</th>
+                <th>Engineer</th>
+                <th>Action</th>
+            </tr>
 
-    <table class="table table-bordered table-sm">
-        <tr>
-            <th>Date</th>
-            <th>Product</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Total</th>
-            <th>Advance</th>
-            <th>Pending</th>
-            <th>Engineer</th>
-            <th>Action</th>
-        </tr>
+            <?php while($c = $res->fetch_assoc()): ?>
+            <tr>
+                <td><?= $c['complaint_date'] ?></td>
+                <td><?= $c['product'] ?></td>
+                <td><?= $c['description'] ?></td>
+                <td><?= $c['status'] ?></td>
 
-        <?php while($c = $res->fetch_assoc()): ?>
-        <tr>
-            <td><?= $c['complaint_date'] ?></td>
-            <td><?= $c['product'] ?></td>
-            <td><?= $c['description'] ?></td>
-            <td><?= $c['status'] ?></td>
+                <td>₹<?= $c['total_amount'] ?? 0 ?></td>
+                <td>₹<?= $c['advance_amount'] ?? 0 ?></td>
+                <td>₹<?= $c['pending_amount'] ?? 0 ?></td>
 
-            <td>₹<?= $c['total_amount'] ?? 0 ?></td>
-            <td>₹<?= $c['advance_amount'] ?? 0 ?></td>
-            <td>₹<?= $c['pending_amount'] ?? 0 ?></td>
+                <td>
+                    <?= $c['engineer_name'] ?? 'Not Assigned' ?>
 
-            <td>
-                <?= $c['engineer_name'] ?? 'Not Assigned' ?><br>
+                    <?php if (!empty($c['engineer_mobile'])): ?>
+                        <a href="tel:<?= $c['engineer_mobile'] ?>" class="btn btn-sm btn-outline-success mt-1">
+                            📞
+                        </a>
 
-                <?php if (!empty($c['engineer_mobile'])): ?>
-                    <a href="tel:<?= $c['engineer_mobile'] ?>" class="btn btn-sm btn-outline-success mt-1">
-                        📞
+                        <a href="https://wa.me/91<?= $c['engineer_mobile'] ?>?text=<?= urlencode(
+                            "Hello " . $c['engineer_name'] . ",\n\n" .
+                            "You have a new Complaint task assigned.\n\n" .
+                            "Date: " . $c['complaint_date'] . "\n" .
+                            "Customer Name: " . $row['name'] . "\n" .
+                            "Mobile: " . $row['mobile'] . "\n" .
+                            "Product: " . $c['product'] . "\n" .
+                            "Work and Time: " . $c['description'] . "\n" .
+                            "Stage: " . $c['status'] . "\n\n" .
+                            "Please take action accordingly.\n\n- Hydrosphere CRM"
+                            ) ?>" 
+                            target="_blank" class="btn btn-sm btn-outline-success">
+                            💬
+                        </a>
+                    <?php endif; ?>
+                </td>
+
+                <td>
+                    <a href="complaint-form.php?id=<?= $c['id'] ?>" class="btn btn-sm btn-warning">
+                        Edit
                     </a>
-
-                    <a href="https://wa.me/91<?= $c['engineer_mobile'] ?>?text=<?= urlencode(
-                        "Hello " . $c['engineer_name'] . ",\n\n" .
-                        "You have a new Complaint task assigned.\n\n" .
-                        "Date: " . $c['complaint_date'] . "\n" .
-                        "Customer Name: " . $row['name'] . "\n" .
-                        "Mobile: " . $row['mobile'] . "\n" .
-                        "Product: " . $c['product'] . "\n" .
-                        "Work and Time: " . $c['description'] . "\n" .
-                        "Stage: " . $c['status'] . "\n\n" .
-                        "Please take action accordingly.\n\n- Hydrosphere CRM"
-                        ) ?>" 
-                        target="_blank" class="btn btn-sm btn-outline-success">
-                        💬
-                    </a>
-                <?php endif; ?>
-            </td>
-
-            <td>
-                <a href="complaint-form.php?id=<?= $c['id'] ?>" class="btn btn-sm btn-warning">
-                    Edit
-                </a>
-            </td>
-        </tr>
-        <?php endwhile; ?>
-    </table>
+                </td>
+            </tr>
+            <?php endwhile; ?>
+        </table>
+   </div>
 </div>
 
             </div>

@@ -134,7 +134,7 @@ $customer_id = $data['customer_id'] ?? ($_GET['customer_id'] ?? '');
                 </div>
 
                 <!-- Submit -->
-                <button class="btn btn-warning w-100">
+                <button type="submit" id="submitBtn" class="btn btn-warning w-100">
                     <?= $id ? 'Update Installation' : 'Save Installation' ?>
                 </button>
 
@@ -144,6 +144,6 @@ $customer_id = $data['customer_id'] ?? ($_GET['customer_id'] ?? '');
     </div>
 
 </div>
-
+<script src="assets/js/one-time-submit.js"></script>
 </body>
 </html>

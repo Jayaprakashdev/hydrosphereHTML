@@ -42,6 +42,7 @@ $result = $conn->query($sql);
 
     <!-- DataTables -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link href="assets/css/table.css" rel="stylesheet">
 </head>
 
 <body class="bg-light">
@@ -85,7 +86,7 @@ $result = $conn->query($sql);
     <div class="card shadow-sm">
         <div class="card-body table-responsive">
 
-            <table id="customerTable" class="table table-bordered table-sm">
+            <table id="customerTable" class="table table-bordered table-sm table-white-space">
                 <thead class="table-light">
                     <tr>
                         <th>ID</th>

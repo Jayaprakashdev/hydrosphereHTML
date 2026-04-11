@@ -299,6 +299,7 @@ for ($i = 6; $i >= 0; $i--) {
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/custom-style.css?v1" rel="stylesheet">
 
     <!-- Chart -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -314,8 +315,19 @@ for ($i = 6; $i >= 0; $i--) {
 <body class="bg-light">
 
 <div class="container mt-4">
+    <div class="header">
+        <h4 class="mb-0">Customer Tracking System</h4>
+        <div class="burger" onclick="toggleMenu()">☰</div>
+    </div>
 
-    <h4 class="mb-3">Customer Tracking System</h4>
+    <div class="nav-menu" id="menu">
+         <div class="close-btn" onclick="toggleMenu()">✖</div>
+         <a href="/time-tracking-system">Time Tracking System</a>
+        <a href="/inventory-tracking-system">Inventory Tracking System</a>
+        <a href="/sales-tracking-system">Sale Tracking System</a>
+        <a href="/service-tracking-system">Service Tracking System</a>
+        <a href="/quotation-invoice-system/product-price-list.html">Product Price List</a>
+    </div>
 
     <!-- FILTER -->
     <form method="GET" class="row mb-3">
@@ -1338,6 +1350,17 @@ new Chart(document.getElementById('conversionChart'), {
             { label: 'Sales', data: salesData }
         ]
     }
+});
+
+function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+}
+
+// Close when clicking menu item
+document.querySelectorAll(".nav-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("menu").classList.remove("active");
+    });
 });
 </script>
 
