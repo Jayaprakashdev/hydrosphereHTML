@@ -1,0 +1,5 @@
+.jp-tab{
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+}

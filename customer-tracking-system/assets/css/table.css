@@ -1,0 +1,3 @@
+.table-white-space th, .table-white-space td {
+    white-space: nowrap;
+}

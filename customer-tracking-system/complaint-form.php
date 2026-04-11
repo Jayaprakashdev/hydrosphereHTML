@@ -153,7 +153,7 @@ $customer_id = $data['customer_id'] ?? ($_GET['customer_id'] ?? '');
                 </div>
 
                 <!-- Submit -->
-                <button class="btn btn-danger w-100">
+                <button type="submit" id="submitBtn" class="btn btn-danger w-100">
                     <?= $id ? 'Update Complaint' : 'Save Complaint' ?>
                 </button>
 
@@ -178,5 +178,6 @@ window.onload = calc;
 total.addEventListener("input", calc);
 advance.addEventListener("input", calc);
 </script>
+<script src="assets/js/one-time-submit.js"></script>
 </body>
 </html>

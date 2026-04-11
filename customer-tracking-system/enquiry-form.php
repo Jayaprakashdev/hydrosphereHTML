@@ -153,8 +153,9 @@ $eng = $conn->query("SELECT id, name FROM service_engineers ORDER BY name ASC");
                 </div>
 
                 <!-- Submit -->
-                <button class="btn btn-primary w-100">
-                    <?= $id ? 'Update Enquiry' : 'Save Enquiry' ?>
+                <button type="submit" id="submitBtn" class="btn btn-primary w-100">
+                    <span id="btnText"><?= $id ? 'Update Enquiry' : 'Save Enquiry' ?></span>
+                    <span id="loader" style="display:none;">⏳</span>
                 </button>
 
             </form>
@@ -163,6 +164,7 @@ $eng = $conn->query("SELECT id, name FROM service_engineers ORDER BY name ASC");
     </div>
 
 </div>
-
+<script src="assets/js/enquiry-form.js"></script>
+<script src="assets/js/one-time-submit.js"></script>
 </body>
 </html>

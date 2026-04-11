@@ -154,7 +154,7 @@ $customer_id = $data['customer_id'] ?? ($_GET['customer_id'] ?? '');
                     </select>
                 </div>
 
-                <button class="btn btn-info w-100">
+                <button type="submit" id="submitBtn" class="btn btn-info w-100">
                     <?= $id ? 'Update Service' : 'Save Service' ?>
                 </button>
 
@@ -195,6 +195,7 @@ window.onload = calc;
 total.addEventListener("input", calc);
 advance.addEventListener("input", calc);
 </script>
+<script src="assets/js/one-time-submit.js"></script>
 
 </body>
 </html>
