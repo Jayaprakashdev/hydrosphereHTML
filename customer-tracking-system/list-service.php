@@ -49,6 +49,8 @@ if ($type == 'upcoming') {
 $sql = "
 SELECT 
     s.*, 
+    s.description,
+    s.note,
     se.name as engineer_name,
     c.name as customer_name,
     c.mobile as customer_mobile
@@ -70,6 +72,13 @@ $result = $conn->query($sql);
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 <link href="assets/css/table.css" rel="stylesheet">
+<style>
+    .table-white-space td.td-custom-width {
+        min-width: 250px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+</style>
 </head>
 
 <body class="bg-light">
@@ -114,12 +123,14 @@ Services
 <table id="serviceTable" class="table table-bordered table-sm table-white-space">
 <thead class="table-light">
 <tr>
-<th>Date</th>
-<th>Customer</th>
-<th>Product</th>
-<th>Engineer</th>
-<th>Status</th>
-<th>Action</th>
+    <th>Date</th>
+    <th>Customer</th>
+    <th>Product</th>
+    <th>Description</th>
+    <th>Note</th>
+    <!-- <th>Engineer</th>
+    <th>Status</th> -->
+    <th>Action</th>
 </tr>
 </thead>
 
@@ -140,8 +151,10 @@ Services
                 <?php endif; ?>
             </td>
             <td><?= $row['product'] ?></td>
-            <td><?= $row['engineer_name'] ?></td>
-            <td><?= $row['status'] ?></td>
+            <td class="td-custom-width"><?= $row['description'] ?? '-' ?></td>
+            <td class="td-custom-width"><?= $row['note'] ?? '-' ?></td>
+            <!-- <td><?= $row['engineer_name'] ?></td>
+            <td><?= $row['status'] ?></td> -->
             <td>
                 <a href="customer-view.php?id=<?= $row['customer_id'] ?>" 
                    class="btn btn-sm btn-primary">
@@ -167,7 +180,13 @@ Services
 $(document).ready(function () {
 
     var table = $('#serviceTable').DataTable({
-        "pageLength": 10
+        pageLength: 10,
+        scrollX: true,   // 🔥 THIS FIXES WIDTH ISSUE
+        autoWidth: false,
+        columnDefs: [
+            { width: "250px", targets: 3 },
+            { width: "250px", targets: 4 }
+        ]
     });
 
     // Product filter
