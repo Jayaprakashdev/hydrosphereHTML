@@ -128,8 +128,8 @@ Services
     <th>Product</th>
     <th>Description</th>
     <th>Note</th>
-    <!-- <th>Engineer</th>
-    <th>Status</th> -->
+    <!-- <th>Engineer</th> -->
+    <th>Status</th>
     <th>Action</th>
 </tr>
 </thead>
@@ -153,8 +153,8 @@ Services
             <td><?= $row['product'] ?></td>
             <td class="td-custom-width"><?= $row['description'] ?? '-' ?></td>
             <td class="td-custom-width"><?= $row['note'] ?? '-' ?></td>
-            <!-- <td><?= $row['engineer_name'] ?></td>
-            <td><?= $row['status'] ?></td> -->
+            <!-- <td><?= $row['engineer_name'] ?></td> -->
+            <td><?= $row['status'] ?></td>
             <td>
                 <a href="customer-view.php?id=<?= $row['customer_id'] ?>" 
                    class="btn btn-sm btn-primary">
