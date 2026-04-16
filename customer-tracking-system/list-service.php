@@ -49,6 +49,7 @@ if ($type == 'upcoming') {
 $sql = "
 SELECT 
     s.*, 
+    s.installation_date,
     s.description,
     s.note,
     se.name as engineer_name,
@@ -123,6 +124,7 @@ Services
 <table id="serviceTable" class="table table-bordered table-sm table-white-space">
 <thead class="table-light">
 <tr>
+    <th>ID or LSD</th>
     <th>Date</th>
     <th>Customer</th>
     <th>Product</th>
@@ -138,6 +140,7 @@ Services
 <?php if ($result->num_rows > 0): ?>
     <?php while($row = $result->fetch_assoc()): ?>
         <tr>
+            <td><?= $row['installation_date'] ?></td>
             <td><?= $row['service_date'] ?></td>
             <td>
                 <strong><?= $row['customer_name'] ?? '-' ?></strong><br>
