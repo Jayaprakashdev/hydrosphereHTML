@@ -9,24 +9,23 @@ if(!empty($_GET['from']) && !empty($_GET['to'])){
     $where .= " AND work_date BETWEEN '$from' AND '$to'";
 }
 
-// Total Amount
-$total = $conn->query("SELECT SUM(amount) as total FROM work_entries $where")->fetch_assoc()['total'] ?? 0;
+// ✅ Total Profit
+$total = $conn->query("SELECT SUM(amount - expense) as total FROM work_entries $where")->fetch_assoc();
 
-// Total Entries
-$count = $conn->query("SELECT COUNT(*) as cnt FROM work_entries $where")->fetch_assoc()['cnt'];
+// ✅ Total Entries
+$count = $conn->query("SELECT COUNT(*) as total FROM work_entries $where")->fetch_assoc();
 
-// ALL Engineers
-$engineers = [];
-
-$query = $conn->query("
-    SELECT engineer, SUM(amount) as total 
+// ✅ Engineer-wise Profit
+$eng = $conn->query("
+    SELECT engineer, SUM(amount - expense) as total 
     FROM work_entries 
     $where 
     GROUP BY engineer 
     ORDER BY total DESC
 ");
 
-while($row = $query->fetch_assoc()){
+$engineers = [];
+while($row = $eng->fetch_assoc()){
     $engineers[] = [
         "name" => $row['engineer'],
         "total" => $row['total']
@@ -34,8 +33,8 @@ while($row = $query->fetch_assoc()){
 }
 
 echo json_encode([
-    "totalAmount" => $total,
-    "totalEntries" => $count,
+    "totalAmount" => $total['total'] ?? 0,
+    "totalEntries" => $count['total'],
     "engineers" => $engineers
 ]);
 ?>
