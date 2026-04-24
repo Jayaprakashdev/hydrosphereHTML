@@ -327,6 +327,7 @@ for ($i = 6; $i >= 0; $i--) {
         <a href="/sales-tracking-system">Sale Tracking System</a>
         <a href="/service-tracking-system">Service Tracking System</a>
         <a href="/quotation-invoice-system/product-price-list.html">Product Price List</a>
+        <a href="https://docs.google.com/spreadsheets/d/1bQOpvFUyCw993BPFwfZ4quWfHCZxuLc-NGVlPPv_kT8/edit?gid=1995461254#gid=1995461254">Billing Sheet</a>
     </div>
 
     <!-- FILTER -->
