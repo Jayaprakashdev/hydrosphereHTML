@@ -53,22 +53,22 @@ $row = $result->fetch_assoc();
 
                 <div class="mb-2">
                     <label>Area *</label>
-                    <input type="text" name="area" class="form-control" value="<?= $row['area'] ?>" required>
+                    <input type="text" name="area" id="area" class="form-control" value="<?= $row['area'] ?>" required>
                 </div>
 
                 <div class="mb-2">
                     <label>Pincode *</label>
-                    <input type="text" name="pincode" class="form-control" value="<?= $row['pincode'] ?>" required>
+                    <input type="text" name="pincode" id="pincode" class="form-control" value="<?= $row['pincode'] ?>" required>
                 </div>
 
                 <div class="mb-2">
                     <label>District</label>
-                    <input type="text" name="district" class="form-control" value="<?= $row['district'] ?>">
+                    <input type="text" name="district" id="district" class="form-control" value="<?= $row['district'] ?>">
                 </div>
 
                 <div class="mb-2">
                     <label>State</label>
-                    <input type="text" name="state" class="form-control" value="<?= $row['state'] ?>">
+                    <input type="text" name="state" id="state" class="form-control" value="<?= $row['state'] ?>">
                 </div>
 
                 <div class="mb-2">
@@ -94,6 +94,42 @@ document.querySelector("form").addEventListener("submit", function(e) {
         e.preventDefault();
     }
 });
+
+document.getElementById("pincode").addEventListener("keyup", function () {
+
+    let pincode = this.value;
+
+    if (pincode.length === 6) {
+
+        fetch("https://api.postalpincode.in/pincode/" + pincode)
+            .then(res => res.json())
+            .then(data => {
+
+                if (data[0].Status === "Success") {
+
+                    let postOffice = data[0].PostOffice[0];
+
+                    document.getElementById("area").value = postOffice.Name;
+                    document.getElementById("district").value = postOffice.District;
+                    document.getElementById("state").value = postOffice.State;
+
+                } else {
+                    alert("Invalid Pincode");
+                }
+
+            })
+            .catch(() => alert("Error fetching pincode data"));
+    }
+});
+
+window.onload = function () {
+    let pincode = document.getElementById("pincode").value;
+
+    if (pincode.length === 6) {
+        document.getElementById("pincode").dispatchEvent(new Event('keyup'));
+    }
+};
+
 </script>
 </body>
 </html>
