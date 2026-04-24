@@ -47,8 +47,8 @@ $eng = $conn->query("SELECT id, name FROM service_engineers ORDER BY name ASC");
                     <div class="col-md-4 mb-2">
                         <label>Enquiry Date *</label>
                         <input type="date" name="enquiry_date" 
-                               value="<?= $data['enquiry_date'] ?? '' ?>" 
-                               class="form-control" required>
+                            value="<?= $data['enquiry_date'] ?? date('Y-m-d') ?>" 
+                            class="form-control" required>
                     </div>
 
                     <div class="col-md-4 mb-2">
@@ -164,7 +164,7 @@ $eng = $conn->query("SELECT id, name FROM service_engineers ORDER BY name ASC");
     </div>
 
 </div>
-<script src="assets/js/enquiry-form.js"></script>
+<!-- <script src="assets/js/enquiry-form.js"></script> -->
 <script src="assets/js/one-time-submit.js"></script>
 </body>
 </html>
