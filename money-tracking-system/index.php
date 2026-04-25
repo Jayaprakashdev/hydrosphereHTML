@@ -47,7 +47,8 @@
         <option value="">Select</option>
         <option value="Installation">Installation</option>
         <option value="Service">Service</option>
-        <option value="ShowroomSale">Showroom Sale</option>
+        <option value="Showroom Sale">Showroom Sale</option>
+        <option value="Salary Advance">Salary Advance</option>
     </select>
 </div>
 
