@@ -173,7 +173,7 @@ const serviceInput = document.getElementById("service_date");
 installInput.addEventListener("change", function () {
     let d = new Date(this.value);
     if (!isNaN(d)) {
-        d.setDate(d.getDate() + 120);
+        d.setDate(d.getDate() + 180);
         let m = String(d.getMonth()+1).padStart(2,'0');
         let day = String(d.getDate()).padStart(2,'0');
         serviceInput.value = d.getFullYear()+"-"+m+"-"+day;
