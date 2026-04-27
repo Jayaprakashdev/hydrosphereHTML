@@ -104,11 +104,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // =========================
-    // 🔥 AUTO NEXT SERVICE (120 days)
+    // 🔥 AUTO NEXT SERVICE (180 days)
     // =========================
     if (!empty($service_date) && trim(strtolower($status)) === "completed") {
 
-        $next_date = date('Y-m-d', strtotime($service_date . ' +120 days'));
+        $next_date = date('Y-m-d', strtotime($service_date . ' +180 days'));
 
         // ✅ Prevent duplicate
         $check = $conn->prepare("
