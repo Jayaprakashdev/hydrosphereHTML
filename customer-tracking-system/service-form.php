@@ -169,7 +169,7 @@ $customer_id = $data['customer_id'] ?? ($_GET['customer_id'] ?? '');
 const installInput = document.getElementById("installation_date");
 const serviceInput = document.getElementById("service_date");
 
-// Auto +120 days
+// Auto +180 days
 installInput.addEventListener("change", function () {
     let d = new Date(this.value);
     if (!isNaN(d)) {
