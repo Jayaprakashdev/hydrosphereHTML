@@ -187,7 +187,7 @@ $(document).ready(function () {
     // Product filter
     $('#productFilter').on('change', function () {
         var value = $(this).val();
-        table.column(1).search(value).draw();
+        table.column(2).search(value).draw();
     });
 
 });

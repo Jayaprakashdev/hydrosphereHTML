@@ -45,6 +45,7 @@ if ($type == 'upcoming') {
 $sql = "
 SELECT 
     e.*, 
+    e.source,   -- ✅ add this
     se.name as engineer_name,
     c.name as customer_name,
     c.mobile as customer_mobile
@@ -107,6 +108,7 @@ Enquiries
 <th>Follow Up Date</th>
 <th>Customer</th>
 <th>Product</th>
+<th>Source</th>
 <th>Engineer</th>
 <th>Status</th>
 <th>Amount</th>
@@ -145,6 +147,7 @@ Enquiries
                 <?php endif; ?>
             </td>
             <td><?= $row['product'] ?></td>
+            <td><?= $row['source'] ?? '-' ?></td>
             <td><?= $row['engineer_name'] ?></td>
             <td><?= $row['status'] ?></td>
             <td><?= $row['amount'] ?? '-' ?></td>
@@ -181,10 +184,10 @@ $(document).ready(function () {
         pageLength: 10
     });
 
-    // ✅ FIXED column index (Product = column 2)
+    // ✅ Correct column index (Product = column 3)
     $('#productFilter').on('change', function () {
         var value = $(this).val();
-        table.column(2).search(value).draw();
+        table.column(3).search(value).draw();
     });
 
 });
