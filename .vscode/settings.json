@@ -4,5 +4,6 @@
         "gst",
         "Ionisers",
         "Madambakkam"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

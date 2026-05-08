@@ -483,6 +483,46 @@
     {
         "Domestic RO System 12 LPH": [
             {
+                "title": "Hydro Era RO Water Purifier",
+                "image": "/assets/images/products/domestic-ro-system/hydro-era-blue.png",
+                "mrp": 15000,
+                "offerPrice": 10499,
+                "emi": true,
+                "freeInstallation": true,
+                "gstIncluded": true,
+                "videoUrl": "",
+                "description": "Hydro Era is a high-capacity RO water purifier designed for homes, offices, and small families. Equipped with a 9-liter storage tank and advanced 7-stage purification system with Alkaline, Copper, and Zinc technology, it delivers safe, healthy, and mineral-rich drinking water even from high TDS borewell water sources.",
+                "benefits": [
+                    "7-stage advanced RO purification for safe drinking water",
+                    "Alkaline + Copper + Zinc mineral enhancement technology",
+                    "Suitable for borewell, tanker, and municipal water",
+                    "9-liter large storage tank for uninterrupted water supply",
+                    "Smart LED indicators for purification and tank status",
+                    "4000 TDS membrane supports hard water purification",
+                    "Food-grade ABS body for durability and hygiene",
+                    "Ideal for homes, offices, clinics, and small families"
+                ],
+                "specifications": [
+                    "Model: Hydro Era",
+                    "Purification Technology: RO + PP + Sediment + Carbon + Alkaline + Zinc + Copper",
+                    "Purification Stages: 7 Stage Advanced Filtration",
+                    "Storage Capacity: 9 Liters",
+                    "Max Operation TDS: 4000 PPM",
+                    "Mineral Technology: Alkaline + Copper + Zinc",
+                    "Membrane Type: Imported 4000 TDS RO Membrane",
+                    "Body Material: Food Grade ABS Plastic",
+                    "Tank Type: Transparent Storage Tank",
+                    "LED Indicators: Purification ON, Tank Full, Power ON/OFF",
+                    "Water Source Compatibility: Borewell, Tanker, Municipal Water",
+                    "Suitable For: Home, Office, Small Family, Clinic",
+                    "Purification Efficiency: Removes Bacteria, Viruses, Heavy Metals, Fluoride & Arsenic",
+                    "pH Level: 7.5 – 8.5 Alkaline Water",
+                    "Installation Type: Wall Mount / Table Top",
+                    "Colour: Black & Transparent Finish",
+                    "Country of Origin: India"
+                ]
+            },
+            {
                 "title": "Generous HNC RO Water Dispenser (Hot, Normal, Cold)",
                 "image": "/assets/images/products/domestic-ro-system/generous.png",
                 "mrp": 54999,
