@@ -54,7 +54,8 @@ SELECT
     s.note,
     se.name as engineer_name,
     c.name as customer_name,
-    c.mobile as customer_mobile
+    c.mobile as customer_mobile,
+    c.pincode as customer_pincode
 FROM services s
 JOIN service_engineers se ON s.assigned_to = se.id
 LEFT JOIN customers c ON s.customer_id = c.id
@@ -127,6 +128,7 @@ Services
     <th>ID or LSD</th>
     <th>Date</th>
     <th>Customer</th>
+    <th>Pincode</th>
     <th>Product</th>
     <th>Description</th>
     <th>Note</th>
@@ -153,6 +155,7 @@ Services
                     </a>
                 <?php endif; ?>
             </td>
+            <td><?= $row['customer_pincode'] ?? '-' ?></td>
             <td><?= $row['product'] ?></td>
             <td class="td-custom-width"><?= $row['description'] ?? '-' ?></td>
             <td class="td-custom-width"><?= $row['note'] ?? '-' ?></td>
@@ -195,7 +198,7 @@ $(document).ready(function () {
     // Product filter
     $('#productFilter').on('change', function () {
         var value = $(this).val();
-        table.column(3).search(value).draw();
+        table.column(4).search(value).draw();
     });
 
 });
