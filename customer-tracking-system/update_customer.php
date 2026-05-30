@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $state    = $_POST['state'];
     $country  = $_POST['country'];
 
-    // ✅ Basic validation
-    if(empty($name) || empty($mobile) || empty($area) || empty($pincode)){
+    // ✅ Basic validation || empty($area)
+    if(empty($name) || empty($mobile) || empty($pincode)){
         die("Required fields missing!");
     }
 
