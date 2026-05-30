@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pincode  = $_POST['pincode'];
     $country  = $_POST['country'];
 
-    // Validation
-    if (empty($name) || empty($mobile) || empty($area) || empty($pincode)) {
+    // Validation || empty($area)
+    if (empty($name) || empty($mobile) || empty($pincode)) {
         echo "Required fields missing!";
         exit;
     }
