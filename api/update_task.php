@@ -12,14 +12,17 @@ $id = $data["id"];
 $date = $data["task_date"];
 $name = $data["task_name"];
 $description = $data["description"];
+$task_income = $data['task_income'];
+$task_expense = $data['task_expense'];
 $engineer = $data["engineer"];
 $status = $data["status"];
 
-$sql = "UPDATE tasks
-SET
+$sql = "UPDATE tasks SET
 task_date=?,
 task_name=?,
 description=?,
+task_income=?,
+task_expense=?,
 engineer=?,
 status=?
 WHERE id=?";

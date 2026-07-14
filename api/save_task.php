@@ -33,12 +33,15 @@ if (
 $date = $data['task_date'];
 $name = $data['task_name'];
 $description = $data['description'];
+$task_income = $data['task_income'];
+$task_expense = $data['task_expense'];
 $engineer = $data['engineer'];
 $status = $data['status'];
 
 $sql = "INSERT INTO tasks
-(task_date, task_name, description, engineer, status)
-VALUES (?, ?, ?, ?, ?)";
+(task_date, task_name, description, task_income, task_expense, engineer, status)
+VALUES
+(?,?,?,?,?,?,?)
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("sssss", $date, $name, $description, $engineer, $status);
