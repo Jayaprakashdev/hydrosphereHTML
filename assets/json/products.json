@@ -407,8 +407,8 @@
             {
                 "title": "Water Softener Salt Tablets (10 KG)",
                 "image": "/assets/images/products/softener/salt-tablet-10.png",
-                "mrp": 400,
-                "offerPrice": 300,
+                "mrp": 450,
+                "offerPrice": 350,
                 "emi": false,
                 "freeInstallation": true,
                 "gstIncluded": true,
@@ -444,8 +444,8 @@
             {
                 "title": "Water Softener Salt Tablets (25 KG)",
                 "image": "/assets/images/products/softener/salt-tablet-25.png",
-                "mrp": 800,
-                "offerPrice": 625,
+                "mrp": 850,
+                "offerPrice": 750,
                 "emi": false,
                 "freeInstallation": true,
                 "gstIncluded": true,
