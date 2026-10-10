@@ -72,7 +72,9 @@ $customer_id = $data['customer_id'] ?? ($_GET['customer_id'] ?? '');
                             "Alkaline Ionizer",
                             "Alkaline Water Purifiers",
                             "Domestic RO",
-                            "Commercial RO"
+                            "Commercial RO",
+                            "CCTV",
+                            "Water ATM"
                         ];
 
                         foreach($products as $p){

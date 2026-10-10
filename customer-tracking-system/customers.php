@@ -75,6 +75,8 @@ $result = $conn->query($sql);
                 <option>Alkaline Water Purifiers</option>
                 <option>Domestic RO</option>
                 <option>Commercial RO</option>
+                <option>CCTV</option>
+                <option>Water ATM</option>
             </select>
         </div>
         <div class="col-12 col-md-3 mb-2">

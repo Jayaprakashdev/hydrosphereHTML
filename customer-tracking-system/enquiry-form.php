@@ -93,7 +93,9 @@ $eng = $conn->query("SELECT id, name FROM service_engineers ORDER BY name ASC");
                             "Alkaline Ionizer",
                             "Alkaline Water Purifiers",
                             "Domestic RO",
-                            "Commercial RO"
+                            "Commercial RO",
+                            "CCTV",
+                            "Water ATM"
                         ];
 
                         foreach($products as $p){

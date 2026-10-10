@@ -119,6 +119,8 @@ Complaints
             <option>Alkaline Water Purifiers</option>
             <option>Domestic RO</option>
             <option>Commercial RO</option>
+            <option>CCTV</option>
+            <option>Water ATM</option>
         </select>
     </div>
 
