@@ -117,6 +117,8 @@ required
 <option value="Alkaline Water Purifiers" <?php if($row['task_type']=="Alkaline Water Purifiers") echo "selected"; ?>>Alkaline Water Purifiers</option>
 <option value="Domestic RO" <?php if($row['task_type']=="Domestic RO") echo "selected"; ?>>Domestic RO</option>
 <option value="Commercial RO" <?php if($row['task_type']=="Commercial RO") echo "selected"; ?>>Commercial RO</option>
+<option value="CCTV" <?php if($row['task_type']=="CCTV") echo "selected"; ?>>CCTV</option>
+<option value="Water ATM" <?php if($row['task_type']=="Water ATM") echo "selected"; ?>>Water ATM</option>
 
 </select>
 
